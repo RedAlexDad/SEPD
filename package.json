@@ -1,0 +1,29 @@
+{
+    "name": "lesson-javascript",
+    "version": "1.0.0",
+    "description": "rest api fullstack example",
+    "main": "index.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "keywords": [
+        "js",
+        "rest",
+        "api"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/RedAlexDad/Lesson-JavaScript.git"
+    },
+    "author": "RedAlexDad",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/RedAlexDad/Lesson-JavaScript/issues"
+    },
+    "homepage": "https://github.com/RedAlexDad/Lesson-JavaScript#readme",
+    "dependencies": {
+        "express": "^4.17.2",
+        "nodemon": "^2.0.15"
+    }
+}
