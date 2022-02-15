@@ -6,7 +6,9 @@ const app = express();
 app.use(express.static(path.resolve(__dirname, 'client')));
 
 // Подключение к html серверу
-app.get('*', (req, res) => { res.sendFile(path.resolve(__dirname, 'client', 'index.html')); });
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'index.html'));
+});
 
 // Номер порта
 const PORT = 5000;
