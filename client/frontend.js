@@ -19,15 +19,15 @@ new Vue({
     methods: {
         createContact() { // Указывает на <form class="form-inline mb-3" @submit.prevent="createContact">
             // console.log(this.form)
-            const {...contact } = this.form
-            console.log(contact)
+            const {...contact } = this.form;
+            console.log(contact);
 
-            this.contacts.push({...contact, id: Date.now() }) // Указывает на <div v-else-if="contacts.length">
+            this.contacts.push({...contact, id: Date.now() }); // Указывает на <div v-else-if="contacts.length">
 
-            this.form.building = this.form.auditory = this.form.displina = this.form.time = '';
+            this.form.building = this.form.auditory && this.form.displina && this.form.time && '';
         },
         markContact(id) {
-            console.log(id)
+            console.log(id);
         },
         removeContact(id) {
 
