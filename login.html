@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86">
+    <title>login page</title>
+</head>
+
+
+<style>
+
+    html, body {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #F2C138;
+        display: grid;
+        place-content: center;
+        height: 100%;
+    }
+
+    #content {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+    }
+
+    #logo {
+        position: relative;
+        padding-top: 40px;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        background-position: center;
+    }
+
+    input {
+        background-color: white;
+        border-radius: 100px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        padding: 10px;
+        margin: 10px auto;
+        border: none;
+    }
+
+    button {
+        background-color: white;
+        border-radius: 100px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        padding: 10px;
+        margin: 10px auto;
+        border: none;
+    }
+
+    button:hover {
+        background-color: #cdcdcd;
+    }
+
+    label {
+        position: relative;
+        left: 40px;
+    }
+
+</style>
+
+<body>
+
+    <div id="content">
+        <img id="logo" src="image%204.svg"/>
+
+        <h1 style="text-align: center">
+            запись к переводчику
+        </h1>
+
+        <form style="display: flex;
+                     flex-direction: column;
+                     width: inherit;
+                     justify-items: center"
+              action="https://postman-echo.com/post"
+              method="post">
+
+            <label for="login">Логин</label>
+            <input id="login"
+                   name="login"
+                   type="text"
+                   placeholder="абоба"
+                   autofocus/>
+
+            <label for="password">Пароль</label>
+            <input id="password"
+                   name="password"
+                   placeholder="*****"
+                   type="password"/>
+
+            <div style="display: flex; width: calc(100% - 20px); margin: auto">
+                <button onclick="forgot_password()">
+                    забыл пароль
+                </button>
+
+                <button id="enter" onclick="enter_password()" type="submit">
+                    войти
+                </button>
+            <form/>
+    </div>
+</body>
+
+<script>
+    let forgot_password = (e) => console.log('забыл пароль. Бывает');
+    let enter_password = (e) => console.log('пытаюсь войти')
+</script>
+
+</html>
