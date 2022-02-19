@@ -1,5 +1,4 @@
 const Account = require('./db_account.js');
-const AccountData = require('./db_account_data.js');
 
 class AccountService{
     async create(account){
@@ -35,12 +34,28 @@ class AccountService{
         return account;
     }
 
-    async getFirst_name(title){
-        if(!title){
+    async updateFirstName(account){
+        if(!account){
             throw new Error("Не указано имя");
         }
-        const first_name= await AccountData.findByIdAndUpdate()
+        const first_name= await Account.findByIdAndUpdate(account._id, account, {new:true});
+        return first_name;
     }
+    async updateSecondName(account){
+        if(!account){
+            throw new Error("Не указана фамилия");
+        }
+        const second_name= await Account.findByIdAndUpdate(account._id, account, {new:true});
+        return second_name;
+    }
+    async updateThirdName(account){
+        if(!account){
+            throw new Error("Не указано отчество");
+        }
+        const third_name= await Account.findByIdAndUpdate(account._id, account, {new:true});
+        return third_name;
+    }
+    
 }
 
 module.exports= new AccountService();

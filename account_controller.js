@@ -36,6 +36,33 @@ class AccountController{
         }
     }
 
+    //Обновлене имени, фамилии, отчества
+    async updateFirstName(req, res){
+        try {
+            const updateFirstNameAccount = await AccountService.updateFirstName(req.body);
+            res.json(updateFirstNameAccount);
+        } catch (e) {
+            res.status(500).json(e.message);
+        }
+    }
+    async updateSecondName(req, res){
+        try {
+            const updateSecondNameAccount = await AccountService.updateSecondName(req.body);
+            res.json(updateSecondNameAccount);
+        } catch (e) {
+            res.status(500).json(e.message);
+        }
+    }
+    async updateThirdName(req, res){
+        try {
+            const updateThirdNameAccount = await AccountService.updateThirdName(req.body);
+            res.json(updateThirdNameAccount);
+        } catch (e) {
+            res.status(500).json(e.message);
+        }
+    }
+    //--------------------
+
     async delete(req, res){
         try {
             const account = await AccountService.delete(req.params.id);
