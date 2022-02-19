@@ -1,0 +1,18 @@
+
+body {
+    width: 35em;
+    margin: 0 auto;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+.article-block {
+    margin: 0.5rem;
+    padding: 1rem;
+    background-color: ghostwhite;
+    border: 1px solid slategrey;
+}
+
+.article-title {
+    font-size: larger;
+    font-weight: 500;
+}

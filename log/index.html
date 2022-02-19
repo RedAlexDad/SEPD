@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HTML5</title>
+    <!--[if IE]>
+   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <style>
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+    <body>
+        <h1>Ответ сервера на GET http://127.0.0.1/backend/api/articles/</h1>
+        <pre id="get-response">
+
+        </pre>
+
+        <h1>Сгененрирорванный в по ответу список статей:</h1>
+        <div id="main">
+
+        </div>
+
+        <h1>Отправка новой статьи на сервер</h1>
+        <div id="send-form">
+            <p>Название: <br> <input id="title-field" type="text"></p>
+            <p>Описание: <br> <textarea id="description-field" rows="3" cols="75"></textarea></p>
+            <p>Содержимое: <br> <textarea id="body-field" rows="5" cols="75"></textarea></p>
+            <p><input type="button" value="Отправить" onclick="sendDataAndFill();"> </p>
+        </div>
+
+        <h1>Ответ сервера на POST http://127.0.0.1/backend/api/articles/</h1>
+        <h4>Тело ЗАПРОСА:</h4>
+        <pre id="post-request">
+            
+        </pre>
+        <h4>Тело ОТВЕТА:</h4>
+        <pre id="post-response">
+
+        </pre>
+    </body>
+</html>
