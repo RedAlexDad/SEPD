@@ -1,4 +1,4 @@
-import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'
+// import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'
 
 // Указывает на корневую директору index.html, на div
 new Vue({
@@ -24,7 +24,7 @@ new Vue({
 
             this.contacts.push({...contact, id: Date.now() }); // Указывает на <div v-else-if="contacts.length">
 
-            this.form.building = this.form.auditory && this.form.displina && this.form.time && '';
+            this.form.building = this.form.auditory == this.form.displina == this.form.time == '';
         },
         markContact(id) {
             console.log(id);
@@ -34,3 +34,8 @@ new Vue({
         }
     }
 })
+
+fetch('http://localhost:5000/?')
+    .then(data => {
+        console.log("Working", data);
+    })
