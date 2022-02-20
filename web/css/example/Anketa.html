@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script>
+        function Complete() {
+            /*  var Elem = "Фамилия: " + Sel1.Family.value +
+                 "\nИмя: " + Sel1.Name.value +
+                 "\nВозраст: " + Sel1.Age.value +
+                 "\nТелефон: " + Sel1.Phone.value; */
+            let Elem = "Фамилия: " + Sel1.Family.value
+            alert(Elem);
+        }
+
+        function CheckAge(age) {
+            if (age < 18)
+                return "18";
+            else
+                return age;
+        }
+    </script>
+</head>
+
+<body>
+    <H1>Заполните анкету</H1>
+    <FORM NAME="Sel1">
+        <!-- Анкета -->
+        <TABLE>
+            <TR>
+                <TD>
+                    <B>Фамилия:<B></TD>
+            <TD><INPUT NAME="Family" SIZE=20
+                  onBlur="this.value=this.value.toUpperCase()"></TD></TR>
+        <TR><TD><B>Имя:<B></TD>
+            <TD><INPUT NAME="Name" SIZE=20
+                  onBlur="this.value=this.value.toUpperCase()"></TD></TR>
+        <TR><TD><B>Возраст:<B></TD>
+            <TD><INPUT NAME="Age" SIZE=3 VALUE="18"
+                  onBlur="this.value=CheckAge(this.value)"
+                  onFocus="this.select()"></TD></TR>
+        <TR><TD><B>Телефон:<B></TD>
+            <TD><INPUT NAME="Phone" SIZE=10></TD></TR>
+    </TABLE>
+    
+    <!-- Кнопки готовности и сброса -->
+    <INPUT TYPE="button" VALUE="Готово" onClick="Complete();">
+    <INPUT TYPE="reset" VALUE="Сброс">
+</FORM>
+</body>
+</html>
