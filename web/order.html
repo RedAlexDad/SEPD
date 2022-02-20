@@ -21,91 +21,36 @@
     <script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script>
 
     <!-- Подключение CSS стилей -->
-    <link rel="stylesheet" href="/css/order_globalStyles.css">
-    <link rel="stylesheet" href="/css/order_overrides_styles.css">
-    <link rel="stylesheet" href="/css/order_action_links_styles">
+    <link rel="stylesheet" href="/web/css/order_globalStyles.css">
+    <link rel="stylesheet" href="/web/css/order_overrides_styles.css">
+    <link rel="stylesheet" href="/web/css/order_action_links_styles">
 
     <!-- <script id="anime-js-script" src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js" integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=" crossorigin="anonymous"></script> -->-->
     <!-- <script id="imgloaded-js-script" src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script> -->
 
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 
-    <script src="/index.js" type="text/javascript"></script>
-    <script src="/Post.js" type="text/javascript"></script>
-    <script src="/router.js" type="text/javascript"></script>
-    <script src="/package.json" type="text/javascript"></script>
-    <script src="/package-lock.json" type="text/javascript"></script>
+    <script src="/web/index.js" type="text/javascript"></script>
+    <script src="/web/Post.js" type="text/javascript"></script>
+    <script src="/web/router.js" type="text/javascript"></script>
+    <script src="/web/package.json" type="text/javascript"></script>
+    <script src="/web/package-lock.json" type="text/javascript"></script>
 
     <!-- Вызов функции для подключения отправки файла в БД -->
-    <script type="text/javascript" src='/index.js'></script>
-    <script type="text/javascript" src='/Post.js'></script>
-    <script type="text/javascript" src='/router.js'></script>
-    <script type="text/javascript" src='/package.json'></script>
-    <script type="text/javascript" src='/package-lock.json'></script>
+    <script type="text/javascript" src='/web/index.js'></script>
+    <script type="text/javascript" src='/web/Post.js'></script>
+    <script type="text/javascript" src='/web/router.js'></script>
+    <script type="text/javascript" src='/web/package.json'></script>
+    <script type="text/javascript" src='/web/package-lock.json'></script>
 
     <!-- Вызов функции для печати всплывающего окна -->
-    <script type="text/javascript" src='/Print_alert.js'></script>
-
-    <script>
-        //          Маршрутизация
-
-        // Подключаем все заголовочные файлы и библиотеки
-        import Router from 'express'
-        import Post from './Post.js'
-
-        // Создаем экземпляр этого роутера
-        const router = new Router()
-
-        // Вызываем все функции
-
-        // Передаем маршрут, по которому posts будет обрабатываться
-        router.post('/posts',
-            async(req, res) => {
-                try {
-                    // Передаем и сохраняем нашу структуру
-                    // const { author, title, content, picture } = req.body
-                    const {
-                        building,
-                        auditorium,
-                        discipline,
-                        schedule
-                    } = req.body
-                        // const post = await Post.create({ author, title, content, picture })
-                    const post = await Post.create({
-                        building,
-                        auditorium,
-                        discipline,
-                        schedule
-                    })
-                    res.json(post)
-
-                } catch (e) {
-                    res.status(500).json(e)
-                }
-            })
-
-
-        // Создадим маршрут для каждой операции
-        router.get('/posts')
-
-        // Операция запроса получения всех постов
-        router.get('/posts/:id')
-
-        // Операция для обновления
-        router.put('/posts')
-
-        // Созданные маршрутизации удаляем
-        router.delete('/posts/:id')
-
-
-        export default router
-    </script>
+    <script type="text/javascript" src='/web/Print_alert.js'></script>
 
 </head>
 
 <body style="margin: 0px; background: rgb(255, 255, 255); overflow-x: hidden;" dark-scroll=""><input type="hidden" id="anPageName" name="page" value="order-deaf">
 
-    <div class="container-center-horizontal">
+    <div class="container-center-horizontal" id="app1">
         <div class="order-deaf screen " data-id="201:19">
             <div class="bgc-FtKNIR" data-id="201:20"></div>
             <h5 class="text_label-FtKNIR" data-id="201:22">ЭКСПРИМЕНТАЛЬНЫЙ САЙТ ДЛЯ ПРОВЕРКИ РАБОТОСПОСОБНОСТИ ОТПРАВКИ ИНФОРМАЦИИ В БАЗ ДАННЫХ
@@ -116,122 +61,56 @@
             <img class="line-18-FtKNIR" data-id="201:27" src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61bf91dfe4d6a145a6b99532/img/line-17@2x.svg" anima-src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61bf91dfe4d6a145a6b99532/img/line-17@2x.svg">
             <img class="line-19-FtKNIR" data-id="201:28" src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61bf91dfe4d6a145a6b99532/img/line-17@2x.svg" anima-src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61bf91dfe4d6a145a6b99532/img/line-17@2x.svg">
             <img class="line-20-FtKNIR" data-id="201:29" src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61bf91dfe4d6a145a6b99532/img/line-17@2x.svg" anima-src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61bf91dfe4d6a145a6b99532/img/line-17@2x.svg">
+
             <!-- Кнопка отправить -->
             <div class="button-primary-FtKNIR" data-id="201:44"></div>
 
-            <!-- <div class="text_label-h38Ady" data-id="201:23">Здание</div> -->
-
             <form name="block1">
-
-                <form class="mx-auto mb-4 md:w-700" action="/" method="post">
-                    <div class="text_label-h38Ady" data-id="201:23">
-                        <!-- <i class="flow-root mx-auto fas fa-user-alt fa-2x"></i> -->
-                        <!-- <input class="" type="text" name="name" required="" id="name" placeholder="Здание" style> -->
-                        <table>
-                            <tr>
-                                <td>
-                                    <B>Здание:<B>
-                                    </td>
-                                    <td>
-                                        <INPUT NAME="building" SIZE=20
-                                        onBlur="this.value=this.value.toUpperCase()">
-                                    </td>
-                                </tr>
-                            </table>
+                <form class="mx-auto mb-4 md:w-700" @submit.prevent="createContact">
+                    <div class="text_label-h38Ady">
+                        <label for="building" class="mr-3">Здание</label>
+                        <input type="text" class="form-control" id="building" v-model="form.building">
                     </div>
                 </form>
 
             </form>
 
             <form name="block2">
-                <!-- <div class="text_label-FDUzlk inter-normal-black-24px" data-id="201:24">Аудитория</div><img class="vector-FtKNIR" data-id="201:25" src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61c37306ee5eb62e8584b7c9/img/vector@2x.svg" anima-src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61c37306ee5eb62e8584b7c9/img/vector@2x.svg"> -->
-
-                    <form class="mx-auto mb-4 md:w-700" action="/" method="post">
-                        <div class="text_label-FDUzlk inter-normal-black-24px" data-id="201:24">
-                            <!-- <img class="vector-FtKNIR" data-id="201:25" src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61c37306ee5eb62e8584b7c9/img/vector@2x.svg" anima-src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61c37306ee5eb62e8584b7c9/img/vector@2x.svg"> -->
-                            <!-- <i class="flow-root mx-auto fas fa-user-alt fa-2x"></i> -->
-                            <!-- <input class="" type="text" name="name" required="" id="name" placeholder="Аудитория" style> -->
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <B>Аудитория:<B>
-                                        </td>
-                                        <td>
-                                            <INPUT NAME="auditorium" SIZE=20
-                                            onBlur="this.value=this.value.toUpperCase()">
-                                        </td>
-                                    </tr>
-                                </table>
-                        </div>
-                    </form>
+                <form class="mx-auto mb-4 md:w-700" @submit.prevent="createContact">
+                    <div class="text_label-FDUzlk inter-normal-black-24px">
+                        <label for="auditory" class="mr-3">Аудитория</label>
+                        <input type="text" class="form-control" id="auditory" v-model="form.auditory">
+                    </div>
+                </form>
 
             </form>
 
             <form name="block3">
-                    <!-- <div class="text_label-a1faSh inter-normal-black-24px" data-id="201:30">Пара</div> -->
-                    <form class="mx-auto mb-4 md:w-700" action="/" method="post">
-                        <div class="text_label-a1faSh inter-normal-black-24px" data-id="201:30">
-                            <!-- <img class="vector-FtKNIR" data-id="201:25" src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61c37306ee5eb62e8584b7c9/img/vector@2x.svg" anima-src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61c37306ee5eb62e8584b7c9/img/vector@2x.svg"> -->
-                            <!-- <i class="flow-root mx-auto fas fa-user-alt fa-2x"></i> -->
-                            <!-- <input class="" type="text" name="name" required="" id="name" placeholder="Пара" style> -->
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <B>Дисциплина:<B>
-                                        </td>
-                                        <td>
-                                            <INPUT NAME="discipline" SIZE=20
-                                            onBlur="this.value=this.value.toUpperCase()">
-                                        </td>
-                                    </tr>
-                                </table>
-                        </div>
-                    </form>
+                <form class="mx-auto mb-4 md:w-700" @submit.prevent="createContact">
+                    <div class="text_label-a1faSh inter-normal-black-24px">
+                        <label for="displina" class="mr-3"> Дисциплина</label>
+                        <input type="text" class="form-control" id="displina" v-model="form.displina">
+                    </div>
+                </form>
             </form>
-            <form name="block4">
-                    <!-- <div class="text_label-49dK6T inter-normal-black-24px" data-id="201:31">Расписание пар</div> -->
-                    <form class="mx-auto mb-4 md:w-700" action="/" method="post">
-                        <div class="text_label-49dK6T inter-normal-black-24px" data-id="201:31">
-                            <!-- <img class="vector-FtKNIR" data-id="201:25" src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61c37306ee5eb62e8584b7c9/img/vector@2x.svg" anima-src="https://cdn.animaapp.com/projects/61bf8d28f9af78fead72bb52/releases/61c37306ee5eb62e8584b7c9/img/vector@2x.svg"> -->
-                            <!-- <i class="flow-root mx-auto fas fa-user-alt fa-2x"></i> -->
-                            <!-- <input class="" type="text" name="name" required="" id="name" placeholder="Расписание пар" style> -->
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <B>Распис.пар:<B>
-                                        </td>
-                                        <td>
-                                            <INPUT NAME="schedule" SIZE=20
-                                            onBlur="this.value=this.value.toUpperCase()">
-                                        </td>
-                                    </tr>
-                                </table>
-                        </div>
-                    </form>
-            </form>
-                            <!-- <div class="text_label-9HlS0X" data-id="201:45">Отправить</div> -->
 
-                            <div class="text_label-9HlS0X" data-id="201:45">
-                                <!-- <button class="" type="submit" style> Отправить<i class=""></i> </button> -->
-                                <!-- <INPUT TYPE="button" VALUE="Готово" onClick="Complete();"> -->
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <!-- <input type="button" name="btnPsw" value=" Отправить " onClick="ShowPassword()"> -->
-                                                <INPUT TYPE="button" VALUE="Готово" onClick="Complete();">
-                                            </td>
-                                        </tr>
-                                    </table>
-                            </div>
+            <form name="block4">
+                <form class="mx-auto mb-4 md:w-700" @submit.prevent="createContact">
+                    <div class="text_label-49dK6T inter-normal-black-24px" data-id="201:31">
+                        <label for="time" class="mr-3">Расписание пар</label>
+                        <input type="text" class="form-control" id="time" v-model="form.time">
+                    </div>
+                </form>
+            </form>
+
+            <div class="text_label-9HlS0X" @submit.prevent="createContact">
+                <button class="btn btn-primary" type="submit">Создать</button>
+            </div>
         </div>
 
-        <!-- <div class="button-primary-FtKNIR" data-id="201:45">
-                                <input type="reset" value="Сброс">
-                            </div> -->
-
     </div>
-    
-    
+
+
 
     <script src="launchpad-js/launchpad-banner.js" async=""></script>
     <script defer="" src="https://animaapp.s3.amazonaws.com/static/restart-btn.min.js"></script>
