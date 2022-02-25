@@ -1,0 +1,225 @@
+html 
+{
+    background-color: #ffffff;
+}
+
+header
+{
+    background-color: #000000;
+}
+
+body 
+{
+    background-color: #ffffff;
+}
+
+footer 
+{
+    background-color: #2e2e2e;
+    margin: 15px 0px 0px 0px;
+}
+
+.LOGO2 img 
+{  
+    width: 100px;
+    height: 120px;
+    padding: 0px 0px 0px 0px;
+
+}
+
+.LOGO2
+{  
+    text-align: center;
+}
+
+h1
+{
+    text-align: center;
+    color: #ffbb00; /* цвет текста */
+    padding: 40px 0px 40px 0px;
+}
+
+h2
+{
+    font-weight: bold;
+    color: rgb(255, 187, 0); /* цвет текста */
+    font-style: italic;
+    text-align: center;
+}
+
+h3 
+{
+    margin: 200px;
+    padding: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(0, 0, 0); /* цвет текста */
+}
+
+.position-absolute p
+{
+    font-size: 40px;
+}
+
+.menu
+{
+    background-color: #4d4d4d;
+    padding: 17px 0px 17px 0px;
+}
+    
+.menu ul  
+{
+    list-style: none; /* Убираем маркер для элементов списка */
+    margin: 0px 0px 0px 0px;
+}
+
+.menu ul li 
+{
+    display: inline-block;/*Выстраиваем пункты меню в ряд по горизонтали */
+}    
+   
+.menu ul li a 
+{
+    display: block; /* Настраиваем оформление пунктов меню */
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 150%;
+    margin: 0px 100px 0px 100px;
+}  
+
+.color-menu:hover 
+{ /* При наведений меняется цвет кнопки "Связаться"  */
+    color: rgb(224, 240, 11);
+}
+
+.photo img 
+{
+    width: 100%;
+    height: 100%;
+}
+
+
+.photo1 img 
+{
+    width: 380px;
+    height: 258px;
+    float: left;
+    margin: 50px; 
+}
+
+.text0 
+{
+    color: rgb(0, 0, 0);
+    margin: 0px 0px 0px 0px;
+    font-size: 150%;
+    float: center;
+    
+}
+
+.text0 p 
+{
+    margin: 70px 30px 70px 30px;
+}
+
+.photo2 img 
+{
+    width: 380px;
+    height: 258px;
+    float: right;
+    margin: 50px;
+}
+
+video 
+{
+    outline: none;
+    width: 1800px;
+    height: 900px;
+    margin: 0px; 
+}
+
+.textandphoto
+{
+    display: flex;
+}
+
+.primer1 
+{ 
+    color: #ffffff;
+    display: inline-block; 
+    text-align: center; 
+    margin: 0px 120px 0px 120px; 
+}
+
+.primer2 
+{
+    color: #ffffff;
+    display: inline-block; 
+    text-align: center; 
+    margin: 0px 120px 0px 120px; 
+}
+
+.primer3 
+{
+    color: #ffffff;
+    display: inline-block; 
+    text-align: center; 
+    margin: 0px 120px 0px 120px; 
+}
+
+.primer0 img 
+{
+    width: 80px;
+    height: 100px;
+    margin: 20px;
+}
+
+.blok4 div {
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

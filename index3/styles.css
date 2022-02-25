@@ -1,0 +1,160 @@
+html 
+{
+    background-color: #ffffff;
+}
+
+header
+{
+    background-color: #000000;
+}
+
+body 
+{
+    background-color: #ffffff;
+}
+
+footer 
+{
+    background-color: #2e2e2e;
+    margin: 0px 0px 0px 0px;
+}
+
+.LOGO2 img 
+{  
+    width: 100px;
+    height: 120px;
+    margin: 0px 0px 0px 0px;
+}
+
+.LOGO2
+{  
+    text-align: center;
+}
+
+
+.menu
+{
+    background-color: #4d4d4d;
+    padding: 17px 0px 17px 0px;
+}
+    
+.menu ul  
+{
+    list-style: none; /* Убираем маркер для элементов списка */
+    margin: 0px 0px 0px 0px;
+}
+
+.menu ul li 
+{
+    display: inline-block;/*Выстраиваем пункты меню в ряд по горизонтали */
+}    
+   
+
+.menu ul li a 
+{
+    display: block; /* Настраиваем оформление пунктов меню */
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 150%;
+    margin: 0px 100px 0px 100px;
+}  
+
+.address
+{
+	padding: 70px 0px 330px 300px;
+}
+
+.icon5 img
+{
+    
+    display: table;
+    margin: 15px 0px 0px 0px;
+}
+
+.color-menu:hover 
+{ /* При наведений меняется цвет кнопки "Связаться"  */
+    color: rgb(224, 240, 11);
+}
+
+.primer1 
+{ 
+    color: #ffffff;
+    display: inline-block; 
+    text-align: center; 
+    margin: 0px 120px 0px 120px; 
+}
+
+.primer2 
+{
+    color: #ffffff;
+    display: inline-block; 
+    text-align: center; 
+    margin: 0px 120px 0px 120px; 
+}
+
+.primer3 
+{
+    color: #ffffff;
+    display: inline-block; 
+    text-align: center; 
+    margin: 0px 120px 0px 120px; 
+}
+
+.primer0 img 
+{
+    width: 80px;
+    height: 100px;
+    margin: 20px;
+}
+
+.blok4 div 
+{
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
