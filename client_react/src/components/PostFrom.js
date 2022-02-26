@@ -10,9 +10,9 @@ export class PostFrom extends Component {
     // Содержание информация
     this.state = {
       building: '',
-      auditory: '',
-      displina: '',
-      time: '',
+      auditorium: '',
+      discipline: '',
+      schedule: '',
     }
   }
 
@@ -42,7 +42,7 @@ submitHandler = (e) => {
 
 
   render() {
-    const { building, auditory, displina, time } = this.state;
+    const { building, auditorium, discipline, schedule } = this.state;
     return (
       <div>
         <form onSubmit = {this.submitHandler}>
@@ -51,15 +51,15 @@ submitHandler = (e) => {
             onChange={this.changeHandler}/>
           </div>
           <div>
-            <input type="text" name="auditory" value = {auditory}
+            <input type="text" name="auditorium" value = {auditorium}
             onChange={this.changeHandler}/>
           </div>
           <div>
-            <input type="text" name="displina" value = {displina}
+            <input type="text" name="discipline" value = {discipline}
             onChange={this.changeHandler}/>
           </div>
           <div>
-            <input type="text" name="time" value = {time}
+            <input type="text" name="schedule" value = {schedule}
             onChange={this.changeHandler}/>
           </div>
           <button type = "submit"> Submit </button>
