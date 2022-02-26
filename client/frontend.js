@@ -12,7 +12,7 @@ new Vue({
                 time: '' // Указывает на <input type="text" class="form-control" id="time" v-model="form.time">
             },
             contacts: [
-                { id: 0, building: 'Main buildin BMSTU', auditory: '219', displina: 'Math', time: '12:00 - 13:35' }
+                { building: 'Main buildin BMSTU', auditory: '219', displina: 'Math', time: '12:00 - 13:35' }
             ]
         }
     },
