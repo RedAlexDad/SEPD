@@ -1,5 +1,7 @@
 import React from 'react';
 // Redirect - это сайт, в котором пользователь попадается, если нет нужного сайта. Т.е по умолчанию
+// Вместо Redirect - Navigate, т.к версия устарела
+// Вместо Switch - Routes, т.к версия устарела
 import {Switch, Route, Redirect} from 'react-router-dom'
 import {Main} from './pages/Main';
 import {Request} from './pages/Request';
