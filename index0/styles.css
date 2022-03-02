@@ -13,37 +13,22 @@ body
     background-color: #ffffff;
 }
 
-footer 
-{
-    background-color: #2e2e2e;
-    margin: 0px 0px 0px 0px;
-}
-
 .LOGO2 img 
 {  
     width: 100px;
     height: 120px;
-    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+
 }
 
 .LOGO2
 {  
     text-align: center;
 }
- 
-.parent
-{
-	padding: 10px 800px 50px 800px;
-}
 
-.form-group
+.form
 {
-    padding: 15px 0px 15px 0px;
-}
-
-.form-check
-{
-    padding: 15px 0px;
+    padding: 30px 300px 30px 300px;
 }
 
 h1
@@ -51,10 +36,6 @@ h1
     text-align: center;
     padding: 50px;
 }
-
-
-
-
 
 
 
