@@ -22,7 +22,8 @@ class AccountController{
     async getOne(req, res){
         try {
             const account = await AccountService.getOne(req.body);
-            res.json(account);            
+            res.json(account);  
+            console.log(account);          
         } catch (e) {
             res.status(500).json(e);
         }
@@ -30,7 +31,8 @@ class AccountController{
     async update(req, res){
         try {
             const updateAccount = await AccountService.update(req.body);
-            res.json(updateAccount);            
+            res.json(updateAccount);     
+            console.log(updateAccount);      
         } catch (e) {
             res.status(500).json(e.message);
         }
@@ -41,6 +43,7 @@ class AccountController{
         try {
             const updateFirstNameAccount = await AccountService.updateFirstName(req.body);
             res.json(updateFirstNameAccount);
+            console.log(updateFirstNameAccount);
         } catch (e) {
             res.status(500).json(e.message);
         }
@@ -49,6 +52,7 @@ class AccountController{
         try {
             const updateSecondNameAccount = await AccountService.updateSecondName(req.body);
             res.json(updateSecondNameAccount);
+            console.log(updateSecondNameAccount);   
         } catch (e) {
             res.status(500).json(e.message);
         }
@@ -57,6 +61,7 @@ class AccountController{
         try {
             const updateThirdNameAccount = await AccountService.updateThirdName(req.body);
             res.json(updateThirdNameAccount);
+            console.log(updateThirdNameAccount);   
         } catch (e) {
             res.status(500).json(e.message);
         }
@@ -66,7 +71,8 @@ class AccountController{
     async delete(req, res){
         try {
             const account = await AccountService.delete(req.params.id);
-            res.json(account);            
+            res.json(account);
+            console.log(account);              
         } catch (e) {
             res.status(500).json(e);
         }

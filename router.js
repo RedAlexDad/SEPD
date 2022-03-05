@@ -1,14 +1,17 @@
 const Router = require('express');
 const AccountController = require('./account_controller.js');
 const authController = require('./authController.js')
-const {check} = require('express-validator')
+const {check} = require('express-validator');
+const { login } = require('./authController.js');
 
 const router = new Router();
 
-router.post('/registration', [
-    check('login', "Имя пользоватьеля не может быть пустым").notEmpty,
+router.post('/registration',
+ [
+    // check('login', "Имя пользоватьеля не может быть пустым").notEmpty,
     check('password', "Пароль должен быть больше 8 и меньше 12 символов").isLength({min:8, max:12})
-], authController.registration)
+], 
+authController.registration)
 router.post('/login', authController.login)
 router.get('/accounts', authController.getUsers)
 router.get('/accounts/:id', AccountController.getOne)
