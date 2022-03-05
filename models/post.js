@@ -1,4 +1,5 @@
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 // Описываем схему (структуру) для нашего поста
 
@@ -9,4 +10,5 @@ const Post = new mongoose.Schema({
     schedule: { type: String, required: true }
 })
 
-export default mongoose.model('Post', Post)
+// export default mongoose.model('Post', Post)
+module.exports = mongoose.model('Post', Post);
