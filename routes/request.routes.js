@@ -17,8 +17,6 @@ router.post('/request',
             const post = await user.create({ building, auditorium, discipline, schedule })
             res.json(post)
             console.log(post)
-
-
         } catch (error) {
             res.status(500).json({ message: 'ERROR! Проверьте!' });
             console.log("ERROR! Проверьте!");
