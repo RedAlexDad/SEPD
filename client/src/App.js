@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import {useRoutes} from './routes';
+import {useRoutes} from '../src/routes';
 // import 'material-css';
 
 // Для работы нужно установить версию npm i react-router-dom@5.0.0

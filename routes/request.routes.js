@@ -1,18 +1,38 @@
+//          Маршрутизация
+
 const { Router } = require('express');
 const user = require('../models/user');
-const router = Router();
+// const Post = require('../models/post.js');
+const router = new Router();
 
 // Обработка запроса
-// /api/auth/register
-router.post('/register', async(req, res) => {
-    try {
-        console.log('Body: ', req.body);
-        
-        const{building, auditorium, discipline, shedule} = req.body;
-    } catch (error) {
-        res.status(500).json({ message: 'ERROR! Проверьте' });
-    }
+// /api/request
+router.post('/request', 
+    async(req, res) => {
+        try {
+            // console.log('Body: ', req.body);
+            // Передаем и сохраняем нашу структуру
+            const{building, auditorium, discipline, shedule} = req.body;
+            const post = await user.create({ building, auditorium, discipline, schedule })
+            res.json(post)
+            console.log(post)
 
+        } catch (error) {
+            res.status(500).json({ message: 'ERROR! Проверьте!' });
+            console.log("ERROR! Проверьте!");
+        }
 })
+
+// Создадим маршрут для каждой операции
+router.get('/request')
+
+// Операция запроса получения всех постов
+router.get('/request/:id')
+
+// Операция для обновления
+router.put('/request')
+
+// Созданные маршрутизации удаляем
+router.delete('/request/:id')
 
 module.exports = router;

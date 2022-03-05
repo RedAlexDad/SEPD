@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useHttp} from '../hooks/http.hook'
+import {useHttp} from '../../src/hooks/http.hook';
 
 export const RequestTranslator = () => {
 
@@ -18,7 +18,7 @@ export const RequestTranslator = () => {
 
     const registerHandler = async () => {
         try {
-            const data = await request('/api/auth/register', 'POST', {...form});
+            const data = await request('/api/register', 'POST', {...form});
             console.log('Data: ', data);
         }
         catch (error) {

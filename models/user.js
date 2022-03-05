@@ -1,6 +1,6 @@
 const {Schema, model} = require('mongoose');
 
-// Структура
+// Описываем схему (структуру) для нашего поста
 const schema = new Schema({
     building: { type: String, required: true },
     auditorium: { type: String, required: true },

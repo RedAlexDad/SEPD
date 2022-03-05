@@ -4,6 +4,7 @@ import React from 'react';
 // Вместо Navigate - Redirect, т.к версия другая
 // Вместо Routes - Switch, т.к версия другая
 import {Switch, Route, Redirect} from 'react-router-dom'
+// import {Main} from './pages/Main';
 import {Main} from './pages/Main';
 import {RequestTranslator} from './pages/RequestTranslator';
 import {Sucessifull} from './pages/Sucessifull';
