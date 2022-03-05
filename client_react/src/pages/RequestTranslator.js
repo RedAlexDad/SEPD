@@ -8,7 +8,7 @@ export const RequestTranslator = () => {
     // Работа с запросами
     const [form, setForm] = useState( {
         // Содержание структуры
-        building: '', auditorium: '', discipline: '', shedule: ''
+        building: '', auditorium: '', discipline: '', shedule: '',
     })
 
     // Обработка данные

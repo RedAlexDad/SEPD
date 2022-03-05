@@ -6,6 +6,8 @@ const router = Router();
 // /api/auth/register
 router.post('/register', async(req, res) => {
     try {
+        console.log('Body: ', req.body);
+        
         const{building, auditorium, discipline, shedule} = req.body;
     } catch (error) {
         res.status(500).json({ message: 'ERROR! Проверьте' });

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Подключение к роутеру
-app.use('/api/request', require('./routes/request.routes'));
+app.use('/api/auth/request', require('./routes/request.routes'));
 
 const PORT = config.get('port') || 5000;
 
