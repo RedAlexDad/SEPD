@@ -1,10 +1,11 @@
 import React from 'react';
 // Redirect - это сайт, в котором пользователь попадается, если нет нужного сайта. Т.е по умолчанию
-// Вместо Redirect - Navigate, т.к версия устарела
-// Вместо Switch - Routes, т.к версия устарела
+// Для работы нужно установить версию npm i react-router-dom@5.0.0
+// Вместо Navigate - Redirect, т.к версия другая
+// Вместо Routes - Switch, т.к версия другая
 import {Switch, Route, Redirect} from 'react-router-dom'
 import {Main} from './pages/Main';
-import {Request} from './pages/Request';
+import {RequestTranslator} from './pages/RequestTranslator';
 import {Sucessifull} from './pages/Sucessifull';
 
 // Возврат полученный результат
@@ -13,12 +14,15 @@ export const useRoutes = isAuthenficated => {
         return (
             // Компонент, который импортируется из react-router-dom
             <Switch>
+                {/* Сайт с ссылкой .../main */}
                 <Route path= "/main" exact>
                     <Main/>
                 </Route>
+                {/* Сайт с ссылкой .../request */}
                 <Route path= "/request" exact>
-                    <Request/> 
+                    <RequestTranslator/> 
                 </Route>
+                {/* Сайт с ссылкой .../sucessifull */}
                 <Route path= "/sucessifull" exact>
                     <Sucessifull/> 
                 </Route>

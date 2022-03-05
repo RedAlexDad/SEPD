@@ -1,20 +1,38 @@
 const express = require('express');
-const path = require('path');
+const config = require('config');
+const mongoose = require('mongoose');
+
 const app = express();
 
-// Использует клиентские стороны
-app.use(express.static(path.resolve(__dirname, 'client')));
+// Подключение к роутеру
+app.use('/api/request', require('./routes/request.routes'));
 
-// Подключение к html серверу
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'index.html'));
-});
+const PORT = config.get('port') || 5000;
 
-// Номер порта
-const PORT = 5000;
+async function start() {
+    try {
+        // Подключение к БД mongoDB
+        await mongoose.connect(config.get('mongoURI')), {
+        // Чтобы передавать в connect
+        useNewUrlParser: true,
+        // Для того, чтобы connect успешно работал
+        useUnifiedTopology: true,
+        useCreateIndex: true
+        }
+        // Печать
+        app.listen(PORT, () => {
+            console.log(`Server had been started in ${PORT}`);
+        })
+    }
+    catch (error) {
+        console.log(`Server is error`, e.message);
+        process.exit(1);
+    }
+}
 
-// Введите npm run dev
-// Чтобы запустить сервер
+// Вызов функции для выполнения работ
+start();
 
-// Печать на консольное окно
-app.listen(PORT, () => console.log(`Server has been started on port ${PORT}...`));
+// app.listen(PORT, () => {
+//     console.log(`Server had been started in ${PORT}`);
+// })
