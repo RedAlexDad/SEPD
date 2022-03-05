@@ -39,6 +39,7 @@ export const RequestTranslator = () => {
                     placeholder="Введите здание"
                     id="building"
                     type="text"
+                    name="building"
                     // берет значение и отправляет в функцию changeHandler
                     onChange={changeHandler}
                     />
@@ -49,6 +50,7 @@ export const RequestTranslator = () => {
                     placeholder="Введите аудиторию"
                     id="auditorium"
                     type="text"
+                    name="auditorium"
                     onChange={changeHandler}
                     />
                 <label htmlFor="auditorium"></label>
@@ -58,6 +60,7 @@ export const RequestTranslator = () => {
                     placeholder="Введите дисциплину"
                     id="discipline"
                     type="text"
+                    name="discipline"
                     onChange={changeHandler}
                     />
                 <label htmlFor="discipline"></label>
@@ -67,6 +70,7 @@ export const RequestTranslator = () => {
                     placeholder="Введите расписание"
                     id="schedule"
                     type="text"
+                    name="schedule"
                     onChange={changeHandler}
                     />
                 <label htmlFor="schedule"></label>
