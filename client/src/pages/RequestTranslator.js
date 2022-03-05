@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useHttp} from '../../src/hooks/http.hook';
+import {useHttp} from '../hooks/http.hook';
 
 export const RequestTranslator = () => {
 
@@ -8,7 +8,7 @@ export const RequestTranslator = () => {
     // Работа с запросами
     const [form, setForm] = useState( {
         // Содержание структуры
-        building: '', auditorium: '', discipline: '', shedule: '',
+        building: '', auditorium: '', discipline: '', schedule: '',
     })
 
     // Обработка данные
@@ -18,11 +18,11 @@ export const RequestTranslator = () => {
 
     const registerHandler = async () => {
         try {
-            const data = await request('/api/register', 'POST', {...form});
+            const data = await request('/api/request', 'POST', {...form});
             console.log('Data: ', data);
         }
         catch (error) {
-
+            console.log('ERROR! Nothing is happening!');
         }
     }
 

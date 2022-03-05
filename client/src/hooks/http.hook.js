@@ -7,15 +7,20 @@ export const useHttp = () => {
     const [error, setError] = useState(null)
     
     
-    const request = useCallback ( 
-        async (url, method = 'GET', body = null, headers = {}) => {
+    const request = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
             
             // Пока грузится до сих пор запрос и данные
             setLoading(true) 
 
             try {
-                const response = await fetch (url, method, body, headers) 
+                if (body) {
+                    body = JSON.stringify(body);
+                    headers['Content-Type'] = 'application/json';
+                }
+
+                const response = await fetch(url, {method, body, headers})
                 const data = await response.json()
+                console.log('Http.hook; data: ', data);
 
                 // Если ответ не будет хорошим, тогда
                 if( !response.ok)   {
@@ -24,18 +29,18 @@ export const useHttp = () => {
                 }
                 // Если грузится все, запрос пошел, тогда "загружается" неверным будет, т.е запрос окончен
                 setLoading(false)
+                
                 return data
+            } catch (e) {
+            setLoading(false)
+            setError(e.message)
+            throw e
             }
-            catch (error) {
-                setLoading(false)
-                setError(error.message)
-                throw error
-            }
-    },[])
+    }, [])
 
     // Сброс ошибок
-    const clearError = () => setError(null);
+    const clearError = useCallback(() => setError(null), [])
     
     // Сообщает о информациях сервера
-    return {loading, request, error, clearError}
+    return { loading, request, error, clearError }
 }
