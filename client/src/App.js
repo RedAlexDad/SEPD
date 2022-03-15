@@ -12,6 +12,9 @@ import {useRoutes} from '../src/routes';
 */
 // То нужно переустановить npm, npm i
 
+// npm run dev - запускать сервер
+// Если сервер не работает, тогда установить npm, npm i
+
 function App() {
     const routes = useRoutes(true)
     return (
