@@ -7,7 +7,7 @@ import {Switch, Route, Redirect} from 'react-router-dom'
 // import {Main} from './pages/Main';
 import {Main} from './pages/Main';
 import {RequestTranslator} from './pages/RequestTranslator';
-import {Sucessifull} from './pages/Sucessifull';
+import {Contact_personal} from './pages/Contact_personal';
 
 // Возврат полученный результат
 export const useRoutes = isAuthenficated => {
@@ -23,9 +23,9 @@ export const useRoutes = isAuthenficated => {
                 <Route path= "/request" exact>
                     <RequestTranslator/> 
                 </Route>
-                {/* Сайт с ссылкой .../sucessifull */}
-                <Route path= "/sucessifull" exact>
-                    <Sucessifull/> 
+                {/* Сайт с ссылкой .../contact_personal */}
+                <Route path= "/contact_personal" exact>
+                    <Contact_personal/> 
                 </Route>
                 {/* Переходит в сайт, если из вышеперечисленных нет */}
                 <Redirect to = "/main" />
