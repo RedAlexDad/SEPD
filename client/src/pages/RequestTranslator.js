@@ -111,8 +111,7 @@ export const RequestTranslator = () => {
               // Отправка запроса
               onClick={registerHandler}
               // Если загружается
-              disable={loading}
-            >
+              disable={loading}>
               Отправить{" "}
             </button>
 
@@ -122,23 +121,6 @@ export const RequestTranslator = () => {
           </div>
         </div>
       </main>
-
-      <div class="card mb-3">
-        {form.map((p) => {
-          return (
-            <div>
-              <p>
-                {p.building}
-                {p.auditorium}
-                {p.discipline}
-                {p.schedule}
-              </p>
-            </div>
-          );
-        })}
-        {/* <button class="btn btn-primary">Отметить</button> */}
-        {/* <button class="btn btn-danger">Удалить</button> */}
-      </div>
     </body>
   );
 };
