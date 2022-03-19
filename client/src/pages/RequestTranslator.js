@@ -39,6 +39,22 @@ export const RequestTranslator = () => {
 
   return (
     <body>
+      <title>Авторизация</title>
+      <meta charset="UTF-8" />
+      <link rel="stylesheet" href="styles.css" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      {/* <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"/>   */}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+      <header>
+        <div class="LOGO2">
+          <img src={logotip} alt={"logotip"}/> 
+        </div>
+      </header>
       <h1>
         Заявление сурдопереводчиков
       </h1>
@@ -61,7 +77,7 @@ export const RequestTranslator = () => {
         <div class="input-group-append">
           <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Аудитория</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите аудиторию"/>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите аудиторию" />
           </div>
         </div>
       </div>
@@ -70,7 +86,7 @@ export const RequestTranslator = () => {
         <div class="input-group-append">
           <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Дисциплина</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите дисциплину"/>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите дисциплину" />
           </div>
         </div>
       </div>
@@ -79,7 +95,7 @@ export const RequestTranslator = () => {
         <form>
           <div class="form-group">
             <label for="inputDate">Введите дату:</label>
-            <input type="date" class="form-control"/>
+            <input type="date" class="form-control" />
           </div>
         </form>
       </div>

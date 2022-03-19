@@ -320,3 +320,24 @@ video {
 
 /* http://localhost:3000/request */
 
+
+h1
+{
+    text-align: center;
+    padding: 40px 0px 40px 0px;
+}
+
+.input-group-append
+{
+    padding: 0px 0px 0px 0px;
+}
+
+.vibor
+{
+    padding: 0px 0px 20px 0px;
+}
+
+.form-group
+{
+    padding: 0px 0px 15px 0px;
+}
