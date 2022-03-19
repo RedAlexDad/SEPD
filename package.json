@@ -1,0 +1,32 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "server": "nodemon app.js",
+        "client": "npm run start --prefix client",
+        "dev": "concurrently \"npm run server\" \"npm run client\" "
+    },
+    "keywords": [],
+    "author": "RedAlexDad",
+    "license": "ISC",
+    "dependencies": {
+        "config": "^3.3.7",
+        "express": "^4.17.3",
+        "mongoose": "^6.2.4"
+    },
+    "devDependencies": {
+        "concurrently": "^7.0.0",
+        "nodemon": "^2.0.15"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/RedAlexDad/SEPD.git"
+    },
+    "bugs": {
+        "url": "https://github.com/RedAlexDad/SEPD/issues"
+    },
+    "homepage": "https://github.com/RedAlexDad/SEPD#readme",
+    "description": ""
+}
