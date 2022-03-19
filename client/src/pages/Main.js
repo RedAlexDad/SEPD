@@ -7,6 +7,7 @@ import teacerandtranslater from '../image/teacerandtranslater.jpeg';
 import translater from '../image/translater.jpg';
 // Подключаем css для визуала
 import '../css/styles.css';
+
 // Для переключения других веб страниц
 import { Link } from "react-router-dom";
 
