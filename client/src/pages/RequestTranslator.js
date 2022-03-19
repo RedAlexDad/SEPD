@@ -12,7 +12,8 @@ import '../css/styles.css';
 // Для переключения других веб страниц
 import { Link } from "react-router-dom";
 
-export const RequestTranslator = () => {const {loading, request} = useHttp()
+export const RequestTranslator = () => {
+    const {loading, request} = useHttp()
     // Работа с запросами
     const [form, setForm] = useState({
         // Содержание структуры
