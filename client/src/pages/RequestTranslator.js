@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import {useHttp} from '../hooks/http.hook';
 
-export const RequestTranslator = () => {
-
-    const {loading, request} = useHttp()
+export const RequestTranslator = () => {const {loading, request} = useHttp()
 
     // Работа с запросами
     const [form, setForm] = useState( {
@@ -19,7 +17,7 @@ export const RequestTranslator = () => {
     const registerHandler = async () => {
         try {
             const data = await request('/api/request', 'POST', {...form});
-            console.log('Data: ', data);
+            // console.log('Data: ', data);
         }
         catch (error) {
             console.log('ERROR! Nothing is happening!');
@@ -82,8 +80,7 @@ export const RequestTranslator = () => {
                     onClick={registerHandler}
                     // Если загружается
                     disable={loading}
-                    >
-                         Отправить 
+                    >Отправить 
                     </button> 
                 </div>
             </div>

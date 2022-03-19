@@ -8,6 +8,8 @@ import {Switch, Route, Redirect} from 'react-router-dom'
 import {Main} from './pages/Main';
 import {RequestTranslator} from './pages/RequestTranslator';
 import {Contact_personal} from './pages/Contact_personal';
+import {RequestTranslatorTasks} from './pages/RequestTranslatorTasks';
+import {FeedBack} from './pages/FeedBack';
 
 // Возврат полученный результат
 export const useRoutes = isAuthenficated => {
@@ -22,6 +24,14 @@ export const useRoutes = isAuthenficated => {
                 {/* Сайт с ссылкой .../request */}
                 <Route path= "/request" exact>
                     <RequestTranslator/> 
+                </Route>
+                {/* Сайт с ссылкой .../request_tasks */}
+                <Route path= "/request_tasks" exact>
+                    <RequestTranslatorTasks/> 
+                </Route>
+                {/* Сайт с ссылкой .../feed_back */}
+                <Route path= "/feed_back" exact>
+                    <FeedBack/> 
                 </Route>
                 {/* Сайт с ссылкой .../contact_personal */}
                 <Route path= "/contact_personal" exact>

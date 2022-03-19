@@ -27,7 +27,7 @@ export const Main = () => {
                                 <li><a class="color-menu" href>
                                 <Link to="/main">Главная</Link></a></li>
                                 <li><a class="color-menu" href>
-                                <Link to="/contact_personal">Запись</Link></a></li>
+                                <Link to="/request">Запись</Link></a></li>
                                 <li><a class="color-menu" href>
                                 <Link to="/contact_personal">Контакты</Link></a></li>
                                 <li><a class="color-menu" href>
