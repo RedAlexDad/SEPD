@@ -39,105 +39,76 @@ export const RequestTranslator = () => {
 
   return (
     <body>
-      <header>
-        <div class="LOGO2">
-          <img src={logotip} alt={"logotip"} />
-        </div>
-      </header>
-
-      <main>
-        <h1>Заявление сурдопереводчиков</h1>
+      <h1>
+        Заявление сурдопереводчиков
+      </h1>
+      <div class="vibor">
         <div class="d-grid gap-2 col-6 mx-auto">
+          <div class="input-group-append">
+            <label class="input-text" for="inputGroupSelect02">Здание</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect02">
+            <option selected>Выбор места</option>
+            <option value="1">ГУК</option>
+            <option value="2">УЛК</option>
+            <option value="3">СМ</option>
+            <option value="4">Э</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="input-group-append">
           <div class="mb-3">
-            <input
-              placeholder="Введите здание"
-              id="building"
-              type="text"
-              name="building"
-              // берет значение и отправляет в функцию changeHandler
-              onChange={changeHandler}
-            />
-            <label htmlFor="building"></label>
+            <label for="formGroupExampleInput" class="form-label">Аудитория</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите аудиторию"/>
           </div>
         </div>
+      </div>
 
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="input-group-append">
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Дисциплина</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите дисциплину"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <form>
+          <div class="form-group">
+            <label for="inputDate">Введите дату:</label>
+            <input type="date" class="form-control"/>
+          </div>
+        </form>
+      </div>
+
+      <div class="vibor">
         <div class="d-grid gap-2 col-6 mx-auto">
-          <div class="mb-3">
-            <input
-              placeholder="Введите аудиторию"
-              id="auditorium"
-              type="text"
-              name="auditorium"
-              onChange={changeHandler}
-            />
-            <label htmlFor="auditorium"></label>
+          <div class="input-group-append">
+            <label class="input-text" for="inputGroupSelect02">Расписание</label>
           </div>
+          <select class="custom-select" id="inputGroupSelect02">
+            <option selected>Время выбора</option>
+            <option value="1">8:30 - 10:05</option>
+            <option value="2">10:15 - 11:50</option>
+            <option value="3">12:00 - 13:35</option>
+            <option value="4">13:50 - 15:25</option>
+            <option value="5">15:40 - 17:15</option>
+            <option value="6">17:25 - 19:00</option>
+          </select>
         </div>
+      </div>
 
+
+
+      <div class="butt">
         <div class="d-grid gap-2 col-6 mx-auto">
-          <div class="mb-3">
-            <input
-              placeholder="Введите дисциплину"
-              id="discipline"
-              type="text"
-              name="discipline"
-              onChange={changeHandler}
-            />
-            <label htmlFor="discipline"></label>
-          </div>
+          <button class="btn btn-warning" type="button">Показать все запросы</button>
+          <button class="btn btn-warning" type="button">Отправить</button>
+          <button class="btn btn-warning" type="button">Назад</button>
         </div>
-
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <div class="mb-3">
-            <input
-              placeholder="Введите расписание"
-              id="schedule"
-              type="text"
-              name="schedule"
-              onChange={changeHandler}
-            />
-            <label htmlFor="schedule"></label>
-          </div>
-        </div>
-
-        <div class="butt">
-          <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-warning" type="button">
-              <Link to="/request_tasks">Показать все запросы</Link>
-            </button>
-
-            <button
-              class="send request"
-              // Отправка запроса
-              onClick={registerHandler}
-              // Если загружается
-              disable={loading}
-            >
-              Отправить{" "}
-            </button>
-
-            <button class="btn btn-warning" type="button">
-              <Link to="/main">Назад</Link>
-            </button>
-          </div>
-        </div>
-      </main>
-
-      <div class="card mb-3">
-        {form.map((p) => {
-          return (
-            <div>
-              <p>
-                {p.building}
-                {p.auditorium}
-                {p.discipline}
-                {p.schedule}
-              </p>
-            </div>
-          );
-        })}
-        {/* <button class="btn btn-primary">Отметить</button> */}
-        {/* <button class="btn btn-danger">Удалить</button> */}
       </div>
     </body>
   );
