@@ -35,14 +35,14 @@ export const Contact_personal = () => {
                 <a
                   class="color-menu"
                   href="http://127.0.0.1:5500/SEPD/index1/index.html">
-                  <Link to="/main">Главная</Link>
+                  <Link to="/main">Запись</Link>
                 </a>
               </li>
               <li>
                 <a
                   class="color-menu"
                   href="http://127.0.0.1:5500/SEPD/index2/index.html">
-                  Запись
+                  <Link to="/main">Главная</Link>
                 </a>
               </li>
               <li>
@@ -56,7 +56,7 @@ export const Contact_personal = () => {
                 <a
                   class="color-menu"
                   href="http://127.0.0.1:5500/SEPD/index4/index.html">
-                  Войти
+                  <Link to="/main">Войти</Link>
                 </a>
               </li>
             </ul>

@@ -1,3 +1,5 @@
+/* Main */
+
 html {
     background-color: #ffffff;
 }
@@ -74,8 +76,8 @@ h3 {
     /* Настраиваем оформление пунктов меню */
     text-decoration: none;
     color: #ffffff;
-    font-size: 100%;
-    margin: 0px 100px 0px 100px;
+    font-size: 120%;
+    margin: -10px 100px 0px 00px;
 }
 
 .color-menu:hover {
@@ -154,6 +156,9 @@ video {
 .blok4 div {
     display: inline-block;
 }
+
+
+/* Contact_personal */
 
 .parent {
     padding: 70px 0px 70px 0px;
