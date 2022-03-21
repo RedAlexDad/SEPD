@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import RequestTranslatorTasks from './pages/RequestTranslatorTasks';
 import {useRoutes} from '../src/routes';
 // import 'material-css';
 
@@ -22,6 +24,7 @@ function App() {
             <div className = "container">
                 {routes}
             </div>
+            <Route path="/request_tasks" element={<RequestTranslatorTasks />}/>
         </Router>
     )
 }

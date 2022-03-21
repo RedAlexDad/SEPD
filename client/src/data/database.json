@@ -1,0 +1,9 @@
+{
+    "request": [{
+        "id": 1,
+        "building": "",
+        "auditorium": "",
+        "discipline": "",
+        "schedule": ""
+    }]
+}
