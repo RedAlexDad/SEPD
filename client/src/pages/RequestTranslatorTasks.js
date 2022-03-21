@@ -28,6 +28,15 @@ export const RequestTranslatorTasks = () => {
   const [auditorium, setAuditorium] = useState("");
   const [discipline, setDiscipline] = useState("");
   const [schedule, setSchedule] = useState("");
+  
+  useEffect(() => {
+    const res = axios.get("http://localhost:5000/request_tasks").then((response) => {
+      setPost(response.data);
+    }).catch(function (error) {
+      console.log(error);
+    });
+    return res.data;
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,8 +48,10 @@ export const RequestTranslatorTasks = () => {
       schedule,
     };
 
+
+
     const res = axios
-    .post("http://localhost:5000/api/request", article)
+    .post("http://localhost:5000/request_tasks", article)
     .then((response) => {
       setPost(response.data);
       console.log(response.data);
@@ -52,40 +63,14 @@ export const RequestTranslatorTasks = () => {
     return res.data;
   };
 
-  useEffect(() => {
-    const res = axios.get("http://localhost:5000/api/request").then((response) => {
-      setPost(response.data);
-    });
-    return res.data;
-  }, []);
   console.log(post);
 
   return (
-    <body>
-      <title>Просмотры запросов</title>
-      <meta charset="UTF-8" />
-      <link rel="stylesheet" href="styles.css" />
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-        crossorigin="anonymous"
-      />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
-        rel="stylesheet"
-      />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-
+   <div>
       <h1>Список запросов</h1>
 
       <header>
-        <div class="LOGO2">
+        <div className="LOGO2">
           <img src={logotip} alt={"logotip"} />
         </div>
       </header>
@@ -136,14 +121,14 @@ export const RequestTranslatorTasks = () => {
               type={"text"}
               classInput={"form_input--text"}
               placeholder={"10:15 - 12:00"}
-              value={discipline}
+              value={schedule}
               onChange={(e) => setSchedule(e.target.value)}
             />
           </div>
 
           <div className="text-center">
             <input
-              type="button "
+              type="button"
               className="mt-4 text-center cursor-pointer btn"
               value="Опубликовать"
               onClick={handleSubmit}
@@ -151,38 +136,23 @@ export const RequestTranslatorTasks = () => {
           </div>
         </form>
       </div>
+      
 
       <div className="flex flex-col w-full max-w-md p-4 mt-4 mb-4 bg-white rounded-md shadow-md">
         {post.map((p) => {
           return (
-            <div>
-              <DisplayCheck
-                header={"студентов"}
-                building={p.building}
-                auditorium={p.auditorium}
-                discipline={p.discipline}
-                schedule={p.schedule}
-              />
+            <div key={p.id}>
+            <p>{p.building}</p>
+            <p>{p.auditorium}</p>
+            <p>{p.discipline}</p>
+            <p>{p.schedule}</p>
             </div>
           );
         })}
       </div>
     </div>
-
-      <div className="flex flex-col w-full max-w-md p-4 mt-4 mb-4 bg-white rounded-md shadow-md">
-        {post.map((p) => {
-          return (
-            <div>
-              <DisplayCheck
-                header={"студентов"}
-                firstName={p.firstName}
-                lastName={p.lastName}
-              />
-            </div>
-          );
-        })}
-      </div>
-    </body>
+</div>
+      
   );
 };
 
