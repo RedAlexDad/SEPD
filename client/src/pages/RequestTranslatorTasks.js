@@ -139,7 +139,7 @@ export const RequestTranslatorTasks = () => {
       
 
       <div className="flex flex-col w-full max-w-md p-4 mt-4 mb-4 bg-white rounded-md shadow-md">
-        {post.map((p) => {
+        {post.map((p) => {  
           return (
             <div key={p.id}>
             <p>{p.building}</p>
@@ -147,6 +147,12 @@ export const RequestTranslatorTasks = () => {
             <p>{p.discipline}</p>
             <p>{p.schedule}</p>
             </div>
+            // <DisplayCheck>
+            //   building={building}
+            //   auditorium={auditorium}
+            //   discipline={discipline}
+            //   schedule={schedule}
+            // </DisplayCheck>
           );
         })}
       </div>
