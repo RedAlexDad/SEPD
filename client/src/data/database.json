@@ -195,6 +195,13 @@
       "auditorium": "10 22",
       "discipline": "Тест пройден успешно",
       "schedule": ""
+    },
+    {
+      "id": 1647979454070,
+      "building": "УЛК",
+      "auditorium": "204",
+      "discipline": "АСОИУ лекция",
+      "schedule": "10:15-12:00"
     }
   ]
 }
