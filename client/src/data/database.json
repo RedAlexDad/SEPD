@@ -202,6 +202,13 @@
       "auditorium": "204",
       "discipline": "АСОИУ лекция",
       "schedule": "10:15-12:00"
+    },
+    {
+      "id": 1648135821170,
+      "building": "Соня и вика",
+      "auditorium": "219",
+      "discipline": "УПСП проверка",
+      "schedule": "18:30"
     }
   ]
 }
