@@ -14,7 +14,7 @@ module.exports = function (role_user) {
             }
             const {role_user:userRole} = jwt.verify(token, secret) 
             let hasRoles = false
-            userRole.foreach(role => {
+            userRole.forEach(role => {
                 if(role_user.includes(role)){ 
                     hasRoles = true
                 }

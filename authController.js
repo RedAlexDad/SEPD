@@ -22,15 +22,16 @@ class authController{
             }
             console.log("-----------------");
             console.log("Error: ", errors);
-            const {password, login} = req.body
+            // const {password, login} = req.body // -------- 
+            const {password, login, value} = req.body
             const candidate = await User.findOne({login})
             if(candidate){
                 res.status(400).json( {message:'Пользователь с таким имене уже существует'} )
             }
             console.log("Candidate: ", candidate);
             const hashPassword = bcrypt.hashSync(password, 7)
-            const userRole = await Role.findOne( {value:"ADMIN"} )
-            const user = new User( {login, password: hashPassword, role_user: [userRole.value]} ) //не записывает значение роли
+            // const userRole = await Role.findOne( {value:"USER"} ) // -------- 
+            const user = new User( {login, password: hashPassword, role_user: [value]} ) //не записывает значение роли
             await user.save()
             return res.json( {message: 'Пользователь успешно зарегистрирован'} )
 

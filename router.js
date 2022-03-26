@@ -16,8 +16,8 @@ router.post('/registration',
 authController.registration)
 router.post('/login', authController.login)
 
-// router.get('/accounts', roleMiddleware(["ADMIN"]), authController.getUsers)
-router.get('/accounts', authController.getUsers)
+router.get('/accounts', roleMiddleware(["USER"]), authController.getUsers)
+// router.get('/accounts', authController.getUsers)
 
 router.get('/accounts/:id', AccountController.getOne)
 router.put('/accounts/:id', AccountController.update)
