@@ -73,12 +73,8 @@ export const Authorization = () => {
                 Войти
               </button>
               <div class="form-group">
-                <button
-                  type="submit"
-                  class="btn btn-outline-dark"
-                  href="http://127.0.0.1:5500/SEPD/index0/index.html"
-                >
-                  Регистрация
+                <button class="btn btn-outline-dark">
+                  <Link to="/registration">Регистрация</Link>
                 </button>
               </div>
             </form>

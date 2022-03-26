@@ -1,44 +1,27 @@
 {
-  "request_tasks": [
-    {
-      "id": 1,
-      "id_request": 0,
-      "building": "",
-      "auditorium": "",
-      "discipline": "",
-      "schedule": ""
-    },
-    {
-      "id": 1648293669139,
-      "id_request": 1,
-      "building": "Главное здание",
-      "auditorium": "219",
-      "discipline": "УПСП",
-      "schedule": "15:40 - 17:15"
-    },
-    {
-      "id": 1648293709204,
-      "id_request": 4,
-      "building": "Спортивный комплекс",
-      "auditorium": "---",
-      "discipline": "ФИЗ-РА",
-      "schedule": "17:25 - 19:00"
-    },
-    {
-      "id": 1648293760035,
-      "id_request": 5,
-      "building": "Учебно-лабораторный корпус",
-      "auditorium": "224",
-      "discipline": "АСОИУ",
-      "schedule": "12:00 - 13:35"
-    },
-    {
-      "id": 1648293808027,
-      "id_request": 6,
-      "building": "Главное здание",
-      "auditorium": "423",
-      "discipline": "Математический анализ",
-      "schedule": "13:50 - 15:25"
-    }
-  ]
+    "request_tasks": [{
+            "id": 1,
+            "id_request": 0,
+            "building": "",
+            "auditorium": "",
+            "discipline": "",
+            "schedule": ""
+        },
+        {
+            "id": 1648298423222,
+            "id_request": 1,
+            "building": "Главное здание",
+            "auditorium": "423",
+            "discipline": "АСОИУ",
+            "schedule": "13:50 - 15:25"
+        },
+        {
+            "id": 1648298482429,
+            "id_request": 2,
+            "building": "Главное здание",
+            "auditorium": "219",
+            "discipline": "МАТЕМ",
+            "schedule": "15:40 - 17:15"
+        }
+    ]
 }

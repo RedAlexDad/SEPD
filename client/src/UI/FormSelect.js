@@ -22,7 +22,7 @@ const FormSelect = (props) => {
         className={classSelect}
         onChange={onChange}
       >
-        <option value={value} disabled selected>
+        <option value={defaultValue} disabled selected>
           {defaultValue}
         </option>
         {options.map((option, index) => (
