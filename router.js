@@ -3,6 +3,8 @@ const AccountController = require('./account_controller.js');
 const authController = require('./authController.js')
 const {check} = require('express-validator');
 const { login } = require('./authController.js');
+const authMiddleware = require("./middlewaree/authMiddleware.js")
+const roleMiddleware = require("./middlewaree/roleMiddleware.js")
 
 const router = new Router();
 
@@ -13,7 +15,10 @@ router.post('/registration',
 ], 
 authController.registration)
 router.post('/login', authController.login)
+
+// router.get('/accounts', roleMiddleware(["ADMIN"]), authController.getUsers)
 router.get('/accounts', authController.getUsers)
+
 router.get('/accounts/:id', AccountController.getOne)
 router.put('/accounts/:id', AccountController.update)
 //

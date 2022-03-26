@@ -29,8 +29,8 @@ class authController{
             }
             console.log("Candidate: ", candidate);
             const hashPassword = bcrypt.hashSync(password, 7)
-            const userRole = await Role.findOne( {value:"USER"} )
-            const user = new User( {login, password: hashPassword, role_user:[userRole]} ) //roles is array in db_account.js
+            const userRole = await Role.findOne( {value:"ADMIN"} )
+            const user = new User( {login, password: hashPassword, role_user: [userRole.value]} ) //не записывает значение роли
             await user.save()
             return res.json( {message: 'Пользователь успешно зарегистрирован'} )
 
@@ -39,6 +39,10 @@ class authController{
             res.status(400).json( {message:'Registration error'} )
         }
     }
+    
+    //предложенные варианты заполнения зданий, аудиторий (text), время (dataTime)
+    //система оповещения при принятии заявки
+    //страницы: мои заявка, поданые заявки
     
     async login(req, res) {
         try {
@@ -61,7 +65,8 @@ class authController{
     
     async getUsers(req, res) {
         try {
-               
+            const users = await User.find()
+            res.json(users)
         } catch (e) {
             console.log(e);
         }
