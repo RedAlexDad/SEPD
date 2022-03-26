@@ -62,23 +62,17 @@ export const RequestTranslatorTasks = () => {
       </header>
 
       <main>
-        <div className="">
           {post.map((p) => {
             return (
               <div class="row">
-                <div key={p.id}>
-                  <div class="d-grid gap-2 col-6 mx-auto">
-                    <div class="mb-3">
-                      <label for="formGroupExampleInput" class="form-label">
-                        Номер запроса
-                      </label>
-                      {p.id_request}
-                    </div>
+                {/* <div key={p.id}> */}
+                  <div class="center">
+                    <h1>Номер запроса №{p.id_request}</h1>
                   </div>
                   <div class="d-grid gap-2 col-6 mx-auto">
                     <div class="mb-3">
                       <label for="formGroupExampleInput" class="form-label">
-                        Здание
+                        Здание:____
                       </label>
                       {p.building}
                     </div>
@@ -86,7 +80,7 @@ export const RequestTranslatorTasks = () => {
                   <div class="d-grid gap-2 col-6 mx-auto">
                     <div class="mb-3">
                       <label for="formGroupExampleInput" class="form-label">
-                        Аудитория
+                        Аудитория:____
                       </label>
                       {p.auditorium}
                     </div>
@@ -95,7 +89,7 @@ export const RequestTranslatorTasks = () => {
                   <div class="d-grid gap-2 col-6 mx-auto">
                     <div class="mb-3">
                       <label for="formGroupExampleInput" class="form-label">
-                        Дисциплина
+                        Дисциплина:____
                       </label>
                       {p.discipline}
                     </div>
@@ -103,40 +97,20 @@ export const RequestTranslatorTasks = () => {
                   <div class="d-grid gap-2 col-6 mx-auto">
                     <div class="mb-3">
                       <label for="formGroupExampleInput" class="form-label">
-                        Расписание
+                        Расписание:____
                       </label>
                       {p.schedule}
                     </div>
                   </div>
                   <p>
                     <label>
-                      ================================================
+                      ======================================================================================================
                     </label>
                   </p>
                 </div>
-              </div>
+              // </div>
             );
           })}
-          {/* <p name = {building} /> */}
-          {/* <DisplayCheck>
-              building={building}
-              auditorium={auditorium}
-              discipline={discipline}
-              schedule={schedule}
-            </DisplayCheck> */}
-          {/* 
-            {post.map((p) => {
-              return (
-                <div key={p.id}>
-                  <p>{p.building}</p>
-                  <p>{p.auditorium}</p>
-                  <p>{p.discipline}</p>
-                  <p>{p.schedule}</p>
-                </div>
-              );
-            })}
-             */}
-        </div>
       </main>
     </body>
   );

@@ -317,3 +317,22 @@ video {
 .blok4 div {
     display: inline-block;
 }
+
+
+/* request_tasks */
+
+.input-group-append {
+    padding: 10px 0px 0px 0px;
+}
+
+.butt {
+    padding: 50px 0px 0px 0px;
+}
+
+.row {
+    padding: 50px 30px 50px 30px;
+}
+
+h1 {
+    padding: 10px;
+}
