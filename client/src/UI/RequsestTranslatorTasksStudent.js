@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 
 
 const DisplayCheck = (props) => {
-  const location = useLocation();
+  // const location = useLocation();
   const {
     // header, 
     building,
