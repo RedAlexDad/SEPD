@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 
 export const RequestTranslator = () => {
   const [post, setPost] = useState([]);
-  const [id_request, setIdRequest] = useState("");
+  const [id_request, setIdRequest] = useState();
   const [building, setBuilding] = useState("");
   const [auditorium, setAuditorium] = useState("");
   const [discipline, setDiscipline] = useState("");

@@ -17,7 +17,7 @@ import logotip from "../image/logotip.png";
 import "../css/styles.css";
 
 // Для переключения других веб страниц
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 // function RequestTranslatorTasks() {
 export const RequestTranslatorTasks = () => {
@@ -108,9 +108,16 @@ export const RequestTranslatorTasks = () => {
                     </label>
                   </p>
                 </div>
-              // </div>
             );
           })}
+
+<div className="text-center">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button class="btn btn-warning" type="button">
+                <Link to="/main">Назад</Link>
+              </button>
+            </div>
+          </div>
       </main>
     </body>
   );
