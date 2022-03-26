@@ -12,6 +12,8 @@ import {RequestTranslatorTasks} from './pages/RequestTranslatorTasks';
 import {FeedBack} from './pages/FeedBack';
 import {Registration} from './pages/Registration';
 import {Authorization} from './pages/Authorization';
+import {Translator} from './pages/Translator';
+import {TestRole} from './pages/TestRole';
 
 // Возврат полученный результат
 export const useRoutes = isAuthenficated => {
@@ -46,6 +48,14 @@ export const useRoutes = isAuthenficated => {
                 {/* Сайт с ссылкой .../authorization */}
                 <Route path= "/authorization" exact>
                     <Authorization/> 
+                </Route>
+                {/* Сайт с ссылкой .../authorization */}
+                <Route path= "/translator" exact>
+                    <Translator/> 
+                </Route>
+                {/* Сайт с ссылкой .../authorization */}
+                <Route path= "/test_role" exact>
+                    <TestRole/> 
                 </Route>
                 {/* Переходит в сайт, если из вышеперечисленных нет */}
                 <Redirect to = "/main" />
