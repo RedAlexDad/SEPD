@@ -22,6 +22,18 @@
             "auditorium": "219",
             "discipline": "МАТЕМ",
             "schedule": "15:40 - 17:15"
+        },
+        {
+            "id": 1648298482429,
+            "id_request": 0,
+            "name": "EGOR",
+            "family": "Klesha",
+            "fatherland": "Sergeevich",
+            "group": "IU5-41B",
+            "building": "Главное здание",
+            "auditorium": "219",
+            "discipline": "МАТЕМ",
+            "schedule": "15:40 - 17:15"
         }
     ]
 }

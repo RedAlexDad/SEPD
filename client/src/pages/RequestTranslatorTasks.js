@@ -62,62 +62,99 @@ export const RequestTranslatorTasks = () => {
       </header>
 
       <main>
-          {post.map((p) => {
-            return (
-              <div class="row">
-                {/* <div key={p.id}> */}
-                  <div class="center">
-                    <h1>Номер запроса №{p.id_request}</h1>
-                  </div>
-                  <div class="d-grid gap-2 col-6 mx-auto">
-                    <div class="mb-3">
-                      <label for="formGroupExampleInput" class="form-label">
-                        Здание:____
-                      </label>
-                      {p.building}
-                    </div>
-                  </div>
-                  <div class="d-grid gap-2 col-6 mx-auto">
-                    <div class="mb-3">
-                      <label for="formGroupExampleInput" class="form-label">
-                        Аудитория:____
-                      </label>
-                      {p.auditorium}
-                    </div>
-                  </div>
+        {post.map((p) => {
+          return (
+            <div class="row">
+              {/* <div key={p.id}> */}
+              <div class="center">
+                <h1>Номер запроса №{p.id_request}</h1>
+              </div>
 
-                  <div class="d-grid gap-2 col-6 mx-auto">
-                    <div class="mb-3">
-                      <label for="formGroupExampleInput" class="form-label">
-                        Дисциплина:____
-                      </label>
-                      {p.discipline}
-                    </div>
-                  </div>
-                  <div class="d-grid gap-2 col-6 mx-auto">
-                    <div class="mb-3">
-                      <label for="formGroupExampleInput" class="form-label">
-                        Расписание:____
-                      </label>
-                      {p.schedule}
-                    </div>
-                  </div>
-                  <p>
-                    <label>
-                      ======================================================================================================
-                    </label>
-                  </p>
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Имя:____
+                  </label>
+                  {p.name}
                 </div>
-            );
-          })}
+              </div>
 
-<div className="text-center">
-            <div class="d-grid gap-2 col-6 mx-auto">
-              <button class="btn btn-warning" type="button">
-                <Link to="/main">Назад</Link>
-              </button>
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Фамилия:____
+                  </label>
+                  {p.family}
+                </div>
+              </div>
+
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Отечество:____
+                  </label>
+                  {p.fatherland}
+                </div>
+              </div>
+
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Группа:____
+                  </label>
+                  {p.group}
+                </div>
+              </div>
+
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Здание:____
+                  </label>
+                  {p.building}
+                </div>
+              </div>
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Аудитория:____
+                  </label>
+                  {p.auditorium}
+                </div>
+              </div>
+
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Дисциплина:____
+                  </label>
+                  {p.discipline}
+                </div>
+              </div>
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Расписание:____
+                  </label>
+                  {p.schedule}
+                </div>
+              </div>
+              <p>
+                <label>
+                  ======================================================================================================
+                </label>
+              </p>
             </div>
+          );
+        })}
+
+        <div className="text-center">
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-warning" type="button">
+              <Link to="/main">Назад</Link>
+            </button>
           </div>
+        </div>
       </main>
     </body>
   );
