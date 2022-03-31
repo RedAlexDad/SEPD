@@ -12,9 +12,9 @@ router.post('/request',
         try {
             // console.log('Body: ', req.body);
             // Передаем и сохраняем нашу структуру
-            const{building, auditorium, discipline, schedule} = req.body;
+            const{id_request, building, auditorium, discipline, schedule} = req.body;
             // console.log("body: ", req.body);
-            const post = await user.create({ building, auditorium, discipline, schedule })
+            const post = await user.create({ id_request, building, auditorium, discipline, schedule })
             res.json(post)
             console.log(post)
         } catch (error) {
