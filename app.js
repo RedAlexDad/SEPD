@@ -6,11 +6,12 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Подключение к роутеру
-app.use('/api/auth/request', require('./routes/request.routes'));
+// app.use('/api/auth/request', require('./backend/router.js'));
 
 const PORT = config.get('port') || 5000;
 
-const router = require('./routes/request.routes.js');
+const router = require('./backend/router.js');
+// const router = require('./routes/request.routes.js');
 
 // const DB_URL = `mongodb+srv://upsp:upsp@cluster0.rzz3o.mongodb.net/UPSP?retryWrites=true&w=majority`
 
