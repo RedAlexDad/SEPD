@@ -5,7 +5,9 @@ html {
 }
 
 header {
-    background-color: #000000;
+    /* background-color: #FFD034; */
+    /* background-color: #000000; */
+    background-color: #846d1b;
 }
 
 body {
@@ -13,13 +15,16 @@ body {
 }
 
 footer {
-    background-color: #2e2e2e;
+    /* background-color: #2e2e2e; */
+    background-color: #846d1b;
     margin: 15px 0px 0px 0px;
 }
 
 .LOGO2 img {
     width: 100px;
+    /* width: 10%; */
     height: 120px;
+    /* height: 10%; */
     padding: 0px 0px 0px 0px;
 }
 
@@ -56,7 +61,8 @@ h3 {
 }
 
 .menu {
-    background-color: #4d4d4d;
+    /* background-color: #4d4d4d; */
+    background-color: #244577;
     padding: 17px 0px 17px 0px;
 }
 
@@ -318,34 +324,40 @@ video {
     display: inline-block;
 }
 
+
 /* http://localhost:3000/request */
 
-
-h1
-{
+h1 {
     text-align: center;
     padding: 40px 0px 40px 0px;
 }
 
-.input-group-append
-{
+.input-group-append {
     padding: 0px 0px 0px 0px;
 }
 
-.vibor
-{
+.vibor {
     padding: 0px 0px 20px 0px;
 }
 
-.form-group
-{
+.form-group {
     padding: 0px 0px 15px 0px;
 }
 
 
 /* http://localhost:3000/request_tasks */
 
-.row
-{
+.row {
     padding: 30px 70px 30px 70px;
+}
+
+.d-grid {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.mb-3 {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    /* padding: 0px 0px 15px 0px; */
 }

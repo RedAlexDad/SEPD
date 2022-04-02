@@ -36,7 +36,7 @@ export const RequestTranslatorTasks = () => {
   }, []);
 
   return (
-    <body>
+    <div>
       <head>
         <title>Список запросов</title>
         <meta charset="UTF-8" />
@@ -82,61 +82,61 @@ export const RequestTranslatorTasks = () => {
               <div class="d-grid gap-2 col-6 mx-auto">
                 <div class="mb-3">
                   <label for="formGroupExampleInput" class="form-label">
-                    Фамилия:____
+                    Фамилия:
                   </label>
-                  {p.family}
+                  <a> {p.family}</a>
                 </div>
               </div>
 
               <div class="d-grid gap-2 col-6 mx-auto">
                 <div class="mb-3">
                   <label for="formGroupExampleInput" class="form-label">
-                    Отечество:____
+                    Отечество: 
                   </label>
-                  {p.fatherland}
+                  <a> {p.fatherland} </a>
                 </div>
               </div>
 
               <div class="d-grid gap-2 col-6 mx-auto">
                 <div class="mb-3">
                   <label for="formGroupExampleInput" class="form-label">
-                    Группа:____
+                    Группа: 
                   </label>
-                  {p.group}
+                  <a> {p.group}</a>
                 </div>
               </div>
 
               <div class="d-grid gap-2 col-6 mx-auto">
                 <div class="mb-3">
                   <label for="formGroupExampleInput" class="form-label">
-                    Здание:____
+                    Здание: 
                   </label>
-                  {p.building}
+                  <a> {p.building}</a>
                 </div>
               </div>
               <div class="d-grid gap-2 col-6 mx-auto">
                 <div class="mb-3">
                   <label for="formGroupExampleInput" class="form-label">
-                    Аудитория:____
+                    Аудитория: 
                   </label>
-                  {p.auditorium}
+                  <a> {p.auditorium}</a>
                 </div>
               </div>
 
               <div class="d-grid gap-2 col-6 mx-auto">
                 <div class="mb-3">
                   <label for="formGroupExampleInput" class="form-label">
-                    Дисциплина:____
+                    Дисциплина:
                   </label>
-                  {p.discipline}
+                  <a> {p.discipline} </a>
                 </div>
               </div>
               <div class="d-grid gap-2 col-6 mx-auto">
                 <div class="mb-3">
                   <label for="formGroupExampleInput" class="form-label">
-                    Расписание:____
+                    Расписание:
                   </label>
-                  {p.schedule}
+                  <a> {p.schedule}</a>
                 </div>
               </div>
               <p>
@@ -156,7 +156,7 @@ export const RequestTranslatorTasks = () => {
           </div>
         </div>
       </main>
-    </body>
+    </div>
   );
 };
 

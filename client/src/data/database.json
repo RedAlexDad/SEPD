@@ -35,6 +35,30 @@
       "auditorium": "219",
       "discipline": "МАТЕМ",
       "schedule": "15:40 - 17:15"
+    },
+    {
+      "id": 1648913778938,
+      "id_request": 1,
+      "building": "Главное здание",
+      "auditorium": "219",
+      "discipline": "Инт и ДУ",
+      "schedule": "17:25 - 19:00"
+    },
+    {
+      "id": 1648913801115,
+      "id_request": 2,
+      "building": "Учебно-лабораторный корпус",
+      "auditorium": "224",
+      "discipline": "АСОИУ",
+      "schedule": "10:15 - 11:50"
+    },
+    {
+      "id": 1648913825043,
+      "id_request": 3,
+      "building": "",
+      "auditorium": "523а",
+      "discipline": "Семантика УчТ",
+      "schedule": "13:50 - 15:25"
     }
   ]
 }
