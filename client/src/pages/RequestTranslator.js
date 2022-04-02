@@ -91,29 +91,6 @@ export const RequestTranslator = () => {
       <h1>
         Заявление сурдопереводчиков
       </h1>
-      <div class="vibor">
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <div class="input-group-append">
-            <label class="input-text" for="inputGroupSelect02">Здание</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect02">
-            <option selected>Выбор места</option>
-            <option value="1">ГУК</option>
-            <option value="2">УЛК</option>
-            <option value="3">СМ</option>
-            <option value="4">Э</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <div class="input-group-append">
-          <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Аудитория</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите аудиторию" />
-          </div>
-        </div>
-      </header>
 
       <main>
         <h1>Оформление заявление</h1>

@@ -73,9 +73,9 @@ export const RequestTranslatorTasks = () => {
               <div class="d-grid gap-2 col-6 mx-auto">
                 <div class="mb-3">
                   <label for="formGroupExampleInput" class="form-label">
-                    Имя:____
+                    Имя: 
                   </label>
-                  {p.name}
+                  <a> {p.name}</a>
                 </div>
               </div>
 
