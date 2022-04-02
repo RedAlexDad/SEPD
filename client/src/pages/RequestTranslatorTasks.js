@@ -1,63 +1,163 @@
-import React, { useEffect, useState } from 'react';
-import { useHttp } from "../hooks/http.hook";
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+
+import FormCheck from "../UI/FormCheck";
+import FormInput from "../UI/FormInput";
+import FormSelect from "../UI/FormSelect";
+
+import axios from "axios";
+import DisplayCheck from "../UI/RequsestTranslatorTasksStudent";
 
 // Подключаем картинку
 import logotip from "../image/logotip.png";
-import BMSTU from "../image/BMSTU.png";
-import symbol from "../image/symbol.png";
-import teacerandtranslater from "../image/teacerandtranslater.jpeg";
-import translater from "../image/translater.jpg";
+// import BMSTU from "../image/BMSTU.png";
+// import symbol from "../image/symbol.png";
+// import teacerandtranslater from "../image/teacerandtranslater.jpeg";
+// import translater from "../image/translater.jpg";
 // Подключаем css для визуала
 import "../css/styles.css";
 
 // Для переключения других веб страниц
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
-// Получение данные оттуда
-// import user from '../../../models/user';
-
+// function RequestTranslatorTasks() {
 export const RequestTranslatorTasks = () => {
-  const { loading, request } = useHttp();
-
-  const [post, setPost] = useState([])
+  const [post, setPost] = useState([]);
 
   useEffect(() => {
-    const res = axios.get('http://localhost:3000/request')
-      .then(response => {
-        setPost(response.data)
-        console.log(response.data)
+    const res = axios
+      .get("http://localhost:5000/request_tasks")
+      .then((response) => {
+        setPost(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
       });
-    return res.data
-  }, [])
-
-  // Работа с запросами
-  const [form, setForm] = useState({
-    // Содержание структуры
-    building: "",
-    auditorium: "",
-    discipline: "",
-    schedule: "",
-  });
+    return res.data;
+  }, []);
 
   return (
-    <div v-else-if="contacts.length">
-      <div class="card mb-3" v-for="contact in contacts">
-        {form.map((p) => {
-              return (
-                <div>
-                  <p>
-                    {p.building}
-                    {p.auditorium}
-                    {p.discipline}
-                    {p.schedule}
-                  </p>
-                </div>
-              );
-            })}
-          {/* <button class="btn btn-primary">Отметить</button> */}
-          {/* <button class="btn btn-danger">Удалить</button> */}
+    <body>
+      <head>
+        <title>Список запросов</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="styles.css" />
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+
+      <header>
+        <div class="LOGO2">
+          <img src={logotip} alt={"logotip"} />
         </div>
-      </div>
+      </header>
+
+      <main>
+        {post.map((p) => {
+          return (
+            <div class="row">
+              {/* <div key={p.id}> */}
+              <div class="center">
+                <h1>Номер запроса №{p.id_request}</h1>
+              </div>
+
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Имя:____
+                  </label>
+                  {p.name}
+                </div>
+              </div>
+
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Фамилия:____
+                  </label>
+                  {p.family}
+                </div>
+              </div>
+
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Отечество:____
+                  </label>
+                  {p.fatherland}
+                </div>
+              </div>
+
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Группа:____
+                  </label>
+                  {p.group}
+                </div>
+              </div>
+
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Здание:____
+                  </label>
+                  {p.building}
+                </div>
+              </div>
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Аудитория:____
+                  </label>
+                  {p.auditorium}
+                </div>
+              </div>
+
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Дисциплина:____
+                  </label>
+                  {p.discipline}
+                </div>
+              </div>
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">
+                    Расписание:____
+                  </label>
+                  {p.schedule}
+                </div>
+              </div>
+              <p>
+                <label>
+                  ======================================================================================================
+                </label>
+              </p>
+            </div>
+          );
+        })}
+
+        <div className="text-center">
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-warning" type="button">
+              <Link to="/main">Назад</Link>
+            </button>
+          </div>
+        </div>
+      </main>
+    </body>
   );
 };
+
+export default RequestTranslatorTasks;

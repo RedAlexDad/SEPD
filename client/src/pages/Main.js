@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 export const Main = () => {
     return (
         <div>
-
             <title>Главная</title>
                     <header>
                         <div class="LOGO2">
@@ -31,7 +30,7 @@ export const Main = () => {
                                 <li><a class="color-menu" href>
                                 <Link to="/contact_personal">Контакты</Link></a></li>
                                 <li><a class="color-menu" href>
-                                <Link to="/contact_personal">Войти</Link></a></li>
+                                <Link to="/authorization">Войти</Link></a></li>
                             </ul>
                         </div>
                         <div class="position-relative photo-text">

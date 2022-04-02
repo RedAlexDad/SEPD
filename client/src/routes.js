@@ -7,9 +7,13 @@ import {Switch, Route, Redirect} from 'react-router-dom'
 // import {Main} from './pages/Main';
 import {Main} from './pages/Main';
 import {RequestTranslator} from './pages/RequestTranslator';
-import {Contact_personal} from './pages/Contact_personal';
+import {ContactPersonal} from './pages/ContactPersonal';
 import {RequestTranslatorTasks} from './pages/RequestTranslatorTasks';
 import {FeedBack} from './pages/FeedBack';
+import {Registration} from './pages/Registration';
+import {Authorization} from './pages/Authorization';
+import {Translator} from './pages/Translator';
+import {TestRole} from './pages/TestRole';
 
 // Возврат полученный результат
 export const useRoutes = isAuthenficated => {
@@ -35,7 +39,23 @@ export const useRoutes = isAuthenficated => {
                 </Route>
                 {/* Сайт с ссылкой .../contact_personal */}
                 <Route path= "/contact_personal" exact>
-                    <Contact_personal/> 
+                    <ContactPersonal/> 
+                </Route>
+                {/* Сайт с ссылкой .../registration */}
+                <Route path= "/registration" exact>
+                    <Registration/> 
+                </Route>
+                {/* Сайт с ссылкой .../authorization */}
+                <Route path= "/authorization" exact>
+                    <Authorization/> 
+                </Route>
+                {/* Сайт с ссылкой .../authorization */}
+                <Route path= "/translator" exact>
+                    <Translator/> 
+                </Route>
+                {/* Сайт с ссылкой .../authorization */}
+                <Route path= "/test_role" exact>
+                    <TestRole/> 
                 </Route>
                 {/* Переходит в сайт, если из вышеперечисленных нет */}
                 <Redirect to = "/main" />

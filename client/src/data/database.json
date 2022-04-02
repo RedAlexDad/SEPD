@@ -1,0 +1,40 @@
+{
+  "request_tasks": [
+    {
+      "id": 1,
+      "id_request": 0,
+      "building": "",
+      "auditorium": "",
+      "discipline": "",
+      "schedule": ""
+    },
+    {
+      "id": 1648298423222,
+      "id_request": 1,
+      "building": "Главное здание",
+      "auditorium": "423",
+      "discipline": "АСОИУ",
+      "schedule": "13:50 - 15:25"
+    },
+    {
+      "id": 1648298482429,
+      "id_request": 2,
+      "building": "Главное здание",
+      "auditorium": "219",
+      "discipline": "МАТЕМ",
+      "schedule": "15:40 - 17:15"
+    },
+    {
+      "id": 1648298482429,
+      "id_request": 0,
+      "name": "EGOR",
+      "family": "Klesha",
+      "fatherland": "Sergeevich",
+      "group": "IU5-41B",
+      "building": "Главное здание",
+      "auditorium": "219",
+      "discipline": "МАТЕМ",
+      "schedule": "15:40 - 17:15"
+    }
+  ]
+}
