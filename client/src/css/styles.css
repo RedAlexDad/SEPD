@@ -345,3 +345,7 @@ h1
 
 /* http://localhost:3000/request_tasks */
 
+.row
+{
+    padding: 30px 70px 30px 70px;
+}
