@@ -318,21 +318,34 @@ video {
     display: inline-block;
 }
 
+/* http://localhost:3000/request */
 
-/* request_tasks */
 
-.input-group-append {
-    padding: 10px 0px 0px 0px;
+h1
+{
+    text-align: center;
+    padding: 40px 0px 40px 0px;
 }
 
-.butt {
-    padding: 50px 0px 0px 0px;
+.input-group-append
+{
+    padding: 0px 0px 0px 0px;
 }
 
-.row {
-    padding: 50px 30px 50px 30px;
+.vibor
+{
+    padding: 0px 0px 20px 0px;
 }
 
-h1 {
-    padding: 10px;
+.form-group
+{
+    padding: 0px 0px 15px 0px;
+}
+
+
+/* http://localhost:3000/request_tasks */
+
+.row
+{
+    padding: 30px 70px 30px 70px;
 }
