@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 import FormCheck from "../UI/FormCheck";
 import FormInput from "../UI/FormInput";
@@ -9,15 +9,16 @@ import DisplayCheck from "../UI/RequsestTranslatorTasksStudent";
 
 // Подключаем картинку
 import logotip from "../image/logotip.png";
-// import BMSTU from "../image/BMSTU.png";
-// import symbol from "../image/symbol.png";
+import BMSTU from "../image/BMSTU.png";
+import symbol from "../image/symbol.png";
 // import teacerandtranslater from "../image/teacerandtranslater.jpeg";
 // import translater from "../image/translater.jpg";
 // Подключаем css для визуала
 import "../css/styles.css";
 
 // Для переключения других веб страниц
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useHistory } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 // function RequestTranslatorTasks() {
 export const RequestTranslatorTasks = () => {
@@ -25,7 +26,7 @@ export const RequestTranslatorTasks = () => {
 
   useEffect(() => {
     const res = axios
-      .get("http://localhost:5000/request_tasks")
+      .get("http://localhost:4000/request_tasks")
       .then((response) => {
         setPost(response.data);
       })
@@ -34,6 +35,15 @@ export const RequestTranslatorTasks = () => {
       });
     return res.data;
   }, []);
+
+  const history = useHistory();
+  const auth = useContext(AuthContext);
+
+  const logoutHandler = (event) => {
+    event.preventDefault();
+    auth.logout();
+    history.push("/");
+  };
 
   return (
     <div>
@@ -61,100 +71,114 @@ export const RequestTranslatorTasks = () => {
         </div>
       </header>
 
+      <center>
+        <div class="menu">
+          <ul>
+            <li>
+              <a class="color-menu" href>
+                <Link to="/main">Главная</Link>
+              </a>
+            </li>
+            <li>
+              <a class="color-menu" href>
+                <Link to="/request">Оформить заявку</Link>
+              </a>
+            </li>
+            <li>
+              <a class="color-menu" href>
+                <Link to="/request_tasks">Посмотреть все записи</Link>
+              </a>
+            </li>
+            <li>
+              <a class="color-menu" href>
+                <Link to="/contact_personal">Контакты</Link>
+              </a>
+            </li>
+            <li>
+              <a class="color-menu" href="/" onClick={logoutHandler}>
+                Выйти
+              </a>
+            </li>
+          </ul>
+        </div>
+      </center>
+
       <main>
         {post.map((p) => {
           return (
             <div class="row">
               {/* <div key={p.id}> */}
-              <div class="center">
-                <h1>Номер запроса №{p.id_request}</h1>
-              </div>
 
-              <div class="d-grid gap-2 col-6 mx-auto">
-                <div class="mb-3">
-                  <label for="formGroupExampleInput" class="form-label">
-                    Имя: 
-                  </label>
-                  <a> {p.name}</a>
-                </div>
-              </div>
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col"><h1>Номер запроса №{p.id_request}</h1></th>
+                        </tr>
+                      </thead>
+                      <div class="mb-3">
+                        <tbody>
+                          <tr>
+                            <th scope="row">ФИО: </th>
+                            <td> Фамилия: {p.family}</td>
+                            <td> Имя: {p.name}</td>
+                            <td> Отечество: {p.fatherland} </td>
+                            <td> Группа: {p.group}</td>
+                          </tr>
+                        </tbody>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
 
-              <div class="d-grid gap-2 col-6 mx-auto">
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                <div class="table">
                 <div class="mb-3">
-                  <label for="formGroupExampleInput" class="form-label">
-                    Фамилия:
-                  </label>
-                  <a> {p.family}</a>
-                </div>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Данные: </th>
+                            <td> Здание: {p.building}</td>
+                            <td> Аудитория: {p.auditorium} </td>
+                            <td> Дисциплина: {p.discipline} </td>
+                            <td> Расписание: {p.schedule} </td>
+                            <td> Дата: {p.DataTime} </td>
+                          </tr>
+                        </tbody>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
-
-              <div class="d-grid gap-2 col-6 mx-auto">
-                <div class="mb-3">
-                  <label for="formGroupExampleInput" class="form-label">
-                    Отечество: 
-                  </label>
-                  <a> {p.fatherland} </a>
-                </div>
-              </div>
-
-              <div class="d-grid gap-2 col-6 mx-auto">
-                <div class="mb-3">
-                  <label for="formGroupExampleInput" class="form-label">
-                    Группа: 
-                  </label>
-                  <a> {p.group}</a>
-                </div>
-              </div>
-
-              <div class="d-grid gap-2 col-6 mx-auto">
-                <div class="mb-3">
-                  <label for="formGroupExampleInput" class="form-label">
-                    Здание: 
-                  </label>
-                  <a> {p.building}</a>
-                </div>
-              </div>
-              <div class="d-grid gap-2 col-6 mx-auto">
-                <div class="mb-3">
-                  <label for="formGroupExampleInput" class="form-label">
-                    Аудитория: 
-                  </label>
-                  <a> {p.auditorium}</a>
-                </div>
-              </div>
-
-              <div class="d-grid gap-2 col-6 mx-auto">
-                <div class="mb-3">
-                  <label for="formGroupExampleInput" class="form-label">
-                    Дисциплина:
-                  </label>
-                  <a> {p.discipline} </a>
-                </div>
-              </div>
-              <div class="d-grid gap-2 col-6 mx-auto">
-                <div class="mb-3">
-                  <label for="formGroupExampleInput" class="form-label">
-                    Расписание:
-                  </label>
-                  <a> {p.schedule}</a>
-                </div>
-              </div>
-              <p>
-                <label>
-                  ======================================================================================================
-                </label>
-              </p>
             </div>
           );
         })}
-
+        {/* 
         <div className="text-center">
           <div class="d-grid gap-2 col-6 mx-auto">
             <button class="btn btn-warning" type="button">
               <Link to="/main">Назад</Link>
             </button>
           </div>
-        </div>
+        </div> */}
+        <footer>
+            <div class="blok4">
+              <div class="primer0">
+                <img src={symbol} alt={"symbol"} />
+              </div>
+              <div class="primer1">
+                <p>105005, Москва, 2-я Бауманкая ул., д. 5, стр. 1</p>
+              </div>
+              <div class="primer2">
+                <p>8 (499)-263-63-91</p>
+              </div>
+              <div class="primer3">
+                <p>bauman@bmstu.ru</p>
+              </div>
+            </div>
+          </footer>
       </main>
     </div>
   );

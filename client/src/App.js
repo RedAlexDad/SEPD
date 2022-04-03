@@ -37,7 +37,7 @@ function App() {
     >
       <Router>
           {/* {isAuthenficated && <Authorization />} */}
-        <div className="container">{routes}</div>
+        <div>{routes}</div>
         <Route path="/request_tasks" element={<RequestTranslatorTasks />} />
       </Router>
     </AuthContext.Provider>

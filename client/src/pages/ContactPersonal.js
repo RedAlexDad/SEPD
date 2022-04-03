@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Avakian from "../image/Avakian.jpg";
 import Kosyan from "../image/Kosyan.png";
@@ -11,12 +11,23 @@ import Old from "../image/Old.jpeg";
 import Magomedsharipova from "../image/Magomedsharipova.jpg";
 import Golovanova from "../image/Golovanova.png";
 import symbol from "../image/symbol.png";
+import logotip from "../image/logotip.png";
 // Подключаем css для визуала
 import "../css/styles.css";
 // Для переключения других веб страниц
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 export const ContactPersonal = () => {
+  const history = useHistory();
+  const auth = useContext(AuthContext);
+
+  const logoutHandler = (event) => {
+    event.preventDefault();
+    auth.logout();
+    history.push("/");
+  };
+
   return (
     <body>
       <div>
@@ -25,42 +36,35 @@ export const ContactPersonal = () => {
         <body>
           <header>
             <div class="LOGO2">
-              <img src={symbol} alt={"symbol"} />
+              <img src={logotip} alt={"logotip"} />
             </div>
           </header>
           <center>
             <div class="menu">
               <ul>
                 <li>
-                  <a
-                    class="color-menu"
-                    href="http://127.0.0.1:5500/SEPD/index1/index.html"
-                  >
+                  <a class="color-menu" href>
                     <Link to="/main">Главная</Link>
                   </a>
                 </li>
                 <li>
-                  <a
-                    class="color-menu"
-                    href="http://127.0.0.1:5500/SEPD/index2/index.html"
-                  >
-                    <Link to="/request">Запись</Link>
+                  <a class="color-menu" href>
+                    <Link to="/request">Оформить заявку</Link>
                   </a>
                 </li>
                 <li>
-                  <a
-                    class="color-menu"
-                    href="http://127.0.0.1:5500/SEPD/index3/index.html"
-                  >
+                  <a class="color-menu" href>
+                    <Link to="/request_tasks">Посмотреть все записи</Link>
+                  </a>
+                </li>
+                <li>
+                  <a class="color-menu" href>
                     <Link to="/contact_personal">Контакты</Link>
                   </a>
                 </li>
                 <li>
-                  <a
-                    class="color-menu"
-                    href="http://127.0.0.1:5500/SEPD/index4/index.html"
-                  >
-                    <Link to="/main">Войти</Link>
+                  <a class="color-menu" href="/" onClick={logoutHandler}>
+                    Выйти
                   </a>
                 </li>
               </ul>
@@ -204,16 +208,17 @@ export const ContactPersonal = () => {
             <center>
               <footer>
                 <div class="blok4">
+                  <div class="primer0">
+                    <img src={symbol} alt={"symbol"} />
+                  </div>
                   <div class="primer1">
-                    <p class="fs-5">
-                      105005, Москва, 2-я Бауманкая ул., д. 5, стр. 1
-                    </p>
+                    <p>105005, Москва, 2-я Бауманкая ул., д. 5, стр. 1</p>
                   </div>
                   <div class="primer2">
-                    <p class="fs-5">8 (499)-263-63-91</p>
+                    <p>8 (499)-263-63-91</p>
                   </div>
                   <div class="primer3">
-                    <p class="fs-5">bauman@bmstu.ru</p>
+                    <p>bauman@bmstu.ru</p>
                   </div>
                 </div>
               </footer>

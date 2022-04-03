@@ -1,7 +1,12 @@
 /* @import "materialize-css/dist/css/materialize.min.css"; */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
 /* Main */
+
+font-face {
+    font-family: 'Montserrat',
+}
 
 html {
     background-color: #ffffff;
@@ -10,7 +15,7 @@ html {
 header {
     /* background-color: #FFD034; */
     /* background-color: #000000; */
-    background-color: #846d1b;
+    background-color: #ffffff;
 }
 
 body {
@@ -19,7 +24,7 @@ body {
 
 footer {
     /* background-color: #2e2e2e; */
-    background-color: #846d1b;
+    background-color: #404040;
     margin: 15px 0px 0px 0px;
 }
 
@@ -61,6 +66,8 @@ h3 {
 
 .position-absolute p {
     font-size: 40px;
+    font-family: 'Montserrat';
+    color: white;
 }
 
 .menu {
@@ -87,11 +94,6 @@ h3 {
     color: #ffffff;
     font-size: 120%;
     margin: -10px 100px 0px 00px;
-}
-
-.color-menu:hover {
-    /* При наведений меняется цвет кнопки "Связаться"  */
-    color: rgb(224, 240, 11);
 }
 
 .photo img {
@@ -362,7 +364,13 @@ h1 {
 .mb-3 {
     font-weight: bold;
     color: rgb(0, 0, 0);
-    /* padding: 0px 0px 15px 0px; */
+    padding: 0px 0px 0px 10px;
+}
+
+.mb-4 {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    padding: 0px 0px 0px 350px;
 }
 
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useHttp } from "../hooks/http.hook";
 
 import FormCheck from "../UI/FormCheck";
@@ -12,14 +12,15 @@ import { useLocation } from "react-router-dom";
 
 // Подключаем картинку
 import logotip from "../image/logotip.png";
-// import BMSTU from "../image/BMSTU.png";
-// import symbol from "../image/symbol.png";
-// import teacerandtranslater from "../image/teacerandtranslater.jpeg";
-// import translater from "../image/translater.jpg";
+import BMSTU from "../image/BMSTU.png";
+import symbol from "../image/symbol.png";
+import teacerandtranslater from "../image/teacerandtranslater.jpeg";
+import translater from "../image/translater.jpg";
 // Подключаем css для визуала
 import "../css/styles.css";
 // Для переключения других веб страниц
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 export const RequestTranslator = () => {
   const [post, setPost] = useState([]);
@@ -28,10 +29,11 @@ export const RequestTranslator = () => {
   const [auditorium, setAuditorium] = useState("");
   const [discipline, setDiscipline] = useState("");
   const [schedule, setSchedule] = useState("");
+  const [DataTime, setDataTime] = useState("");
 
   useEffect(() => {
     const res = axios
-      .get("http://localhost:5000/request_tasks")
+      .get("http://localhost:4000/request_tasks")
       .then((response) => {
         setPost(response.data);
       })
@@ -50,10 +52,11 @@ export const RequestTranslator = () => {
       auditorium,
       discipline,
       schedule,
+      DataTime,
     };
 
     const res = axios
-      .post("http://localhost:5000/request_tasks", article)
+      .post("http://localhost:4000/request_tasks", article)
       .then((response) => {
         setPost(response.data);
         console.log(response.data);
@@ -63,41 +66,67 @@ export const RequestTranslator = () => {
     setAuditorium("");
     setDiscipline("");
     setSchedule("");
+    setDataTime("");
     return res.data;
   };
 
-  
+  const history = useHistory();
+  const auth = useContext(AuthContext);
+
+  const logoutHandler = (event) => {
+    event.preventDefault();
+    auth.logout();
+    history.push("/");
+  };
 
   console.log(post);
 
   return (
     <div>
       <title>Оформление заявок</title>
-      
-      <meta charset="UTF-8" />
-      {/* <link rel="stylesheet" href="styles.css" /> */}
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"/>  
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-      
+
       <header>
         <div class="LOGO2">
-          <img src={logotip} alt={"logotip"}/> 
+          <img src={logotip} alt={"logotip"} />
         </div>
       </header>
-      <h1>
-        Заявление сурдопереводчиков
-      </h1>
 
-      <main>
-        <h1>Оформление заявление</h1>
+      <center>
+        <div class="menu">
+          <ul>
+            <li>
+              <a class="color-menu" href>
+                <Link to="/main">Главная</Link>
+              </a>
+            </li>
+            <li>
+              <a class="color-menu" href>
+                <Link to="/request">Оформить заявку</Link>
+              </a>
+            </li>
+            <li>
+              <a class="color-menu" href>
+                <Link to="/request_tasks">Посмотреть все записи</Link>
+              </a>
+            </li>
+            <li>
+              <a class="color-menu" href>
+                <Link to="/contact_personal">Контакты</Link>
+              </a>
+            </li>
+            <li>
+              <a class="color-menu" href="/" onClick={logoutHandler}>
+                Выйти
+              </a>
+            </li>
+          </ul>
+        </div>
+      </center>
+
+      <div class="p-3 mb-2 bg-light">
+        <h1>Оформить заявление</h1>
         <form action="" required>
-          <div class="d-grid gap-2 col-6 mx-auto">
+          <div class="d-grid gap-2 col-2 mx-auto">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">
                 Здание
@@ -113,14 +142,20 @@ export const RequestTranslator = () => {
                 onChange={(e) => setBuilding(e.target.value)}
                 options={[
                   { value: "Главное здание", text: "Главное здание" },
-                  { value: "Учебно-лабораторный корпус", text: "Учебно-лабораторный корпус"},
-                  { value: "Спортивный комплекс", text: "Спортивный комплекс" },
+                  {
+                    value: "Учебно-лабораторный корпус",
+                    text: "Учебно-лабораторный корпус",
+                  },
+                  {
+                    value: "Спортивный комплекс",
+                    text: "Спортивный комплекс",
+                  },
                 ]}
               />
             </div>
           </div>
 
-          <div class="d-grid gap-2 col-6 mx-auto">
+          <div class="d-grid gap-2 col-2 mx-auto">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">
                 Аудитория
@@ -137,7 +172,7 @@ export const RequestTranslator = () => {
             </div>
           </div>
 
-          <div class="d-grid gap-2 col-6 mx-auto">
+          <div class="d-grid gap-2 col-2 mx-auto">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">
                 Дисциплина
@@ -154,7 +189,7 @@ export const RequestTranslator = () => {
             </div>
           </div>
 
-          <div class="d-grid gap-2 col-6 mx-auto">
+          <div class="d-grid gap-2 col-2 mx-auto">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">
                 Расписание
@@ -180,11 +215,26 @@ export const RequestTranslator = () => {
             </div>
           </div>
 
+          <div class="d-grid gap-2 col-2 mx-auto">
+            <div class="mb-3">
+              <form>
+                <div class="form-group">
+                  <label for="inputDate">Введите дату:</label>
+                  <FormInput
+                    classBlock={"block mt-1"}
+                    classLabel={"form_caption"}
+                    type={"date"}
+                    classInput={"form_input--text"}
+                    value={DataTime}
+                    onChange={(e) => setDataTime(e.target.value)}
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+
           <div className="text-center">
-            <div class="d-grid gap-2 col-6 mx-auto">
-              <button class="btn btn-warning" type="button">
-                <Link to="/request_tasks">Посмотреть все запросы</Link>
-              </button>
+            <div class="d-grid gap-2 col-3 mx-auto">
               <button
                 class="btn btn-warning"
                 // Отправка запроса
@@ -192,13 +242,26 @@ export const RequestTranslator = () => {
               >
                 Отправить{" "}
               </button>
-              <button class="btn btn-warning" type="button">
-                <Link to="/main">Назад</Link>
-              </button>
             </div>
           </div>
-        </form>            
-      </main>
+        </form>
+      </div>
+      <footer>
+        <div class="blok4">
+          <div class="primer0">
+            <img src={symbol} alt={"symbol"} />
+          </div>
+          <div class="primer1">
+            <p>105005, Москва, 2-я Бауманкая ул., д. 5, стр. 1</p>
+          </div>
+          <div class="primer2">
+            <p>8 (499)-263-63-91</p>
+          </div>
+          <div class="primer3">
+            <p>bauman@bmstu.ru</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

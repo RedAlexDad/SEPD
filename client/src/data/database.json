@@ -6,7 +6,8 @@
       "building": "",
       "auditorium": "",
       "discipline": "",
-      "schedule": ""
+      "schedule": "",
+      "DataTime": ""
     },
     {
       "id": 1648298423222,
@@ -53,20 +54,22 @@
       "schedule": "10:15 - 11:50"
     },
     {
-      "id": 1648913825043,
-      "id_request": 3,
-      "building": "",
-      "auditorium": "523а",
-      "discipline": "Семантика УчТ",
-      "schedule": "13:50 - 15:25"
+      "id": 1649007045842,
+      "id_request": 1,
+      "building": "Учебно-лабораторный корпус",
+      "auditorium": "224",
+      "discipline": "АСОИУ л. Шук",
+      "schedule": "13:50 - 15:25",
+      "DataTime": "2022-04-08"
     },
     {
-      "id": 1648979023216,
+      "id": 1649014354513,
       "id_request": "",
-      "building": "",
-      "auditorium": "811",
-      "discipline": "TEST",
-      "schedule": "12:00 - 13:35"
+      "building": "Учебно-лабораторный корпус",
+      "auditorium": "406",
+      "discipline": "Иностранный язык",
+      "schedule": "13:50 - 15:25",
+      "DataTime": "2022-04-12"
     }
   ]
 }
