@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 // Подключаем картинку
 import logotip from '../image/logotip.png';
 import BMSTU from '../image/BMSTU.png';
@@ -10,8 +10,19 @@ import '../css/styles.css';
 
 // Для переключения других веб страниц
 import { Link } from "react-router-dom";
+import { AuthContext} from '../context/AuthContext';
+import { NavLink, useHistory } from 'react-router-dom';
 
 export const Main = () => {
+
+    const history = useHistory();
+    const auth = useContext(AuthContext);
+
+    const logoutHandler = event => {
+        event.preventDefault();
+        auth.logout();
+        history.push('/');
+    }
     return (
         <div>
         <meta charset="UTF-8" />
@@ -41,7 +52,9 @@ export const Main = () => {
                                 <li><a class="color-menu" href>
                                 <Link to="/contact_personal">Контакты</Link></a></li>
                                 <li><a class="color-menu" href>
-                                <Link to="/login">Войти</Link></a></li>
+                                <Link to="/login">Войти</Link></a>
+                                </li><li><a class="color-menu" href = "/"
+                                onClick={logoutHandler}>Выйти</a></li>
                             </ul>
                         </div>
                         <div class="position-relative photo-text">

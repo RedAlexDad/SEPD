@@ -21,6 +21,7 @@
     "main": "App.js",
     "scripts": {
         "start": "react-scripts start",
+        "server": "json-server src/data/database.json --watch  --port 5000",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"

@@ -18,7 +18,8 @@ router.post('/request',
             res.json(post)
             console.log(post)
         } catch (error) {
-            res.status(500).json({ message: 'ERROR! Проверьте!' });
+            res.status(500).json({ message: 'ERROR! Проверьте! Тип ошибка: ',
+            error: error.message });
             console.log("ERROR! Проверьте!");
         }
 })

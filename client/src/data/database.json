@@ -59,6 +59,14 @@
       "auditorium": "523а",
       "discipline": "Семантика УчТ",
       "schedule": "13:50 - 15:25"
+    },
+    {
+      "id": 1648979023216,
+      "id_request": "",
+      "building": "",
+      "auditorium": "811",
+      "discipline": "TEST",
+      "schedule": "12:00 - 13:35"
     }
   ]
 }

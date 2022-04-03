@@ -5,25 +5,27 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+// Подключение к роутеру
+app.use('/api/auth/request', require('./routes/auth.routes.js'));
+// или так
+
+// app.use('/auth', require('./routes/router.js'));
+// app.use('/api', require('./routes/request.routes.js'));
+
 const PORT = config.get('port') || 5000;
 
 // Маршрутизация
-const router = require('./routes/request.routes.js');
-// const router = require('./routes/router.js');
+// const router = require('./routes/request.routes.js');
+const router = require('./routes/router.js');
 // app.use('/api/auth', router)
-app.use('/api', router)
-
-// или так
-
-// Подключение к роутеру
-// app.use('/api/auth', require('./routes/auth.routes.js'));
-// app.use('/auth', require('./routes/router.js'));
-
 
 // const DB_URL = `mongodb+srv://upsp:upsp@cluster0.rzz3o.mongodb.net/UPSP?retryWrites=true&w=majority`
 
+
 // Для отображения лога в КО, т.е undefined (для второго теста и более)
 app.use(express.json())
+
+app.use('/api/auth', router)
 
 // 31.03.2022г.
 // MongoDB оказался под санкцией, поэтому вместо

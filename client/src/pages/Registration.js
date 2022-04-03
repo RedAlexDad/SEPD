@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 // Для регистрации
 
 export const Registration = () => {
+  
   const auth = useContext(AuthContext);
   const message = useMessage();
   const { loading, request, error, clearError } = useHttp();
@@ -42,7 +43,7 @@ export const Registration = () => {
 
   const registerHandler = async () => {
     try {
-      const data = await request('/auth/regist', 'POST', { ...form });
+      const data = await request('/api/auth/regist', 'POST', { ...form });
       // message(data.message);
       console.log('Data: ', data)
     } catch (e) {}
@@ -50,7 +51,7 @@ export const Registration = () => {
 
   const loginHandler = async () => {
     try {
-      const data = await request('/auth/login', 'POST', { ...form });
+      const data = await request('/api/auth/login', 'POST', { ...form });
       auth.login(data.token, data.userId);
     } catch (e) {}
   };

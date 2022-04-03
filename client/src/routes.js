@@ -66,7 +66,7 @@ export const useRoutes = isAuthenficated => {
     return (
         <Switch>
             <Route path= "/" exact>
-                <Authorization/>
+                <Registration/>
             </Route>
             <Redirect to = "/" /> 
         </Switch>
