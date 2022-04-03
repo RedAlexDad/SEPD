@@ -51,9 +51,7 @@ export const Main = () => {
                                 <Link to="/request">Запись</Link></a></li>
                                 <li><a class="color-menu" href>
                                 <Link to="/contact_personal">Контакты</Link></a></li>
-                                <li><a class="color-menu" href>
-                                <Link to="/login">Войти</Link></a>
-                                </li><li><a class="color-menu" href = "/"
+                                <li><a class="color-menu" href = "/"
                                 onClick={logoutHandler}>Выйти</a></li>
                             </ul>
                         </div>
