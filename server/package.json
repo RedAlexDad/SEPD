@@ -4,7 +4,7 @@
     "main": "app.js",
     "scripts": {
         "start": "node app.js",
-        "server": "nodemon app.js \" json-server data/database.json --watch  --port 5000",
+        "server": "nodemon app.js",
         "client": "npm run start --prefix client",
         "dev": "concurrently \"npm run server\" \"npm run client\" "
     },

@@ -32,6 +32,7 @@ export const useHttp = () => {
                 
                 return data
             } catch (e) {
+            console.log("Catch: ", e.message)
             setLoading(false)
             setError(e.message)
             throw e
@@ -39,7 +40,8 @@ export const useHttp = () => {
     }, [])
 
     // Сброс ошибок
-    const clearError = useCallback(() => setError(null), [])
+    // const clearError = useCallback(() => setError(null), [])
+    const clearError = () => setError(null);
     
     // Сообщает о информациях сервера
     return { loading, request, error, clearError }

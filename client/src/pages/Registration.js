@@ -1,4 +1,9 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+
+import { useHttp } from "../hooks/http.hook";
+import { useMessage } from "../hooks/message.hook";
+import { AuthContext } from "../context/AuthContext";
+
 // Подключаем картинку
 import logotip from "../image/logotip.png";
 import BMSTU from "../image/BMSTU.png";
@@ -11,7 +16,45 @@ import "../css/styles.css";
 // Для переключения других веб страниц
 import { Link } from "react-router-dom";
 
+// Для регистрации
+
 export const Registration = () => {
+  const auth = useContext(AuthContext);
+  const message = useMessage();
+  const { loading, request, error, clearError } = useHttp();
+  const [form, setForm] = useState({
+    login: "",
+    password: "",
+  });
+
+  useEffect(() => {
+    message(error);
+    clearError();
+  }, [error, message, clearError]);
+
+  // useEffect(() => {
+    // window.M.updateTextFields();
+  // }, []);
+
+  const changeHandler = (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
+  };
+
+  const registerHandler = async () => {
+    try {
+      const data = await request('/auth/regist', 'POST', { ...form });
+      // message(data.message);
+      console.log('Data: ', data)
+    } catch (e) {}
+  };
+
+  const loginHandler = async () => {
+    try {
+      const data = await request('/auth/login', 'POST', { ...form });
+      auth.login(data.token, data.userId);
+    } catch (e) {}
+  };
+
   return (
     <div>
       <head>
@@ -49,47 +92,89 @@ export const Registration = () => {
           <h1>Регистрация</h1>
           <div class="form">
             <form class="row g-3">
-              <div class="col-md-6">
+{/*               
+              <div class="col-md-4">
                 <label for="validationDefault01" class="form-label">
-                  Логин
+                  Имя
                 </label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="validationDefault01"
-                  required
-                  placeholder="@"
-                />
+                <input type="text" class="form-control" id="validationDefault01" required placeholder="Ваше имя"/>
               </div>
-              <div class="col-md-6">
+
+              <div class="col-md-4">
                 <label for="validationDefault02" class="form-label">
-                  Пароль
+                  Фамилия
                 </label>
+                <input type="text" class="form-control" id="validationDefault02" required placeholder="Ваша фамилия"/>
+              </div> */}
+
+              <div class="col-md-4">
+                <label for="validationDefaultUsername" class="form-label">
+                  Login
+                </label>
+                <div class="input-group">
                 <input
-                  type="password"
-                  class="form-control"
-                  id="validationDefault02"
-                  required
-                  placeholder="******"
+                  placeholder="Введите login"
+                  id="login"
+                  type="text"
+                  name="login"
+                  className="yellow-input"
+                  value={form.login}
+                  onChange={changeHandler}
                 />
+                <label htmlFor="Login">Login</label></div>
               </div>
+{/* 
+              <div class="col-md-4">
+                <label for="validationDefault03" class="form-label">
+                  Отечество
+                </label>
+                <input type="text" class="form-control" id="validationDefault03" required placeholder="Ваше отечество"/>
+              </div>
+
+              <div class="col-md-4">
+                <label for="validationDefault05" class="form-label">
+                  Телефон
+                </label>
+                <input type="phone" class="form-control" id="validationDefault05" required placeholder="+7 (XXX) XXX XXXX"/>
+              </div>
+               */}
+              <div class="col-md-4">
+                <input
+                  placeholder="Введите пароль"
+                  id="password"
+                  type="password"
+                  name="password"
+                  className="yellow-input"
+                  value={form.password}
+                  onChange={changeHandler}
+                />
+                <label htmlFor="Login">Пароль</label>
+                </div>
+{/* 
               <div class="col-12">
                 <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="invalidCheck2"
-                    required
-                  />
+                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required/>
                   <label class="form-check-label" for="invalidCheck2">
                     Примите условия и соглашения
                   </label>
                 </div>
-              </div>
+              </div> */}
+
               <div class="col-12">
-                <button class="btn btn-success" type="submit">
-                  Зарегистрироваться
+              <button
+                  className="btn yellow darken-4"
+                  style={{ marginRight: 10 }}
+                  disabled={loading}
+                  onClick={loginHandler}
+                >
+                  Войти
+                </button>
+                <button
+                  className="btn grey lighten-1 black-text"
+                  onClick={registerHandler}
+                  disabled={loading}
+                >
+                  Регистрация
                 </button>
               </div>
             </form>

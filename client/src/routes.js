@@ -42,11 +42,11 @@ export const useRoutes = isAuthenficated => {
                     <ContactPersonal/> 
                 </Route>
                 {/* Сайт с ссылкой .../registration */}
-                <Route path= "/registration" exact>
+                <Route path= "/regist" exact>
                     <Registration/> 
                 </Route>
                 {/* Сайт с ссылкой .../authorization */}
-                <Route path= "/authorization" exact>
+                <Route path= "/login" exact>
                     <Authorization/> 
                 </Route>
                 {/* Сайт с ссылкой .../authorization */}
@@ -66,7 +66,7 @@ export const useRoutes = isAuthenficated => {
     return (
         <Switch>
             <Route path= "/" exact>
-            <main/>
+                <Authorization/>
             </Route>
             <Redirect to = "/" /> 
         </Switch>

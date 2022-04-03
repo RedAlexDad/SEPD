@@ -74,7 +74,7 @@ export const Authorization = () => {
               </button>
               <div class="form-group">
                 <button class="btn btn-outline-dark">
-                  <Link to="/registration">Регистрация</Link>
+                  <Link to="/regist">Регистрация</Link>
                 </button>
               </div>
             </form>

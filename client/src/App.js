@@ -19,6 +19,7 @@ import {useRoutes} from '../src/routes';
 
 function App() {
     const routes = useRoutes(true)
+
     return (
         <Router>
             <div className = "container">
