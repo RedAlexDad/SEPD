@@ -15,20 +15,27 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { NavLink, useHistory } from "react-router-dom";
 
-import { useAuth } from "../hooks/auth.hook";
+import { useAuth, $dataDB } from "../hooks/auth.hook";
 import { useHttp } from "../hooks/http.hook";
 import { useMessage } from "../hooks/message.hook";
-
  
 export const Header = () => {
 
-  console.log($family)
+  console.log($dataDB)
 
   const history = useHistory();
   const auth = useContext(AuthContext);
   const message = useMessage();
 
- 
+  const {token, userId, family, name, fatherland, group} = useAuth();
+  console.log("token:", token);
+  console.log("userId:", userId);
+  console.log("family:", family);
+  console.log("name:", name);
+  console.log("fatherland:", fatherland);
+  console.log("group:", group);
+
+  // const [$dataDB] = useState();
   
   const logoutHandler = (event) => {
     event.preventDefault();
@@ -38,7 +45,7 @@ export const Header = () => {
 
   const [Man, setMan] = useState();
 
-  const [ form, setForm] = useState([]);
+  // const [ form, setForm] = useState([]);
    // useEffect(() => {
   //   message(error);
   //   clearError();
@@ -67,23 +74,22 @@ export const Header = () => {
   // const [family, setFamily] = useAuth();
     
 
-  useEffect(() => {
-    const res = axios
-      .get(`http://localhost:4000/Man/`)
-      // .get("http://localhost:5000/api/auth/login", {...form})
-      .then((response) => {
-        setMan(response.data);
-        // setForm(response.data);
-        console.log(response.data)
-        // const data = ("/api/auth/login", "GET", { ...form });
-        // auth.login(data.token, data.userId, data.family, data.name, data.fatherland, data.group);
-  
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    return res.data;
-  }, []);
+  // useEffect(() => {
+  //   const res = axios
+  //     .get(`http://localhost:4000/Man/`)
+  //     // .get("http://localhost:5000/api/auth/login", {...form})
+  //     .then((response) => {
+  //       setMan(response.data);
+  //       // setForm(response.data);
+  //       console.log(response.data)
+  //       // const data = ("/api/auth/login", "GET", { ...form });
+  //       // auth.login(data.token, data.userId, data.family, data.name, data.fatherland, data.group);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  //   return res.data;
+  // }, []);
 
   return (
     <div>
@@ -94,10 +100,10 @@ export const Header = () => {
         <div>
           <h1>
           <div>
-              {/* <div>{family}</div>
+              <div>{family}</div>
               <div>{name}</div>
               <div>{fatherland}</div>
-              <div>{group}</div> */}
+              <div>{group}</div>
               </div>
           </h1>
            <h1>

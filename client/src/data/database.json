@@ -97,6 +97,33 @@
       "name": "Vlad",
       "fatherland": "Vit",
       "group": "VLAAD"
+    },
+    {
+      "id": 1649103395590,
+      "login": "Alex",
+      "password": "Alex",
+      "family": "Папин",
+      "name": "Алексей",
+      "fatherland": "Владимирович",
+      "group": "ИУ5Ц-41Б"
+    },
+    {
+      "id": 1649106444311,
+      "login": "Gosha",
+      "password": "Gosha",
+      "family": "Половников",
+      "name": "Игорь",
+      "fatherland": "Михайлович",
+      "group": "РК9Ц-41"
+    },
+    {
+      "id": 1649106608838,
+      "login": "Vlad",
+      "password": "Vlad",
+      "family": "Малахов",
+      "name": "Владислав",
+      "fatherland": "Витальевич",
+      "group": "ИУ5Ц-41Б"
     }
   ]
 }

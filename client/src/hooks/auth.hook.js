@@ -55,12 +55,16 @@ export const useAuth = () => {
 
   useEffect(() => {
     $dataDB = JSON.parse(localStorage.getItem(storageName));
-     console.log("storageName: ", $dataDB)
+    // const data = JSON.parse(localStorage.getItem(storageName));
+    //  console.log("storageName: ", $dataDB)
+    //  console.log("storageName: ", data)
     // console.log("data ", data)
     // console.log("data.token ", data.token)
 
     if ($dataDB && $dataDB.token) {
-      login($dataDB.token, $dataDB.userId);
+    // if (data && data.token) {
+      // login(data.token, data.userId, data.family, data.name, data.fatherland, data.group);
+      login($dataDB.token, $dataDB.userId, $dataDB.family, $dataDB.name, $dataDB.fatherland, $dataDB.group);
       // console.log("data.token ", data.token)
       // console.log("data.userId ", data.userId)
       // console.log("userId ", userId)
@@ -71,7 +75,7 @@ export const useAuth = () => {
     setReady(true);
   }, [login]);
 
-  return { login, logout, token, userId, ready, family, name, fatherland, group};
+  return { login, logout, token, userId, family, name, fatherland, group};
 };
 
 export {$dataDB}
