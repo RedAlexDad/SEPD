@@ -91,14 +91,6 @@ export const RequestTranslatorTasks = () => {
             </div>
           );
         })}
-        {/* 
-        <div className="text-center">
-          <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-warning" type="button">
-              <Link to="/main">Назад</Link>
-            </button>
-          </div>
-        </div> */}
         <footer>
             <div class="blok4">
               <div class="primer0">

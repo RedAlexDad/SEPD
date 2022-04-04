@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useHttp } from "../hooks/http.hook";
+import { useAuth } from "../hooks/auth.hook";
 
 import FormCheck from "../UI/FormCheck";
 import FormInput from "../UI/FormInput";
@@ -31,6 +32,9 @@ export const RequestTranslator = () => {
   const [schedule, setSchedule] = useState("");
   const [DataTime, setDataTime] = useState("");
 
+  
+  const {family, name, fatherland, group} = useAuth();
+
   useEffect(() => {
     const res = axios
       .get("http://localhost:4000/request_tasks")
@@ -47,6 +51,10 @@ export const RequestTranslator = () => {
     e.preventDefault();
     const article = {
       id: Date.now(),
+      family,
+      name,
+      fatherland,
+      group,
       id_request,
       building,
       auditorium,
@@ -70,7 +78,7 @@ export const RequestTranslator = () => {
     return res.data;
   };
 
-  console.log(post);
+  // console.log(post);
 
   return (
     <div>

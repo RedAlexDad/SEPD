@@ -33,33 +33,6 @@ export const Registration = () => {
     group: "",
   });
 
-  // const [Man, setMan] = useState({
-  //   family: "",
-  //   name: "",
-  //   fatherland: "",
-  //   group: "",
-  // });
-
-  // const [post, setPost] = useState([]);
-  // const [family, setFamily] = useState("");
-  // const [name, setName] = useState("");
-  // const [fatherland, setFatherland] = useState("");
-  // const [group, setGroup] = useState("");
-
-  // useEffect(() => {
-  //   const res = axios
-  //     .get("http://localhost:4000/main")
-  //     .then((response) => {
-  //       setPost(response.data);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  //   return res.data;
-  // }, []);
-
-  // console.log(post);
-
   useEffect(() => {
     message(error);
     clearError();
@@ -67,7 +40,6 @@ export const Registration = () => {
 
   const changeHandler = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
-    // setMan({ ...Man, [event.target.name]: event.target.value });
   };
 
   const registerHandler = async () => {

@@ -1,7 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 
 const storageName = "userData";
-let $dataDB = [];
 
 export const useAuth = () => {
   const [token, setToken] = useState(null);
@@ -31,15 +30,6 @@ export const useAuth = () => {
         group: groupS,
       })
     );
-    
-
-    // console.log("jwtToken: ", jwtToken)
-    // console.log("id: ", id);
-    // console.log("name: ", name);
-    // console.log("family: ", family);
-    // console.log("fatherland: ", fatherland);
-    // console.log("group: ", group);
-    // console.log(id)
   }, []);
 
   const logout = useCallback(() => {
@@ -54,28 +44,14 @@ export const useAuth = () => {
   });
 
   useEffect(() => {
-    $dataDB = JSON.parse(localStorage.getItem(storageName));
-    // const data = JSON.parse(localStorage.getItem(storageName));
-    //  console.log("storageName: ", $dataDB)
-    //  console.log("storageName: ", data)
-    // console.log("data ", data)
-    // console.log("data.token ", data.token)
+    const data = JSON.parse(localStorage.getItem(storageName));
 
-    if ($dataDB && $dataDB.token) {
-    // if (data && data.token) {
-      // login(data.token, data.userId, data.family, data.name, data.fatherland, data.group);
-      login($dataDB.token, $dataDB.userId, $dataDB.family, $dataDB.name, $dataDB.fatherland, $dataDB.group);
-      // console.log("data.token ", data.token)
-      // console.log("data.userId ", data.userId)
-      // console.log("userId ", userId)
+    if (data && data.token) {
+      login(data.token, data.userId, data.family, data.name, data.fatherland, data.group);
     }
-    // console.log("data.token ", data.token)
-    // console.log("data.userId ", data.userId)
 
     setReady(true);
   }, [login]);
 
   return { login, logout, token, userId, family, name, fatherland, group};
 };
-
-export {$dataDB}
