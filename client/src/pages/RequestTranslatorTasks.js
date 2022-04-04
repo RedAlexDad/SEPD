@@ -36,73 +36,9 @@ export const RequestTranslatorTasks = () => {
     return res.data;
   }, []);
 
-  const history = useHistory();
-  const auth = useContext(AuthContext);
-
-  const logoutHandler = (event) => {
-    event.preventDefault();
-    auth.logout();
-    history.push("/");
-  };
-
   return (
     <div>
-      <head>
         <title>Список запросов</title>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="styles.css" />
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-          crossorigin="anonymous"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-
-      <header>
-        <div class="LOGO2">
-          <img src={logotip} alt={"logotip"} />
-        </div>
-      </header>
-
-      <center>
-        <div class="menu">
-          <ul>
-            <li>
-              <a class="color-menu" href>
-                <Link to="/main">Главная</Link>
-              </a>
-            </li>
-            <li>
-              <a class="color-menu" href>
-                <Link to="/request">Оформить заявку</Link>
-              </a>
-            </li>
-            <li>
-              <a class="color-menu" href>
-                <Link to="/request_tasks">Посмотреть все записи</Link>
-              </a>
-            </li>
-            <li>
-              <a class="color-menu" href>
-                <Link to="/contact_personal">Контакты</Link>
-              </a>
-            </li>
-            <li>
-              <a class="color-menu" href="/" onClick={logoutHandler}>
-                Выйти
-              </a>
-            </li>
-          </ul>
-        </div>
-      </center>
-
       <main>
         {post.map((p) => {
           return (

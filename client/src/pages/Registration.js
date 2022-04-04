@@ -15,123 +15,161 @@ import "../css/styles.css";
 
 // Для переключения других веб страниц
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 // Для регистрации
 
 export const Registration = () => {
-  
-  const auth = useContext(AuthContext);
   const message = useMessage();
   const { loading, request, error, clearError } = useHttp();
+
   const [form, setForm] = useState({
+    id: Date.now(),
     login: "",
     password: "",
+    family: "",
+    name: "",
+    fatherland: "",
+    group: "",
   });
+
+  // const [Man, setMan] = useState({
+  //   family: "",
+  //   name: "",
+  //   fatherland: "",
+  //   group: "",
+  // });
+
+  // const [post, setPost] = useState([]);
+  // const [family, setFamily] = useState("");
+  // const [name, setName] = useState("");
+  // const [fatherland, setFatherland] = useState("");
+  // const [group, setGroup] = useState("");
+
+  // useEffect(() => {
+  //   const res = axios
+  //     .get("http://localhost:4000/main")
+  //     .then((response) => {
+  //       setPost(response.data);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  //   return res.data;
+  // }, []);
+
+  // console.log(post);
 
   useEffect(() => {
     message(error);
     clearError();
   }, [error, message, clearError]);
 
-  // useEffect(() => {
-    // window.M.updateTextFields();
-  // }, []);
-
   const changeHandler = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
+    // setMan({ ...Man, [event.target.name]: event.target.value });
   };
 
   const registerHandler = async () => {
     try {
-      const data = await request('/api/auth/regist', 'POST', { ...form });
+      const data = await request("/api/auth/regist", "POST", { ...form });
+      // Сообщение о успешной регистрации
       // message(data.message);
-      console.log('Data: ', data)
-    } catch (e) {}
-  };
+      console.log("Data: ", data);
+      alert(data.message);
 
-  const loginHandler = async () => {
-    try {
-      const data = await request('/api/auth/login', 'POST', { ...form });
-      auth.login(data.token, data.userId);
-    } catch (e) {}
+      // Сформирование ДБ и отправляет в локальную ДБ
+      const res = axios
+        .post("http://localhost:4000/Man", {...form})
+        .then((response) => {
+          setForm(response.data);
+          console.log(response.data);
+        });
+      form.family("");
+      form.name("");
+      form.fatherland("");
+      form.group("");
+      return res.data;
+    } catch (e) {
+      alert(error.message);
+    }
   };
 
   return (
     <div>
-      <head>
-        <title>Регистрация</title>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="styles.css" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-          crossorigin="anonymous"
-        />
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-          crossorigin="anonymous"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+      <title>Регистрация</title>
 
-      <body>
-        <header>
-          <div class="LOGO2">
-            <img src={logotip} alt={"logotip"} />
-          </div>
-        </header>
+      <main>
+        <h1>Регистрация</h1>
+        <div class="form">
+          <form class="row g-3">
+            <div class="col-md-4">
+              <label for="validationDefault02" class="form-label">
+                Фамилия
+              </label>
+              <input
+                required
+                placeholder="Ваша фамилия"
+                id="family"
+                type="text"
+                name="family"
+                class="form-control"
+                value={form.family}
+                onChange={changeHandler}
+              />
+            </div>
 
-        <main>
-          <h1>Регистрация</h1>
-          <div class="form">
-            <form class="row g-3">
-{/*               
-              <div class="col-md-4">
-                <label for="validationDefault01" class="form-label">
-                  Имя
-                </label>
-                <input type="text" class="form-control" id="validationDefault01" required placeholder="Ваше имя"/>
-              </div>
+            <div class="col-md-4">
+              <label for="validationDefault01" class="form-label">
+                Имя
+              </label>
+              <input
+                required
+                placeholder="Ваше имя"
+                id="name"
+                type="text"
+                name="name"
+                class="form-control"
+                value={form.name}
+                onChange={changeHandler}
+              />
+            </div>
 
-              <div class="col-md-4">
-                <label for="validationDefault02" class="form-label">
-                  Фамилия
-                </label>
-                <input type="text" class="form-control" id="validationDefault02" required placeholder="Ваша фамилия"/>
-              </div> */}
+            <div class="col-md-4">
+              <label for="validationDefault03" class="form-label">
+                Отечество
+              </label>
+              <input
+                required
+                placeholder="Ваше отечество"
+                id="fatherland"
+                type="text"
+                name="fatherland"
+                class="form-control"
+                value={form.fatherland}
+                onChange={changeHandler}
+              />
+            </div>
 
-              <div class="col-md-4">
-                <label for="validationDefaultUsername" class="form-label">
-                  Login
-                </label>
-                <div class="input-group">
+            <div class="col-md-4">
+              <label for="validationDefaultUsername" class="form-label">
+                Логин
+              </label>
+              <div class="input-group">
                 <input
-                  placeholder="Введите login"
+                  required
+                  placeholder="Введите логин"
                   id="login"
                   type="text"
                   name="login"
-                  className="yellow-input"
+                  class="form-control"
                   value={form.login}
                   onChange={changeHandler}
                 />
-                <label htmlFor="Login">Login</label></div>
               </div>
-{/* 
-              <div class="col-md-4">
-                <label for="validationDefault03" class="form-label">
-                  Отечество
-                </label>
-                <input type="text" class="form-control" id="validationDefault03" required placeholder="Ваше отечество"/>
-              </div>
+            </div>
 
+            {/* 
               <div class="col-md-4">
                 <label for="validationDefault05" class="form-label">
                   Телефон
@@ -139,19 +177,43 @@ export const Registration = () => {
                 <input type="phone" class="form-control" id="validationDefault05" required placeholder="+7 (XXX) XXX XXXX"/>
               </div>
                */}
-              <div class="col-md-4">
+
+            <div class="col-md-4">
+              <label for="validationDefaultUsername" class="form-label">
+                Пароль
+              </label>
+              <div class="input-group">
                 <input
+                  required
                   placeholder="Введите пароль"
                   id="password"
                   type="password"
                   name="password"
-                  className="yellow-input"
+                  class="form-control"
                   value={form.password}
                   onChange={changeHandler}
                 />
-                <label htmlFor="Login">Пароль</label>
-                </div>
-{/* 
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="validationDefaultUsername" class="form-label">
+                Группа
+              </label>
+              <div class="input-group">
+                <input
+                  required
+                  placeholder="Ваша группа"
+                  id="group"
+                  type="text"
+                  name="group"
+                  class="form-control"
+                  value={form.group}
+                  onChange={changeHandler}
+                />
+              </div>
+            </div>
+            {/*             
               <div class="col-12">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required/>
@@ -161,27 +223,17 @@ export const Registration = () => {
                 </div>
               </div> */}
 
-              <div class="col-12">
-              <button
-                  className="btn yellow darken-4"
-                  style={{ marginRight: 10 }}
-                  disabled={loading}
-                  onClick={loginHandler}
-                >
-                  Войти
-                </button>
-                <button
-                  className="btn grey lighten-1 black-text"
-                  onClick={registerHandler}
-                  disabled={loading}
-                >
-                  Регистрация
-                </button>
-              </div>
-            </form>
-          </div>
-        </main>
-      </body>
+            <button
+              class="btn btn-secondary"
+              onClick={registerHandler}
+              disabled={loading}
+            >
+              Зарегистрироваться
+            </button>
+            <div class="col-12"></div>
+          </form>
+        </div>
+      </main>
     </div>
   );
 };

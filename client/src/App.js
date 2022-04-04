@@ -5,7 +5,8 @@ import RequestTranslatorTasks from "./pages/RequestTranslatorTasks";
 import { useRoutes } from "../src/routes";
 import { useAuth } from "./hooks/auth.hook";
 import { AuthContext } from "./context/AuthContext";
-import {Authorization} from "./pages/Authorization";
+import { Header } from "./pages/Header";
+import { Main } from "./pages/Main";
 // import 'material-css';
 
 // Для работы нужно установить версию npm i react-router-dom@5.0.0
@@ -22,12 +23,18 @@ import {Authorization} from "./pages/Authorization";
 
 function App() {
   // const routes = useRoutes(true);
-  const { token, login, logout, userID } = useAuth();
+  // const { token, login, logout, userID } = useAuth();
+  const { family, name, fatherland, group, token, login, logout, userID } =
+    useAuth();
   const isAuthenficated = !!token;
   const routes = useRoutes(isAuthenficated);
   return (
     <AuthContext.Provider
       value={{
+        family,
+        name,
+        fatherland,
+        group,
         token,
         login,
         logout,
@@ -36,9 +43,9 @@ function App() {
       }}
     >
       <Router>
-          {/* {isAuthenficated && <Authorization />} */}
-        <div>{routes}</div>
-        <Route path="/request_tasks" element={<RequestTranslatorTasks />} />
+        {isAuthenficated && <Header />}
+        {routes}
+        {/* <Route path="/request_tasks" element={<RequestTranslatorTasks />} /> */}
       </Router>
     </AuthContext.Provider>
   );

@@ -26,52 +26,16 @@ export const Main = () => {
     <div>
       <title>Главная</title>
 
-      <header>
-        <div class="LOGO2">
-          <img src={logotip} alt={"logotip"} />
-        </div>
-      </header>
-
-      <center>
-        <div class="menu">
-          <ul>
-            <li>
-              <a class="color-menu" href>
-                <Link to="/main">Главная</Link>
-              </a>
-            </li>
-            <li>
-              <a class="color-menu" href>
-                <Link to="/request">Оформить заявку</Link>
-              </a>
-            </li>
-            <li>
-              <a class="color-menu" href>
-                <Link to="/request_tasks">Посмотреть все записи</Link>
-              </a>
-            </li>
-            <li>
-              <a class="color-menu" href>
-                <Link to="/contact_personal">Контакты</Link>
-              </a>
-            </li>
-            <li>
-              <a class="color-menu" href="/" onClick={logoutHandler}>
-                Выйти
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="position-relative photo-text">
+      <div class="position-relative photo-text">
+        <center>
           <div class="photo">
             <img src={BMSTU} alt={"BMSTU"} />
             <div class="position-absolute top-50 start-50 translate-middle">
-                <p>Запись к переводчику в МГТУ им. Н. Э. Баумана</p>
+              <p>Запись к переводчику в МГТУ им. Н. Э. Баумана</p>
             </div>
           </div>
-        </div>
-      </center>
-
+        </center>
+      </div>
       <main>
         <center>
           <div>

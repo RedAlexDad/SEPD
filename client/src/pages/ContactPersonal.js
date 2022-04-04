@@ -34,42 +34,7 @@ export const ContactPersonal = () => {
         <title>Запись</title>
 
         <body>
-          <header>
-            <div class="LOGO2">
-              <img src={logotip} alt={"logotip"} />
-            </div>
-          </header>
           <center>
-            <div class="menu">
-              <ul>
-                <li>
-                  <a class="color-menu" href>
-                    <Link to="/main">Главная</Link>
-                  </a>
-                </li>
-                <li>
-                  <a class="color-menu" href>
-                    <Link to="/request">Оформить заявку</Link>
-                  </a>
-                </li>
-                <li>
-                  <a class="color-menu" href>
-                    <Link to="/request_tasks">Посмотреть все записи</Link>
-                  </a>
-                </li>
-                <li>
-                  <a class="color-menu" href>
-                    <Link to="/contact_personal">Контакты</Link>
-                  </a>
-                </li>
-                <li>
-                  <a class="color-menu" href="/" onClick={logoutHandler}>
-                    Выйти
-                  </a>
-                </li>
-              </ul>
-            </div>
-
             <div class="parent">
               <div class="child">
                 <img src={Avakian} alt={"Avakian"} />

@@ -22,7 +22,7 @@ export const useRoutes = isAuthenficated => {
             // Компонент, который импортируется из react-router-dom
             <Switch>
                 {/* Сайт с ссылкой .../main */}
-                <Route path= "/main" exact>
+                <Route path= "/main/" exact>
                     <Main/>
                 </Route>
                 {/* Сайт с ссылкой .../request */}
@@ -45,15 +45,15 @@ export const useRoutes = isAuthenficated => {
                 <Route path= "/regist" exact>
                     <Registration/> 
                 </Route>
-                {/* Сайт с ссылкой .../authorization */}
+                {/* Сайт с ссылкой .../login */}
                 <Route path= "/login" exact>
                     <Authorization/> 
                 </Route>
-                {/* Сайт с ссылкой .../authorization */}
+                {/* Сайт с ссылкой .../translator */}
                 <Route path= "/translator" exact>
                     <Translator/> 
                 </Route>
-                {/* Сайт с ссылкой .../authorization */}
+                {/* Сайт с ссылкой .../test_role */}
                 <Route path= "/test_role" exact>
                     <TestRole/> 
                 </Route>
@@ -66,7 +66,7 @@ export const useRoutes = isAuthenficated => {
     return (
         <Switch>
             <Route path= "/" exact>
-                <Registration/>
+                <Authorization/>
             </Route>
             <Redirect to = "/" /> 
         </Switch>

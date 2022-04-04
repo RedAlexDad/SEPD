@@ -1,6 +1,5 @@
 import {useState, useCallback} from 'react'
-
-// Работа с асихронными запросами на сервер с использованием нативным браузером
+ // Работа с асихронными запросами на сервер с использованием нативным браузером
 export const useHttp = () => {
     // Внутри хуки будем определяться, грузится сервер что то или нет
     const [loading, setLoading] = useState(false)
@@ -35,6 +34,7 @@ export const useHttp = () => {
             console.log("Catch: ", e.message)
             setLoading(false)
             setError(e.message)
+            alert(e.message);
             throw e
             }
     }, [])

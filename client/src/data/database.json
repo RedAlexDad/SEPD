@@ -71,5 +71,32 @@
       "schedule": "13:50 - 15:25",
       "DataTime": "2022-04-12"
     }
+  ],
+  "Man": [
+    {
+      "id": 1,
+      "family": "",
+      "name": "",
+      "fatherland": "",
+      "group": ""
+    },
+    {
+      "id": 1649086179714,
+      "login": "Alex15",
+      "password": "Alex15",
+      "family": "Папин",
+      "name": "Алексей",
+      "fatherland": "Владимирович",
+      "group": "Alex15"
+    },
+    {
+      "id": 1649086299763,
+      "login": "VLAAD",
+      "password": "VLAAD",
+      "family": "Malahov",
+      "name": "Vlad",
+      "fatherland": "Vit",
+      "group": "VLAAD"
+    }
   ]
 }

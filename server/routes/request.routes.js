@@ -1,7 +1,7 @@
 //          Маршрутизация
 
 const { Router } = require('express');
-const user = require('../models/user');
+const user = require('../models/building');
 // const Post = require('../models/post.js');
 const router = new Router();
 
