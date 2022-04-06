@@ -5,6 +5,12 @@ const jwt = require("jsonwebtoken");
 const { validationResult } = require("express-validator");
 const { secret } = require("./config.js");
 
+// Получение ID 
+// const mongoose = require('mongoose');
+// const myId = mongoose.Types.ObjectId();
+// _id: myId
+// console.log(myId)
+
 const generateAccessToken = (id, role_user) => {
   const payload = {
     id,
@@ -13,7 +19,7 @@ const generateAccessToken = (id, role_user) => {
   return jwt.sign(payload, secret, { expiresIn: "3h" });
 };
 
-const add_man_db = (_id, family, name, fatherland, group, token) => {
+const add_man_db = (_id, family, name, fatherland, group, token, myID) => {
   const MAN = {
     _id,
     family,
@@ -21,6 +27,7 @@ const add_man_db = (_id, family, name, fatherland, group, token) => {
     fatherland,
     group,
     token,
+    myID,
   };
   return MAN;
 };
@@ -38,7 +45,7 @@ class authController {
       console.log("Error: ", errors);
       // const {password, login} = req.body // --------
       // const {password, login, value} = req.body
-      const { password, login, value, family, name, fatherland, group } =
+      const { password, login, value, family, name, fatherland, group, myID } =
         req.body;
       const candidate = await User.findOne({ login });
 
@@ -67,7 +74,9 @@ class authController {
         name,
         fatherland,
         group,
+        myID,
       }); //не записывает значение роли
+
       await user.save();
       return res.json({ message: "Пользователь успешно зарегистрирован" });
     } catch (e) {
@@ -82,7 +91,7 @@ class authController {
 
   async login(req, res) {
     try {
-      const { login, password, family, name, fatherland, group } = req.body;
+      const { login, password, family, name, fatherland, group, myID } = req.body;
       // const {login, password} = req.body
       // const user = await User.findOne({login})
 
@@ -102,8 +111,11 @@ class authController {
 
     const token = generateAccessToken(user._id, user.role_user);
 
+    // Получение ID и постоянное присвоение
+    user.myID = user._id;
+
     // Полная информация
-    const Man = add_man_db( user._id, user.family, user.name, user.fatherland, user.group, token );
+    const Man = add_man_db( user._id, user.family, user.name, user.fatherland, user.group, token, user.myID );
     //   const Man = await User.create( user._id, user.family, user.name, user.fatherland, user.group );
     // const Man = await user.create({ login, password, family, name, fatherland, group });
     //   const Man = await User.findOne({ login, password})

@@ -17,71 +17,81 @@ import { NavLink, useHistory } from "react-router-dom";
 import { useAuth } from "../hooks/auth.hook";
 import { useHttp } from "../hooks/http.hook";
 import { useMessage } from "../hooks/message.hook";
- 
-export const Header = () => {
 
+// import { Nav } from "react-bootstrap";
+
+export const Header = () => {
   const history = useHistory();
   const auth = useContext(AuthContext);
   const message = useMessage();
 
-  const { family, name, fatherland, group} = useAuth();
+  const { myID, family, name, fatherland, group } = useAuth();
+  console.log("myID: ", myID, "family: ", family, "name: ", name, "fatherland", fatherland, "group: ", group);
 
   const logoutHandler = (event) => {
     event.preventDefault();
     auth.logout();
     history.push("/");
   };
+  
+
 
   return (
     <div>
+      {/*       
       <header>
         <div class="LOGO2">
           <img src={logotip} alt={"logotip"} />
         </div>
         <div>
           <h1>
-          <div>
+            <div>
               <div>{family}</div>
               <div>{name}</div>
               <div>{fatherland}</div>
               <div>{group}</div>
-              </div>
+            </div>
           </h1>
         </div>
-      </header>
+      </header> */}
 
       <center>
         <div class="menu">
           <ul>
             <li>
-              <a class="color-menu" href>
+              <a class="menu ul li a" href>
                 <Link to="/main">Главная</Link>
               </a>
             </li>
             <li>
-              <a class="color-menu" href>
+              <a class="menu ul li a" href>
                 <Link to="/request">Оформить заявку</Link>
               </a>
             </li>
             <li>
-              <a class="color-menu" href>
+              <a class="menu ul li a" href>
                 <Link to="/request_tasks">Посмотреть все записи</Link>
               </a>
             </li>
             <li>
-              <a class="color-menu" href>
+              <a class="menu ul li a" href>
                 <Link to="/contact_personal">Контакты</Link>
               </a>
             </li>
             <li>
-              <a class="color-menu" href>
+              <a class="menu ul li a" href>
                 <Link to="/regist">Регистрация </Link>
               </a>
             </li>
             <li>
-              <a class="color-menu" href="/" onClick={logoutHandler}>
+              <a class="menu ul li a" href="/" onClick={logoutHandler}>
                 Выйти
               </a>
+            </li>
+            <li class="FIO_man_pos">
+              <p class="fw-bold">
+                {family} {name} {fatherland} {group}
+              </p>
             </li>
           </ul>
         </div>

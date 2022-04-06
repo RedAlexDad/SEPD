@@ -59,10 +59,51 @@
             "discipline": "3453",
             "schedule": "12:00 - 13:35",
             "DataTime": "2022-04-29"
+        },
+        {
+            "id": 1649143236379,
+            "family": "Папин",
+            "name": "Алексей",
+            "fatherland": "Владимирович",
+            "group": "ИУ5Ц-41Б",
+            "id_request": "",
+            "building": "",
+            "auditorium": "",
+            "discipline": "",
+            "schedule": "",
+            "DataTime": ""
+        },
+        {
+            "id": 1649143252683,
+            "family": "Папин",
+            "name": "Алексей",
+            "fatherland": "Владимирович",
+            "group": "ИУ5Ц-41Б",
+            "id_request": 1,
+            "building": "",
+            "auditorium": "219",
+            "discipline": "fsdfsdf",
+            "schedule": "12:00 - 13:35",
+            "DataTime": "2022-04-21"
+        },
+        {
+            "id": 1649192977735,
+            "family": "Папин",
+            "name": "Алексей",
+            "fatherland": "Владимирович",
+            "group": "ИУ5Ц-41Б",
+            "id_request": "",
+            "building": "Главное здание",
+            "auditorium": "423",
+            "discipline": "Физика",
+            "schedule": "13:50 - 15:25",
+            "DataTime": "2022-04-19"
         }
     ],
     "Man": [{
             "id": 1,
+            "login": "",
+            "password": "",
             "family": "",
             "name": "",
             "fatherland": "",
@@ -94,6 +135,24 @@
             "name": "Владислав",
             "fatherland": "Витальевич",
             "group": "ИУ5Ц-41Б"
+        },
+        {
+            "id": 1649143565209,
+            "login": "Nikita",
+            "password": "Nikita",
+            "family": "Перевощиков",
+            "name": "Никита",
+            "fatherland": "Дмитреевич",
+            "group": "ИУ5Ц-41Б"
         }
-    ]
+    ],
+    "_id": [{
+        "id": 1,
+        "login": "",
+        "password": "",
+        "family": "",
+        "name": "",
+        "fatherland": "",
+        "group": ""
+    }]
 }

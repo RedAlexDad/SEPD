@@ -53,7 +53,8 @@ export const Authorization = () => {
         data.fatherland,
         data.group
       );
-      // alert(data.message);
+      // alert(data);
+      // console.log("data.userId: ", data.userId);
     } catch (e) {
       alert(error.message);
     }

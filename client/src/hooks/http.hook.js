@@ -42,7 +42,7 @@ export const useHttp = () => {
     // Сброс ошибок
     // const clearError = useCallback(() => setError(null), [])
     const clearError = () => setError(null);
-    
+
     // Сообщает о информациях сервера
     return { loading, request, error, clearError }
 }

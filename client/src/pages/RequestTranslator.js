@@ -32,8 +32,7 @@ export const RequestTranslator = () => {
   const [schedule, setSchedule] = useState("");
   const [DataTime, setDataTime] = useState("");
 
-  
-  const {family, name, fatherland, group} = useAuth();
+  const { family, name, fatherland, group } = useAuth();
 
   useEffect(() => {
     const res = axios
@@ -80,6 +79,24 @@ export const RequestTranslator = () => {
 
   // console.log(post);
 
+  const [form, setForm] = useState({
+    id: "",
+    family: "",
+    name: "",
+    fatherland: "",
+    group: "",
+    id_request: "",
+    building: "",
+    auditorium: "",
+    discipline: "",
+    schedule: "",
+    DataTime: "",
+  });
+
+  const changeHandler = (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
+  };
+
   return (
     <div>
       <title>Оформление заявок</title>
@@ -92,12 +109,33 @@ export const RequestTranslator = () => {
               <label for="formGroupExampleInput" class="form-label">
                 Здание
               </label>
+
+              {/* <select class="form-select" aria-label="Default select example">
+                <option selected>Выберите здания</option>
+                <option value="Главное здание">Главное здание</option>
+                <option value="Учебно-лабораторный корпус">Учебно-лабораторный корпус</option>
+                <option value="Спортивный комплекс">Спортивный комплекс</option>
+                onChange={(e) => setBuilding(e.target.value)}
+                options={[
+                  { value: "Главное здание", text: "Главное здание" },
+                  {
+                    value: "Учебно-лабораторный корпус",
+                    text: "Учебно-лабораторный корпус",
+                  },
+                  {
+                    value: "Спортивный комплекс",
+                    text: "Спортивный комплекс",
+                  },
+                ]}
+              </select> */}
+
               <FormSelect
                 value={building}
-                classBlock={"block mt-1"}
-                classLabel={"form_caption"}
+                classBlock={"block mt-4"}
+                classSelect={"form-select"}
+                classLabel={"form-select mb-3"}
                 type={"text"}
-                classInput={"form_input--text"}
+                classInput={"form-control select-input placeholder-active active"}
                 placeholder={"Главное здание"}
                 defaultValue={"Выберите здание"}
                 onChange={(e) => setBuilding(e.target.value)}
@@ -125,7 +163,7 @@ export const RequestTranslator = () => {
                 classBlock={"block mt-1"}
                 classLabel={"form_caption"}
                 type={"text"}
-                classInput={"form_input--text"}
+                classInput={"form-control"}
                 placeholder={"219"}
                 value={auditorium}
                 onChange={(e) => setAuditorium(e.target.value)}
@@ -142,7 +180,7 @@ export const RequestTranslator = () => {
                 classBlock={"block mt-1"}
                 classLabel={"form_caption"}
                 type={"text"}
-                classInput={"form_input--text"}
+                classInput={"form-control"}
                 placeholder={"УПСП"}
                 value={discipline}
                 onChange={(e) => setDiscipline(e.target.value)}
@@ -156,10 +194,11 @@ export const RequestTranslator = () => {
                 Расписание
               </label>
               <FormSelect
-                classBlock={"block mt-1"}
-                classLabel={"form_caption"}
+                classBlock={"block mt-4"}
+                classLabel={"form-select"}
+                classSelect={"form-select"}
                 type={"text"}
-                classInput={"form_input--text"}
+                classInput={"form-control--text"}
                 placeholder={"10:15 - 12:00"}
                 value={schedule}
                 defaultValue={"Выберите время расписании"}
@@ -183,9 +222,9 @@ export const RequestTranslator = () => {
                   <label for="inputDate">Введите дату:</label>
                   <FormInput
                     classBlock={"block mt-1"}
-                    classLabel={"form_caption"}
+                    classLabel={"form-label"}
                     type={"date"}
-                    classInput={"form_input--text"}
+                    classInput={"form-control form-icon-trailing"}
                     value={DataTime}
                     onChange={(e) => setDataTime(e.target.value)}
                   />

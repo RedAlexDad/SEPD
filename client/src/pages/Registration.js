@@ -52,7 +52,7 @@ export const Registration = () => {
 
       // Сформирование ДБ и отправляет в локальную ДБ
       const res = axios
-        .post("http://localhost:4000/Man", {...form})
+        .post(`http://localhost:4000/Man`, { ...form })
         .then((response) => {
           setForm(response.data);
           console.log(response.data);
@@ -74,74 +74,75 @@ export const Registration = () => {
       <main>
         <h1>Регистрация</h1>
         <div class="form">
-          <form class="row g-3">
-            <div class="col-md-4">
-              <label for="validationDefault02" class="form-label">
-                Фамилия
-              </label>
-              <input
-                required
-                placeholder="Ваша фамилия"
-                id="family"
-                type="text"
-                name="family"
-                class="form-control"
-                value={form.family}
-                onChange={changeHandler}
-              />
-            </div>
-
-            <div class="col-md-4">
-              <label for="validationDefault01" class="form-label">
-                Имя
-              </label>
-              <input
-                required
-                placeholder="Ваше имя"
-                id="name"
-                type="text"
-                name="name"
-                class="form-control"
-                value={form.name}
-                onChange={changeHandler}
-              />
-            </div>
-
-            <div class="col-md-4">
-              <label for="validationDefault03" class="form-label">
-                Отечество
-              </label>
-              <input
-                required
-                placeholder="Ваше отечество"
-                id="fatherland"
-                type="text"
-                name="fatherland"
-                class="form-control"
-                value={form.fatherland}
-                onChange={changeHandler}
-              />
-            </div>
-
-            <div class="col-md-4">
-              <label for="validationDefaultUsername" class="form-label">
-                Логин
-              </label>
-              <div class="input-group">
+          <div class="row_g-35">
+            <form class="row g-3">
+              <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">
+                  Фамилия
+                </label>
                 <input
                   required
-                  placeholder="Введите логин"
-                  id="login"
+                  placeholder="Ваша фамилия"
+                  id="family"
                   type="text"
-                  name="login"
+                  name="family"
                   class="form-control"
-                  value={form.login}
+                  value={form.family}
                   onChange={changeHandler}
                 />
               </div>
-            </div>
 
-            {/* 
+              <div class="col-md-4">
+                <label for="validationDefault01" class="form-label">
+                  Имя
+                </label>
+                <input
+                  required
+                  placeholder="Ваше имя"
+                  id="name"
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  value={form.name}
+                  onChange={changeHandler}
+                />
+              </div>
+
+              <div class="col-md-4">
+                <label for="validationDefault03" class="form-label">
+                  Отечество
+                </label>
+                <input
+                  required
+                  placeholder="Ваше отечество"
+                  id="fatherland"
+                  type="text"
+                  name="fatherland"
+                  class="form-control"
+                  value={form.fatherland}
+                  onChange={changeHandler}
+                />
+              </div>
+
+              <div class="col-md-4">
+                <label for="validationDefaultUsername" class="form-label">
+                  Логин
+                </label>
+                <div class="input-group">
+                  <input
+                    required
+                    placeholder="Введите логин"
+                    id="login"
+                    type="text"
+                    name="login"
+                    class="form-control"
+                    value={form.login}
+                    onChange={changeHandler}
+                  />
+                </div>
+              </div>
+
+              {/* 
               <div class="col-md-4">
                 <label for="validationDefault05" class="form-label">
                   Телефон
@@ -150,42 +151,42 @@ export const Registration = () => {
               </div>
                */}
 
-            <div class="col-md-4">
-              <label for="validationDefaultUsername" class="form-label">
-                Пароль
-              </label>
-              <div class="input-group">
-                <input
-                  required
-                  placeholder="Введите пароль"
-                  id="password"
-                  type="password"
-                  name="password"
-                  class="form-control"
-                  value={form.password}
-                  onChange={changeHandler}
-                />
+              <div class="col-md-4">
+                <label for="validationDefaultUsername" class="form-label">
+                  Пароль
+                </label>
+                <div class="input-group">
+                  <input
+                    required
+                    placeholder="Введите пароль"
+                    id="password"
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    value={form.password}
+                    onChange={changeHandler}
+                  />
+                </div>
               </div>
-            </div>
 
-            <div class="col-md-4">
-              <label for="validationDefaultUsername" class="form-label">
-                Группа
-              </label>
-              <div class="input-group">
-                <input
-                  required
-                  placeholder="Ваша группа"
-                  id="group"
-                  type="text"
-                  name="group"
-                  class="form-control"
-                  value={form.group}
-                  onChange={changeHandler}
-                />
+              <div class="col-md-4">
+                <label for="validationDefaultUsername" class="form-label">
+                  Группа
+                </label>
+                <div class="input-group">
+                  <input
+                    required
+                    placeholder="Ваша группа"
+                    id="group"
+                    type="text"
+                    name="group"
+                    class="form-control"
+                    value={form.group}
+                    onChange={changeHandler}
+                  />
+                </div>
               </div>
-            </div>
-            {/*             
+              {/*             
               <div class="col-12">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required/>
@@ -195,17 +196,35 @@ export const Registration = () => {
                 </div>
               </div> */}
 
-            <button
-              class="btn btn-secondary"
-              onClick={registerHandler}
-              disabled={loading}
-            >
-              Зарегистрироваться
-            </button>
-            <div class="col-12"></div>
-          </form>
+              <button
+                class="btn btn-secondary"
+                onClick={registerHandler}
+                disabled={loading}
+              >
+                Зарегистрироваться
+              </button>
+              <div class="col-12"></div>
+            </form>
+          </div>
         </div>
       </main>
+
+      <footer>
+        <div class="blok4">
+          <div class="primer0">
+            <img src={symbol} alt={"symbol"} />
+          </div>
+          <div class="primer1">
+            <p>105005, Москва, 2-я Бауманкая ул., д. 5, стр. 1</p>
+          </div>
+          <div class="primer2">
+            <p>8 (499)-263-63-91</p>
+          </div>
+          <div class="primer3">
+            <p>bauman@bmstu.ru</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

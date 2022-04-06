@@ -10,14 +10,16 @@ export const useAuth = () => {
   const [name, setName] = useState(null);
   const [fatherland, setFatherland] = useState(null);
   const [group, setGroup] = useState(null);
+  const [myID, setmyID] = useState(null);
 
-  const login = useCallback((jwtToken, id, familyS, nameS, fatherlandS, groupS) => {
+  const login = useCallback((jwtToken, id, familyS, nameS, fatherlandS, groupS, myIDS) => {
     setToken(jwtToken);
     setUserId(id);
     setFamily(familyS);
     setName(nameS);
     setFatherland(fatherlandS);
     setGroup(groupS);
+    setmyID(myIDS);
 
     localStorage.setItem(
       storageName,
@@ -28,6 +30,7 @@ export const useAuth = () => {
         name: nameS,
         fatherland: fatherlandS,
         group: groupS,
+        myID: myIDS,
       })
     );
   }, []);
@@ -39,6 +42,7 @@ export const useAuth = () => {
     setName(null);
     setFatherland(null);
     setGroup(null);
+    setmyID(null);
 
     localStorage.removeItem(storageName);
   });
@@ -47,11 +51,11 @@ export const useAuth = () => {
     const data = JSON.parse(localStorage.getItem(storageName));
 
     if (data && data.token) {
-      login(data.token, data.userId, data.family, data.name, data.fatherland, data.group);
+      login(data.token, data.userId, data.family, data.name, data.fatherland, data.group, data.myID);
     }
 
     setReady(true);
   }, [login]);
 
-  return { login, logout, token, userId, family, name, fatherland, group};
+  return { login, logout, token, userId, family, name, fatherland, group, myID};
 };
