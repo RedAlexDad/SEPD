@@ -11,8 +11,6 @@ const Account = new mongoose.Schema({
   fatherland: { type: String, required: true },
   group: { type: String, required: true },
 
-  myID: { type: String, required: true },
-
   // Роль доступа, USER и ADMIN
   role_user: [{ type: String, ref: "Role" }],
 });
