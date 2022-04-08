@@ -1,7 +1,7 @@
 const User = require('./db_account.js')
 const Role = require('./db_account_role.js')
 const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
+const jwt =require("jsonwebtoken");
 const {validationResult} = require('express-validator')
 const {secret} = require('./config.js')
 

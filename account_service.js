@@ -19,8 +19,8 @@ class AccountService{
         return account;
     }
     async update(account){
-        if(!account._id){
-            throw new Error("Не указан ID");
+        if(account._id){
+            throw new Error("ID не найден");
         }
         const updateAccount = await Account.findByIdAndUpdate(account._id, account, {new:true});
         return updateAccount;
