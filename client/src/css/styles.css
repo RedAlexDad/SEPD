@@ -23,7 +23,7 @@
 }
 
 .FIO_man_pos {
-    color: #ffffff;
+    color: #000000;
     margin: 25px 0px 0px 80px;
 }
 
@@ -107,10 +107,19 @@ h3 {
     /* цвет текста */
 }
 
+
+
 .position-absolute p {
     font-size: 40px;
     font-family: 'Montserrat';
     color: white;
+}
+
+.nav-link.active a
+{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .menu {
