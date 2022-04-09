@@ -26,25 +26,30 @@
         </div>
     </header>
     <center>
-        <!-- hamburger -->
-        <input type="checkbox" id="navi-toggle" class="checkbox" />
-        <label for="navi-toggle" class="button">
-            <span class="icon">&nbsp;</span>
-        </label>
-        <div class="background">&nbsp;</div>
-
-        <!-- nav -->
-        <nav class="nav">
-            <div class="menu">
-                <ul>
-                    <li><a class="color-menu" href="http://127.0.0.1:5500/SEPD/index1/index.html">Главная</a></li>
-                    <li><a class="color-menu" href="http://127.0.0.1:5500/SEPD/index2/index.html">Запись</a></li>
-                    <li><a class="color-menu" href="http://127.0.0.1:5500/SEPD/index3/index.html">Контакты</a></li>
-                    <li><a class="color-menu" href="http://127.0.0.1:5500/SEPD/index4/index.html">Войти</a></li>
+       
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Запись к переводчику</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <li><a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/SEPD/index1/index.html">Главная</a></li>
+                    <li><a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/SEPD/index2/index.html">Запись</a></li>
+                    <li><a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/SEPD/index3/index.html">Контакты</a></li>
+                    <li><a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/SEPD/index4/index.html">Войти</a></li>
+                  </li>
                 </ul>
+                <form class="d-flex">
+                  <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
             </div>
-        </nav>
-
+          </nav>
         <div class="position-relative photo-text">
             <div class="photo">
                 <img src="image/Untitled.png">
