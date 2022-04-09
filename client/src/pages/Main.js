@@ -38,29 +38,6 @@ export const Main = () => {
       </div>
       <main>
         <center>
-          <div>
-            <div class="textandphoto">
-              <div class="photo1">
-                <img src={teacerandtranslater} alt={"teacerandtranslater"} />
-              </div>
-              <div class="text0">
-                <p>
-                  Сурдопереводчикисопровождают преподавателей во время ведения
-                  пар. В штате факультета сейчас 13 переводчиков. Это самая
-                  многочисленная команда среди всех вузов, где обучаются
-                  студенты с нарушением слуха. За долгие годы работы в МГТУ
-                  переводчиками даже была разработана технологическая база
-                  жестов инженерных терминов. Например, термин «дифракция» может
-                  быть понятен любому студенту факультета благодаря языку
-                  жестов.
-                </p>
-              </div>
-              <div class="photo2">
-                <img src={translater} alt={"translater"} />
-              </div>
-            </div>
-          </div>
-
           <footer>
             <div class="blok4">
               <div class="primer0">

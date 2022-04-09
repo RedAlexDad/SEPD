@@ -101,10 +101,10 @@ export const RequestTranslator = () => {
     <div>
       <title>Оформление заявок</title>
 
-      <div class="p-3 mb-2 bg-light">
+      <div class="p-3 mb-6 bg-light">
         <h1>Оформить заявление</h1>
         <form action="" required>
-          <div class="d-grid gap-2 col-2 mx-auto">
+          <div class="d-grid gap-2 col-8 mx-auto">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">
                 Здание
@@ -154,7 +154,7 @@ export const RequestTranslator = () => {
             </div>
           </div>
 
-          <div class="d-grid gap-2 col-2 mx-auto">
+          <div class="d-grid gap-2 col-8 mx-auto">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">
                 Аудитория
@@ -171,7 +171,7 @@ export const RequestTranslator = () => {
             </div>
           </div>
 
-          <div class="d-grid gap-2 col-2 mx-auto">
+          <div class="d-grid gap-2 col-8 mx-auto">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">
                 Дисциплина
@@ -188,7 +188,7 @@ export const RequestTranslator = () => {
             </div>
           </div>
 
-          <div class="d-grid gap-2 col-2 mx-auto">
+          <div class="d-grid gap-2 col-8 mx-auto">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">
                 Расписание
@@ -215,7 +215,7 @@ export const RequestTranslator = () => {
             </div>
           </div>
 
-          <div class="d-grid gap-2 col-2 mx-auto">
+          <div class="d-grid gap-2 col-8 mx-auto">
             <div class="mb-3">
               <form>
                 <div class="form-group">

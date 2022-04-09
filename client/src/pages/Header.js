@@ -37,7 +37,7 @@ export const Header = () => {
 
 
   return (
-    <div>
+    <div2>
       {/*       
       <header>
         <div class="LOGO2">
@@ -56,9 +56,8 @@ export const Header = () => {
       </header> */}
  
       <center>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="">Запись к переводчику</a>
+        <div class="navbar navbar-expand-lg">
+          <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -102,8 +101,8 @@ export const Header = () => {
               </ul>
             </div>
           </div>
-        </nav>
+        </div>
       </center>
-    </div>
+    </div2>
   );
 };
