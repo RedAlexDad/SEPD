@@ -31,7 +31,7 @@ export const ContactPersonal = () => {
   return (
     <body>
       <div>
-        <title>Запись</title>
+        <title>Сурдопереводчики</title>
 
         <body>
           <center>

@@ -33,54 +33,10 @@ export const RequestTranslator = () => {
   const [DataTime, setDataTime] = useState("");
 
   const { family, name, fatherland, group } = useAuth();
-
-  useEffect(() => {
-    const res = axios
-      .get("http://localhost:4000/request_tasks")
-      .then((response) => {
-        setPost(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    return res.data;
-  }, []);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const article = {
-      id: Date.now(),
-      family,
-      name,
-      fatherland,
-      group,
-      id_request,
-      building,
-      auditorium,
-      discipline,
-      schedule,
-      DataTime,
-    };
-
-    const res = axios
-      .post("http://localhost:4000/request_tasks", article)
-      .then((response) => {
-        setPost(response.data);
-        console.log(response.data);
-      });
-    setIdRequest(+id_request + 1);
-    setBuilding("");
-    setAuditorium("");
-    setDiscipline("");
-    setSchedule("");
-    setDataTime("");
-    return res.data;
-  };
-
-  // console.log(post);
+  const { loading, request, error, clearError } = useHttp();
 
   const [form, setForm] = useState({
-    id: "",
+    id: Date.now(),
     family: "",
     name: "",
     fatherland: "",
@@ -93,9 +49,85 @@ export const RequestTranslator = () => {
     DataTime: "",
   });
 
-  const changeHandler = (event) => {
-    setForm({ ...form, [event.target.name]: event.target.value });
+  // const changeHandler = (event) => {
+  //   setForm({ ...form, [event.target.name]: event.target.value });
+  // };
+
+  // useEffect(() => {
+  //   const res = axios
+  //     .get("http://localhost:4000/request_tasks")
+  //     .then((response) => {
+  //       setPost(response.data);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  //   return res.data;
+  // }, []);
+
+  const handleSubmit = async () => {
+    try {
+      // const data = await request("/api/auth/request", "POST", { ...form });
+      // // Сообщение о успешной регистрации
+      // // message(data.message);
+      // console.log("Data request: ", data);
+      // alert(data.message);
+
+      const article = {
+        id: Date.now(),
+        family,
+        name,
+        fatherland,
+        group,
+        id_request,
+        building,
+        auditorium,
+        discipline,
+        schedule,
+        DataTime,
+      };
+  
+      const res = axios
+        .post("http://localhost:4000/request_tasks", article)
+        // .post("http://localhost:4000/request_tasks", {...form})
+        .then((response) => {
+          setForm(response.data);
+          console.log(response.data);
+        });
+      
+      // ФИО и группа
+      // form.family("");
+      // form.name("");
+      // form.fatherland("");
+      // form.group("");
+
+      // Запросы
+      let value = String(+id_request + 1);
+      // form.setIdRequest(value);
+      // form.setIdRequest("");
+      // form.setBuilding("");
+      // form.setAuditorium("");
+      // form.setDiscipline("");
+      // form.setSchedule("");
+      // form.setDataTime("");
+
+      setIdRequest(value);
+      setBuilding("");
+      setAuditorium("");
+      setDiscipline("");
+      setSchedule("");
+      setDataTime("");
+
+      return res.data;
+    } catch (e) {
+      e.preventDefault();
+      alert(error.message);
+    }
   };
+
+  // console.log(post);
+
+
 
   return (
     <div>
@@ -131,6 +163,7 @@ export const RequestTranslator = () => {
 
               <FormSelect
                 value={building}
+                // value={form.building}
                 classBlock={"block mt-4"}
                 classSelect={"form-select"}
                 classLabel={"form-select mb-3"}
@@ -139,6 +172,7 @@ export const RequestTranslator = () => {
                 placeholder={"Главное здание"}
                 defaultValue={"Выберите здание"}
                 onChange={(e) => setBuilding(e.target.value)}
+                // onChange={(e) => {changeHandler(e.target.value)}}
                 options={[
                   { value: "Главное здание", text: "Главное здание" },
                   {
@@ -166,7 +200,9 @@ export const RequestTranslator = () => {
                 classInput={"form-control"}
                 placeholder={"219"}
                 value={auditorium}
+                // value={form.auditorium}
                 onChange={(e) => setAuditorium(e.target.value)}
+                // onChange={(e) => changeHandler(e.target.value)}
               />
             </div>
           </div>
@@ -183,7 +219,9 @@ export const RequestTranslator = () => {
                 classInput={"form-control"}
                 placeholder={"УПСП"}
                 value={discipline}
+                // value={form.discipline}
                 onChange={(e) => setDiscipline(e.target.value)}
+                // onChange={(e) => changeHandler(e.target.value)}
               />
             </div>
           </div>
@@ -201,8 +239,10 @@ export const RequestTranslator = () => {
                 classInput={"form-control--text"}
                 placeholder={"10:15 - 12:00"}
                 value={schedule}
+                // value={form.schedule}
                 defaultValue={"Выберите время расписании"}
                 onChange={(e) => setSchedule(e.target.value)}
+                // onChange={(e) => changeHandler(e.target.value)}
                 options={[
                   { value: "8:30 - 10:05", text: "8:30 - 10:05" },
                   { value: "10:15 - 11:50", text: "10:15 - 11:50" },
@@ -226,7 +266,9 @@ export const RequestTranslator = () => {
                     type={"date"}
                     classInput={"form-control form-icon-trailing"}
                     value={DataTime}
+                    // value={form.DataTime}
                     onChange={(e) => setDataTime(e.target.value)}
+                    // onChange={(e) => changeHandler(e.target.value)}
                   />
                 </div>
               </form>

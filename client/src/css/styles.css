@@ -19,7 +19,7 @@
 }
 
 .fw-bold {
-    font-weight: 700!important;
+    font-weight: 700 !important;
 }
 
 .FIO_man_pos {
@@ -145,28 +145,29 @@ h3 {
 }
 
 .photo1 img {
-    width: 380px;
-    height: 258px;
-    float: left;
-    margin: 50px;
+    width: auto;
+    height: auto;
+    /* float: left; */
+    margin: 50px auto;
 }
 
 .text0 {
     color: rgb(0, 0, 0);
-    margin: 0px 0px 0px 0px;
-    font-size: 150%;
-    float: center;
+    /* margin: 0px 0px 0px 0px; */
+    font-size: 5 vw;
+    /* float: center; */
 }
 
-.text0 p {
-    margin: 70px 30px 70px 30px;
+.text0 h1 {
+    margin: 70px 10% 70px 10%;
+    font-size: 5 vw;
 }
 
 .photo2 img {
-    width: 380px;
-    height: 258px;
-    float: right;
-    margin: 50px;
+    width: 395px;
+    height: 222px;
+    /* float: right; */
+    margin: 50px auto;
 }
 
 video {
@@ -178,6 +179,11 @@ video {
 
 .textandphoto {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: space-around;
+    align-items: stretch;
 }
 
 .primer1 {
@@ -379,7 +385,7 @@ video {
 /* .form-label {} */
 
 .mt-4 {
-    margin-top: -1.5rem!important
+    margin-top: -1.5rem !important
 }
 
 .form-select {
@@ -453,19 +459,19 @@ h1 {
 }
 
 input.yellow-input {
-    border-bottom: 1px solid rgb(0, 0, 0)!important;
-    box-shadow: 0 1px 0 0 rgb(0, 0, 0)!important;
+    border-bottom: 1px solid rgb(0, 0, 0) !important;
+    box-shadow: 0 1px 0 0 rgb(0, 0, 0) !important;
 }
 
 input.yellow-input+label {
-    color: #000000!important;
+    color: #000000 !important;
 }
 
 input.yellow-input:focus+label {
-    color: #000000!important;
+    color: #000000 !important;
 }
 
 input.yellow-input:focus {
-    border-bottom: 1px solid #ffeb3b!important;
-    box-shadow: 0 1px 0 0 #ffeb3b!important;
+    border-bottom: 1px solid #ffeb3b !important;
+    box-shadow: 0 1px 0 0 #ffeb3b !important;
 }

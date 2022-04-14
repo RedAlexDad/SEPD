@@ -47,7 +47,7 @@ export const Registration = () => {
       const data = await request("/api/auth/regist", "POST", { ...form });
       // Сообщение о успешной регистрации
       // message(data.message);
-      console.log("Data: ", data);
+      console.log("Data regist: ", data);
       alert(data.message);
 
       // Сформирование ДБ и отправляет в локальную ДБ
@@ -61,6 +61,7 @@ export const Registration = () => {
       form.name("");
       form.fatherland("");
       form.group("");
+      
       return res.data;
     } catch (e) {
       alert(error.message);

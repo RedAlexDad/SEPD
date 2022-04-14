@@ -6,7 +6,7 @@ import { useRoutes } from "../src/routes";
 import { useAuth } from "./hooks/auth.hook";
 import { AuthContext } from "./context/AuthContext";
 import { Header } from "./pages/Header";
-import { Main } from "./pages/Main";
+// import { Main } from "./pages/Main";
 // import 'material-css';
 
 // Для работы нужно установить версию npm i react-router-dom@5.0.0
@@ -43,7 +43,7 @@ function App() {
       }}
     >
       <Router>
-        {isAuthenficated && <Header />}
+        {isAuthenficated && <Header />} 
         {routes}
         {/* <Route path="/request_tasks" element={<RequestTranslatorTasks />} /> */}
       </Router>

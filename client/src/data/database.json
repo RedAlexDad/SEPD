@@ -89,6 +89,19 @@
             "discipline": "Физика",
             "schedule": "12:00 - 13:35",
             "DataTime": "2022-04-19"
+        },
+        {
+            "id": 1649506723395,
+            "family": "Папин",
+            "name": "Алексей",
+            "fatherland": "Владимирович",
+            "group": "ИУ5Ц-41Б",
+            "id_request": "",
+            "building": "Спортивный комплекс",
+            "auditorium": "34а3",
+            "discipline": "34п34",
+            "schedule": "12:00 - 13:35",
+            "DataTime": "0004-03-31"
         }
     ],
     "Man": [{
@@ -135,15 +148,15 @@
             "name": "Никита",
             "fatherland": "Дмитреевич",
             "group": "ИУ5Ц-41Б"
+        },
+        {
+            "id": 1649499633765,
+            "login": "KleshaEgor",
+            "password": "KleshaEgor",
+            "family": "Клеша",
+            "name": "Егор",
+            "fatherland": "Сергеевич",
+            "group": "ИУ5Ц-41Б"
         }
-    ],
-    "_id": [{
-        "id": 1,
-        "login": "",
-        "password": "",
-        "family": "",
-        "name": "",
-        "fatherland": "",
-        "group": ""
-    }]
+    ]
 }

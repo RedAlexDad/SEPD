@@ -38,23 +38,6 @@ export const Header = () => {
 
   return (
     <div>
-      {/*       
-      <header>
-        <div class="LOGO2">
-          <img src={logotip} alt={"logotip"} />
-        </div>
-        <div>
-          <h1>
-            <div>
-              <div>{family}</div>
-              <div>{name}</div>
-              <div>{fatherland}</div>
-              <div>{group}</div>
-            </div>
-          </h1>
-        </div>
-      </header> */}
-
       <center>
         <div class="menu">
           <ul>
@@ -75,7 +58,7 @@ export const Header = () => {
             </li>
             <li>
               <a class="menu ul li a" href>
-                <Link to="/contact_personal">Контакты</Link>
+                <Link to="/contact_personal">Сурдопереводчики</Link>
               </a>
             </li>
             <li>

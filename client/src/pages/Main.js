@@ -12,6 +12,7 @@ import translater from "../image/translater.jpg";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { NavLink, useHistory } from "react-router-dom";
+import { Footer } from "./Footer";
 
 export const Main = () => {
   const history = useHistory();
@@ -36,6 +37,7 @@ export const Main = () => {
           </div>
         </center>
       </div>
+
       <main>
         <center>
           <div>
@@ -44,7 +46,7 @@ export const Main = () => {
                 <img src={teacerandtranslater} alt={"teacerandtranslater"} />
               </div>
               <div class="text0">
-                <p>
+                <h1>
                   Сурдопереводчикисопровождают преподавателей во время ведения
                   пар. В штате факультета сейчас 13 переводчиков. Это самая
                   многочисленная команда среди всех вузов, где обучаются
@@ -53,32 +55,16 @@ export const Main = () => {
                   жестов инженерных терминов. Например, термин «дифракция» может
                   быть понятен любому студенту факультета благодаря языку
                   жестов.
-                </p>
+                </h1>
               </div>
               <div class="photo2">
                 <img src={translater} alt={"translater"} />
               </div>
             </div>
           </div>
-
-          <footer>
-            <div class="blok4">
-              <div class="primer0">
-                <img src={symbol} alt={"symbol"} />
-              </div>
-              <div class="primer1">
-                <p>105005, Москва, 2-я Бауманкая ул., д. 5, стр. 1</p>
-              </div>
-              <div class="primer2">
-                <p>8 (499)-263-63-91</p>
-              </div>
-              <div class="primer3">
-                <p>bauman@bmstu.ru</p>
-              </div>
-            </div>
-          </footer>
         </center>
       </main>
+      <Footer></Footer>
     </div>
   );
 };

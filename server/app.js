@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Подключение к роутеру
-app.use('/api/auth/request', require('./routes/auth.routes.js'));
+// app.use('/api/auth/regist', require('./routes/auth.routes.js'));
 // или так
 
 // app.use('/auth', require('./routes/router.js'));
@@ -17,6 +17,7 @@ const PORT = config.get('port') || 5000;
 // Маршрутизация
 // const router = require('./routes/request.routes.js');
 const router = require('./routes/router.js');
+// const router_request = require('./routes/request.routes.js');
 // app.use('/api/auth', router)
 
 // const DB_URL = `mongodb+srv://upsp:upsp@cluster0.rzz3o.mongodb.net/UPSP?retryWrites=true&w=majority`
@@ -25,6 +26,7 @@ const router = require('./routes/router.js');
 // Для отображения лога в КО, т.е undefined (для второго теста и более)
 app.use(express.json())
 
+// Для авторизации и регистрации
 app.use('/api/auth', router)
 
 // 31.03.2022г.
