@@ -133,10 +133,11 @@ export const RequestTranslator = () => {
     <div>
       <title>Оформление заявок</title>
 
+<center>
       <div class="p-3 mb-6 bg-light">
         <h1>Оформить заявление</h1>
         <form action="" required>
-          <div class="d-grid gap-2 col-8 mx-auto">
+          <div class="d-grid gap-2 col-2 mx-auto">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">
                 Здание
@@ -188,7 +189,8 @@ export const RequestTranslator = () => {
             </div>
           </div>
 
-          <div class="d-grid gap-2 col-8 mx-auto">
+                
+          <div class="d-grid gap-2 col-2 mx-auto">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">
                 Аудитория
@@ -207,7 +209,7 @@ export const RequestTranslator = () => {
             </div>
           </div>
 
-          <div class="d-grid gap-2 col-8 mx-auto">
+          <div class="d-grid gap-2 col-2 mx-auto">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">
                 Дисциплина
@@ -226,7 +228,7 @@ export const RequestTranslator = () => {
             </div>
           </div>
 
-          <div class="d-grid gap-2 col-8 mx-auto">
+          <div class="d-grid gap-2 col-2 mx-auto">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">
                 Расписание
@@ -255,7 +257,7 @@ export const RequestTranslator = () => {
             </div>
           </div>
 
-          <div class="d-grid gap-2 col-8 mx-auto">
+          <div class="d-grid gap-2 col-2 mx-auto">
             <div class="mb-3">
               <form>
                 <div class="form-group">
@@ -274,9 +276,9 @@ export const RequestTranslator = () => {
               </form>
             </div>
           </div>
-
+          
           <div className="text-center">
-            <div class="d-grid gap-2 col-3 mx-auto">
+            <div class="d-grid gap-2 col-2 mx-auto">
               <button
                 class="btn btn-warning"
                 // Отправка запроса
@@ -288,6 +290,8 @@ export const RequestTranslator = () => {
           </div>
         </form>
       </div>
+      
+      </center>
       <footer>
         <div class="blok4">
           <div class="primer0">
