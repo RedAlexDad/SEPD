@@ -57,7 +57,7 @@ async function start() {
         })
     }
     catch (error) {
-        console.log(`Server is error`, e.message);
+        console.log(`Server is error`, error.message);
         process.exit(1);
     }
 }

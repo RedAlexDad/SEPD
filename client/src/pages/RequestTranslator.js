@@ -86,7 +86,7 @@ export const RequestTranslator = () => {
         schedule,
         DataTime,
       };
-  
+
       const res = axios
         .post("http://localhost:4000/request_tasks", article)
         // .post("http://localhost:4000/request_tasks", {...form})
@@ -94,7 +94,7 @@ export const RequestTranslator = () => {
           setForm(response.data);
           console.log(response.data);
         });
-      
+
       // ФИО и группа
       // form.family("");
       // form.name("");
@@ -127,170 +127,153 @@ export const RequestTranslator = () => {
 
   // console.log(post);
 
-
-
   return (
     <div>
       <title>Оформление заявок</title>
 
-<center>
-      <div class="p-3 mb-6 bg-light">
-        <h1>Оформить заявление</h1>
-        <form action="" required>
-          <div class="d-grid gap-2 col-2 mx-auto">
-            <div class="mb-3">
-              <label for="formGroupExampleInput" class="form-label">
-                Здание
-              </label>
+      <center>
+        <div class="p-3 mb-6 bg-light">
+          <h1>Оформить заявление</h1>
 
-              {/* <select class="form-select" aria-label="Default select example">
-                <option selected>Выберите здания</option>
-                <option value="Главное здание">Главное здание</option>
-                <option value="Учебно-лабораторный корпус">Учебно-лабораторный корпус</option>
-                <option value="Спортивный комплекс">Спортивный комплекс</option>
-                onChange={(e) => setBuilding(e.target.value)}
-                options={[
-                  { value: "Главное здание", text: "Главное здание" },
-                  {
-                    value: "Учебно-лабораторный корпус",
-                    text: "Учебно-лабораторный корпус",
-                  },
-                  {
-                    value: "Спортивный комплекс",
-                    text: "Спортивный комплекс",
-                  },
-                ]}
-              </select> */}
+          <div class="bd-example">
+            <form action="" required>
+              <div class="form-group">
+                {/* <div class="d-grid gap-2 col-4 mx-auto"> */}
+                {/* <div class="mb-3"> */}
+                <label for="formGroupExampleInput" class="form-label">
+                  Здание
+                </label>
+                <FormSelect
+                  value={building}
+                  // value={form.building}
+                  classBlock={"block mt-4"}
+                  classSelect={"custom-select my-1 mr-sm-2"}
+                  classLabel={"mr-sm-2"}
+                  classInput={"custom-select my-1 mr-sm-2"}
+                  type={"text"}
+                  placeholder={"Главное здание"}
+                  defaultValue={"Выберите здание"}
+                  onChange={(e) => setBuilding(e.target.value)}
+                  // onChange={(e) => {changeHandler(e.target.value)}}
+                  options={[
+                    { value: "Главное здание", text: "Главное здание" },
+                    {
+                      value: "Учебно-лабораторный корпус",
+                      text: "Учебно-лабораторный корпус",
+                    },
+                    {
+                      value: "Спортивный комплекс",
+                      text: "Спортивный комплекс",
+                    },
+                  ]}
+                />
+                {/* </div> */}
+              </div>
 
-              <FormSelect
-                value={building}
-                // value={form.building}
-                classBlock={"block mt-4"}
-                classSelect={"form-select"}
-                classLabel={"form-select mb-3"}
-                type={"text"}
-                classInput={"form-control select-input placeholder-active active"}
-                placeholder={"Главное здание"}
-                defaultValue={"Выберите здание"}
-                onChange={(e) => setBuilding(e.target.value)}
-                // onChange={(e) => {changeHandler(e.target.value)}}
-                options={[
-                  { value: "Главное здание", text: "Главное здание" },
-                  {
-                    value: "Учебно-лабораторный корпус",
-                    text: "Учебно-лабораторный корпус",
-                  },
-                  {
-                    value: "Спортивный комплекс",
-                    text: "Спортивный комплекс",
-                  },
-                ]}
-              />
-            </div>
-          </div>
+              <div class="form-group">
+                {/* <div class="d-grid gap-2 col-4 mx-auto"> */}
+                {/* <div class="mb-3"> */}
+                <label for="formGroupExampleInput" class="form-label">
+                  Аудитория
+                </label>
+                <FormInput
+                  // classBlock={"mt-4"}
+                  classLabel={"mt-4"}
+                  type={"text"}
+                  classInput={"form-control"}
+                  placeholder={"219"}
+                  value={auditorium}
+                  // value={form.auditorium}
+                  onChange={(e) => setAuditorium(e.target.value)}
+                  // onChange={(e) => changeHandler(e.target.value)}
+                />
+                {/* </div> */}
+              </div>
 
-                
-          <div class="d-grid gap-2 col-2 mx-auto">
-            <div class="mb-3">
-              <label for="formGroupExampleInput" class="form-label">
-                Аудитория
-              </label>
-              <FormInput
-                classBlock={"block mt-1"}
-                classLabel={"form_caption"}
-                type={"text"}
-                classInput={"form-control"}
-                placeholder={"219"}
-                value={auditorium}
-                // value={form.auditorium}
-                onChange={(e) => setAuditorium(e.target.value)}
-                // onChange={(e) => changeHandler(e.target.value)}
-              />
-            </div>
-          </div>
+              <div class="form-group">
+                {/* <div class="d-grid gap-2 col-4 mx-auto"> */}
+                {/* <div class="mb-3"> */}
+                <label for="formGroupExampleInput" class="form-label">
+                  Дисциплина
+                </label>
+                <FormInput
+                  // classBlock={"block mt-1"}
+                  classLabel={"mt-4"}
+                  type={"text"}
+                  classInput={"form-control"}
+                  placeholder={"УПСП"}
+                  value={discipline}
+                  // value={form.discipline}
+                  onChange={(e) => setDiscipline(e.target.value)}
+                  // onChange={(e) => changeHandler(e.target.value)}
+                />
+                {/* </div> */}
+              </div>
 
-          <div class="d-grid gap-2 col-2 mx-auto">
-            <div class="mb-3">
-              <label for="formGroupExampleInput" class="form-label">
-                Дисциплина
-              </label>
-              <FormInput
-                classBlock={"block mt-1"}
-                classLabel={"form_caption"}
-                type={"text"}
-                classInput={"form-control"}
-                placeholder={"УПСП"}
-                value={discipline}
-                // value={form.discipline}
-                onChange={(e) => setDiscipline(e.target.value)}
-                // onChange={(e) => changeHandler(e.target.value)}
-              />
-            </div>
-          </div>
+              <div class="form-group">
+                {/* <div class="d-grid gap-2 col-4 mx-auto"> */}
+                {/* <div class="mb-3"> */}
+                <label for="col-auto my-1" class="form-label">
+                  Расписание
+                </label>
+                <FormSelect
+                  classBlock={"block mt-4"}
+                  classSelect={"custom-select my-1 mr-sm-2"}
+                  classLabel={"mr-sm-2"}
+                  classInput={"custom-select my-1 mr-sm-2"}
+                  type={"text"}
+                  placeholder={"10:15 - 12:00"}
+                  value={schedule}
+                  // value={form.schedule}
+                  defaultValue={"Выберите время расписании"}
+                  onChange={(e) => setSchedule(e.target.value)}
+                  // onChange={(e) => changeHandler(e.target.value)}
+                  options={[
+                    { value: "8:30 - 10:05", text: "8:30 - 10:05" },
+                    { value: "10:15 - 11:50", text: "10:15 - 11:50" },
+                    { value: "12:00 - 13:35", text: "12:00 - 13:35" },
+                    { value: "13:50 - 15:25", text: "13:50 - 15:25" },
+                    { value: "15:40 - 17:15", text: "15:40 - 17:15" },
+                    { value: "17:25 - 19:00", text: "17:25 - 19:00" },
+                  ]}
+                />
+                {/* </div> */}
+              </div>
 
-          <div class="d-grid gap-2 col-2 mx-auto">
-            <div class="mb-3">
-              <label for="formGroupExampleInput" class="form-label">
-                Расписание
-              </label>
-              <FormSelect
-                classBlock={"block mt-4"}
-                classLabel={"form-select"}
-                classSelect={"form-select"}
-                type={"text"}
-                classInput={"form-control--text"}
-                placeholder={"10:15 - 12:00"}
-                value={schedule}
-                // value={form.schedule}
-                defaultValue={"Выберите время расписании"}
-                onChange={(e) => setSchedule(e.target.value)}
-                // onChange={(e) => changeHandler(e.target.value)}
-                options={[
-                  { value: "8:30 - 10:05", text: "8:30 - 10:05" },
-                  { value: "10:15 - 11:50", text: "10:15 - 11:50" },
-                  { value: "12:00 - 13:35", text: "12:00 - 13:35" },
-                  { value: "13:50 - 15:25", text: "13:50 - 15:25" },
-                  { value: "15:40 - 17:15", text: "15:40 - 17:15" },
-                  { value: "17:25 - 19:00", text: "17:25 - 19:00" },
-                ]}
-              />
-            </div>
-          </div>
-
-          <div class="d-grid gap-2 col-2 mx-auto">
-            <div class="mb-3">
-              <form>
-                <div class="form-group">
-                  <label for="inputDate">Введите дату:</label>
+              <div class="form-group">
+                {/* <div class="d-grid gap-2 col-4 mx-auto"> */}
+                {/* <div class="mb-3"> */}
+                {/* <div class="formGroupExampleInput"> */}
+                  <label for="inputDate" class="form-label">Введите дату:</label>
                   <FormInput
-                    classBlock={"block mt-1"}
-                    classLabel={"form-label"}
+                    classSelect={"custom-select my-1 mr-sm-2"}
+                    classLabel={"mt-4"}
+                    classInput={"custom-select my-1 mr-sm-2"}
                     type={"date"}
-                    classInput={"form-control form-icon-trailing"}
                     value={DataTime}
                     // value={form.DataTime}
                     onChange={(e) => setDataTime(e.target.value)}
                     // onChange={(e) => changeHandler(e.target.value)}
                   />
+                {/* </div> */}
+                {/* </div> */}
+              </div>
+
+              <div class="form-group">
+                <div className="text-center">
+                  {/* <div class="d-grid gap-2 col-4 mx-auto"> */}
+                  <button
+                    class="btn btn-warning"
+                    // Отправка запроса
+                    onClick={handleSubmit}
+                  >
+                    Отправить{" "}
+                  </button>
                 </div>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
-          
-          <div className="text-center">
-            <div class="d-grid gap-2 col-2 mx-auto">
-              <button
-                class="btn btn-warning"
-                // Отправка запроса
-                onClick={handleSubmit}
-              >
-                Отправить{" "}
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-      
+        </div>
       </center>
       <footer>
         <div class="blok4">

@@ -92,13 +92,12 @@ footer {
     background-color: #244577;
 }
 
-.navbar.navbar-expand-lg.navbar-light.bg-light{
+.navbar.navbar-expand-lg.navbar-light.bg-light {
     background-color: #244577;
     color: #ffffff;
-
 }
 
-.nav-link .active a{
+.nav-link .active a {
     color: rgb(255, 255, 255);
 }
 
@@ -136,18 +135,17 @@ h3 {
     color: rgb(255, 255, 255);
 }
 
-.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link a{
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show>.nav-link a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: bold;
-
 }
 
 .nav-link.active a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: bold;
-
 }
 
 .photo img {
@@ -160,8 +158,7 @@ h3 {
     height: 100%;
 }
 
-.photo p
-{
+.photo p {
     font-size: 30px;
     color: rgb(255, 255, 255);
 }
@@ -379,33 +376,109 @@ h3 {
 /* http://localhost:3000/request */
 
 
-/* .form-label {} */
+/* .form-label {
+    margin-top: 1rem !important;
+} */
+
+.bd-example {
+    position: relative;
+    padding: 1rem;
+    margin: 1rem -15px 0;
+    border: solid #f7f7f9;
+    border-width: 0.2rem 0 0;
+}
+
+@media (max-width: 1000px) {
+    .form-group {
+        margin-top: 5rem !important;
+        /* width: 100% !important; */
+        /* height: 100% !important; */
+    }
+    .btn.btn-warning {
+        text-align: center!important;
+        width: 50%;
+        height: 50%;
+        font-size: 1.3rem;
+    }
+    .form-label {
+        font-size: 1.3rem;
+        font-weight: bold;
+        padding: 0px 0px 30px 0px;
+    }
+    .inputDate {
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+    .custom-select.my-1.mr-sm-2 {
+        font-size: 1.3rem;
+        /* padding: 0px 0px 30px 0px; */
+    }
+    h1 {
+        text-align: center;
+        padding: 40px 0px 40px 0px;
+        font-size: 4rem;
+    }
+    .form-control {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1.3rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+}
 
 .mt-4 {
-    margin-top: -1.5rem !important
+    margin-top: -1.5rem !important;
+    width: 50%;
 }
 
-.form-select {
+.mt-1 {
+    width: auto;
+    height: auto;
+}
+
+.form_request {
+    display: block;
+    margin-top: 0em;
+    /* margin-left: -10%; */
+    width: auto;
+    height: auto;
+}
+
+.mb-3 {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    padding: 0px 0px 0px 10px;
+    /* margin-left: -15rem !important; */
+    /* margin-left: -10%; */
+}
+
+.mb-4 {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    padding: 0px 0px 0px 350px;
+}
+
+
+/* .form-control {
     display: block;
     width: 100%;
-    padding: .375rem 2.25rem .375rem .75rem;
-    -moz-padding-start: calc(0.75rem - 3px);
+    padding: 0.375rem 0.75rem;
     font-size: 1rem;
-    font-weight: 400;
     line-height: 1.5;
-    color: #212529;
+    color: #495057;
     background-color: #fff;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right .75rem center;
-    background-size: 16px 12px;
+    background-clip: padding-box;
     border: 1px solid #ced4da;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
+} */
 
 h1 {
     text-align: center;
@@ -434,15 +507,18 @@ h1 {
 .d-grid {
     font-weight: bold;
     color: rgb(0, 0, 0);
+    width: auto;
+    padding: 0px 0px 0px 0px;
+    margin-left: 100%;
 }
 
-.mb-3 {
+.mb-3_tasks {
     font-weight: bold;
     color: rgb(0, 0, 0);
     padding: 0px 0px 0px 10px;
 }
 
-.mb-4 {
+.mb-4_tasks {
     font-weight: bold;
     color: rgb(0, 0, 0);
     padding: 0px 0px 0px 350px;
@@ -473,7 +549,6 @@ input.yellow-input:focus {
     box-shadow: 0 1px 0 0 #ffeb3b !important;
 }
 
-.fw-bold
-{
-   color: #ffffff;
+.fw-bold {
+    color: #ffffff;
 }

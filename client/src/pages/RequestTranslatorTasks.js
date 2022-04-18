@@ -54,13 +54,13 @@ export const RequestTranslatorTasks = () => {
                           <th scope="col"><h1>Номер запроса №{p.id_request}</h1></th>
                         </tr>
                       </thead>
-                      <div class="mb-3">
+                      <div class="mb-3_tasks">
                         <tbody>
                           <tr>
                             <th scope="row">ФИО: </th>
                             <td> Фамилия: {p.family}</td>
                             <td> Имя: {p.name}</td>
-                            <td> Отечество: {p.fatherland} </td>
+                            <td> Отчество: {p.fatherland} </td>
                             <td> Группа: {p.group}</td>
                           </tr>
                         </tbody>
@@ -72,7 +72,7 @@ export const RequestTranslatorTasks = () => {
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                 <div class="table">
-                <div class="mb-3">
+                <div class="mb-3_tasks">
                         <tbody>
                           <tr>
                             <th scope="row">Данные: </th>
