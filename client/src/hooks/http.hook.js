@@ -4,6 +4,7 @@ export const useHttp = () => {
     // Внутри хуки будем определяться, грузится сервер что то или нет
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
+    // const [data, setData] = useState(null)
     
     
     const request = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
@@ -19,7 +20,9 @@ export const useHttp = () => {
 
                 const response = await fetch(url, {method, body, headers})
                 const data = await response.json()
+                // let data = await response.json()
                 console.log('Http.hook; data: ', data);
+                // setData(data)
 
                 // Если ответ не будет хорошим, тогда
                 if( !response.ok)   {
@@ -30,6 +33,7 @@ export const useHttp = () => {
                 setLoading(false)
                 
                 return data
+                
             } catch (e) {
             console.log("Catch: ", e.message)
             setLoading(false)

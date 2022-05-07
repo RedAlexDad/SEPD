@@ -19,22 +19,35 @@ import "../css/styles.css";
 // Для переключения других веб страниц
 import { useLocation, Link, useHistory } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { useHttp } from "../hooks/http.hook.js";
+import { useAuth } from "../hooks/auth.hook.js";
+
+import db from "mongoose";
 
 // function RequestTranslatorTasks() {
 export const RequestTranslatorTasks = () => {
   const [post, setPost] = useState([]);
 
+  const { loading, request, error, clearError } = useHttp();
+  const { myID, family, name, fatherland, group, number_request } = useAuth();
+
+
   useEffect(() => {
     const res = axios
-      .get("http://localhost:4000/request_tasks")
+      // .get("http://localhost:4000/request_tasks")
+      .get("/api/auth/getInfoAll")
       .then((response) => {
         setPost(response.data);
       })
       .catch(function (error) {
         console.log(error);
       });
+    console.log("res.data: ", res.data);
     return res.data;
   }, []);
+
+  
+  // getInfoDB();
 
   return (
     <div>
@@ -44,7 +57,6 @@ export const RequestTranslatorTasks = () => {
           return (
             <div class="row">
               {/* <div key={p.id}> */}
-
               <div class="card">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
@@ -58,6 +70,7 @@ export const RequestTranslatorTasks = () => {
                         <tbody>
                           <tr>
                             <th scope="row">ФИО: </th>
+                            {/* <td> Фамилия: {USER}</td> */}
                             <td> Фамилия: {p.family}</td>
                             <td> Имя: {p.name}</td>
                             <td> Отчество: {p.fatherland} </td>

@@ -26,10 +26,12 @@ export const Authorization = () => {
     login: "",
     password: "",
     id: "",
+    post_user: "",
     family: "",
     name: "",
     fatherland: "",
     group: "",
+    number_request: "",
   });
 
   const changeHandler = (event) => {
@@ -48,10 +50,14 @@ export const Authorization = () => {
       auth.login(
         data.token,
         data.userId,
+        data.post_user,
         data.family,
         data.name,
         data.fatherland,
-        data.group
+        data.group,
+        data.myID,
+        data.id_request,
+        data.number_request,
       );
       // alert(data);
       // console.log("data.userId: ", data.userId);

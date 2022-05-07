@@ -27,6 +27,7 @@ function App() {
   const { family, name, fatherland, group, token, login, logout, userID } =
     useAuth();
   const isAuthenficated = !!token;
+  // const isAuthenficated = true;
   const routes = useRoutes(isAuthenficated);
   return (
     <AuthContext.Provider
@@ -38,7 +39,6 @@ function App() {
         token,
         login,
         logout,
-        userID,
         isAuthenficated,
       }}
     >

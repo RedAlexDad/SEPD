@@ -1,9 +1,9 @@
-const User = require("./db_account.js");
-const Role = require("./db_account_role.js");
+const User = require("../models/db_account.js");
+const Role = require("../models/db_account_role.js");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { validationResult } = require("express-validator");
-const { secret } = require("./config.js");
+const { secret } = require("../config/config.js");
 
 const generateAccessToken = (id, role_user) => {
   const payload = {
@@ -13,9 +13,11 @@ const generateAccessToken = (id, role_user) => {
   return jwt.sign(payload, secret, { expiresIn: "3h" });
 };
 
-const add_man_db = (_id, family, name, fatherland, group, token) => {
+const add_man_db = (_id, post_user, number_request, family, name, fatherland, group, token) => {
   const MAN = {
     _id,
+    post_user,
+    number_request,
     family,
     name,
     fatherland,
@@ -38,8 +40,7 @@ class authController {
       console.log("Error: ", errors);
       // const {password, login} = req.body // --------
       // const {password, login, value} = req.body
-      const { password, login, value, family, name, fatherland, group } =
-        req.body;
+      const { password, login, post_user, value, family, name, fatherland, group, number_request } = req.body;
       const candidate = await User.findOne({ login });
 
       if (candidate) {
@@ -57,16 +58,19 @@ class authController {
       // console.log(Man)
 
       const hashPassword = bcrypt.hashSync(password, 7);
-      // const userRole = await Role.findOne( {value:"USER"} ) // --------
+      const userRole = await Role.findOne( {value:"USER"} ) // --------
       // const user = new User( {login, password: hashPassword, role_user: [value]} ) //не записывает значение роли
       const user = new User({
         login,
         password: hashPassword,
-        role_user: [value],
+        post_user,
+        userRole: [value],
         family,
         name,
         fatherland,
         group,
+        // Номер заявления
+        number_request: 0,
       }); //не записывает значение роли
 
       await user.save();
@@ -83,7 +87,7 @@ class authController {
 
   async login(req, res) {
     try {
-      const { login, password, family, name, fatherland, group } = req.body;
+      const { login, password, post_user, number_request, family, name, fatherland, group } = req.body;
       // const {login, password} = req.body
       // const user = await User.findOne({login})
 
@@ -104,7 +108,7 @@ class authController {
     const token = generateAccessToken(user._id, user.role_user);
 
     // Полная информация
-    const Man = add_man_db( user._id, user.family, user.name, user.fatherland, user.group, token );
+    const Man = add_man_db( user._id, user.post_user, user.number_request, user.family, user.name, user.fatherland, user.group, token );
     //   const Man = await User.create( user._id, user.family, user.name, user.fatherland, user.group );
     // const Man = await user.create({ login, password, family, name, fatherland, group });
     //   const Man = await User.findOne({ login, password})
@@ -124,6 +128,7 @@ class authController {
       // return res.json({_id})
       // return res.json({family, name, fatherland, group});
       // return res.json({Man});
+    // return res.json(Man);
     } catch (e) {
       console.log(e);
       res.status(400).json({ message: "Login error" });

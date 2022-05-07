@@ -11,7 +11,12 @@ import "../css/styles.css";
 // Для переключения других веб страниц
 import { Link } from "react-router-dom";
 
+import { useHttp } from "../hooks/http.hook";
+
 export const Translator = () => {
+
+  const { loading, request, error, clearError } = useHttp();
+
   return (
     <div>
       <title>Translator</title>

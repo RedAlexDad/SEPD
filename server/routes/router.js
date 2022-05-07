@@ -1,14 +1,16 @@
 const Router = require('express');
-// const AccountController = require('./account_controller.js');
-const authController = require('../authController.js')
+const mongoose = require('mongoose');
+// const AccountController = require('../models/account_controller.js');
+const authController = require('./authController.js')
 const {check} = require('express-validator');
-const { login } = require('../authController.js');
-// const authMiddleware = require("./middlewaree/authMiddleware.js")
-// const roleMiddleware = require("./middlewaree/roleMiddleware.js")
+const { login } = require('./authController.js');
+// const authMiddleware = require("../middlewaree/authMiddleware.js")
+const roleMiddleware = require("../middlewaree/roleMiddleware.js")
 
 // Получение и отправки запроса
 const requestBuilding = require('./request.routes.js')
 const { request } = require('./request.routes.js')
+const database = require('../database/database.js')
 
 const router = new Router();
 
@@ -20,6 +22,16 @@ router.post('/regist',
 authController.registration)
 
 router.post('/login', authController.login)
+
+// Получение данные: ФИО и бронирования
+router.get("/getInfoAll", database.getInfoAll)
+
+router.get("/getInfoName", database.getInfoName)
+
+router.get("/getInfoFIO", database.getInfoFIO)
+
+router.get("/getInfoNumReq", database.getInfoNumReq)
+
 
 // Для подачи и получения заявок и обработка запроса
 // 
@@ -33,12 +45,12 @@ router.get('/request')
 router.get('/request/:id')
 
 // Операция для обновления
-router.put('/request')
+router.put('/request', requestBuilding.update)
 
 // Созданные маршрутизации удаляем
 router.delete('/request/:id')
 
-// router.get('/accounts', roleMiddleware(["USER"]), authController.getUsers)
+router.get('/accounts', roleMiddleware(["USER"]), authController.getUsers)
 // router.get('/accounts', authController.getUsers)
 
 // router.get('/accounts/:id', AccountController.getOne)

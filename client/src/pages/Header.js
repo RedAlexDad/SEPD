@@ -25,8 +25,8 @@ export const Header = () => {
   const auth = useContext(AuthContext);
   const message = useMessage();
 
-  const { myID, family, name, fatherland, group } = useAuth();
-  console.log("myID: ", myID, "family: ", family, "name: ", name, "fatherland", fatherland, "group: ", group);
+  const { myID, family, name, fatherland, group, num_req, post_user } = useAuth();
+  console.log("myID: ", myID, "family: ", family, "name: ", name, "fatherland", fatherland, "group: ", group, "num_req: ", num_req, "PostUser: ", post_user);
 
   const logoutHandler = (event) => {
     event.preventDefault();

@@ -1,176 +1,28 @@
 {
   "request_tasks": [
     {
-      "id": 1649107188185,
-      "family": "Малахов",
-      "name": "Владислав",
-      "fatherland": "Витальевич",
+      "family": "Dad",
+      "name": "Alex",
+      "fatherland": "Vladimirovich",
       "group": "ИУ5Ц-41Б",
-      "id_request": "1",
+      "id_request": 1651935645629,
+      "number_request": 1,
       "building": "Учебно-лабораторный корпус",
-      "auditorium": "224",
-      "discipline": "АСОИУ лекция",
-      "schedule": "12:00 - 13:35",
-      "DataTime": "2022-04-19"
-    },
-    {
-      "id": 1649107301125,
-      "family": "Папин",
-      "name": "Алексей",
-      "fatherland": "Владимирович",
-      "group": "ИУ5Ц-41Б",
-      "id_request": "2",
-      "building": "Главное здание",
-      "auditorium": "219",
-      "discipline": "УПСП",
-      "schedule": "13:50 - 15:25",
-      "DataTime": "2022-04-16"
-    },
-    {
-      "id": 1649107867166,
-      "family": "Папин",
-      "name": "Алексей",
-      "fatherland": "Владимирович",
-      "group": "ИУ5Ц-41Б",
-      "id_request": "3",
-      "building": "Главное здание",
-      "auditorium": "219",
-      "discipline": "Математический анализ",
-      "schedule": "15:40 - 17:15",
-      "DataTime": "2022-04-25"
-    },
-    {
-      "id": 1649107884515,
-      "family": "Папин",
-      "name": "Алексей",
-      "fatherland": "Владимирович",
-      "group": "ИУ5Ц-41Б",
-      "id_request": "4",
-      "building": "Спортивный комплекс",
-      "auditorium": "19",
-      "discipline": "3453",
-      "schedule": "12:00 - 13:35",
-      "DataTime": "2022-04-29"
-    },
-    {
-      "id": 1649192977735,
-      "family": "Папин",
-      "name": "Алексей",
-      "fatherland": "Владимирович",
-      "group": "ИУ5Ц-41Б",
-      "id_request": "5",
-      "building": "Главное здание",
-      "auditorium": "423",
-      "discipline": "Физика",
-      "schedule": "13:50 - 15:25",
-      "DataTime": "2022-04-19"
-    },
-    {
-      "id": 1649358530932,
-      "family": "Папин",
-      "name": "Алексей",
-      "fatherland": "Владимирович",
-      "group": "ИУ5Ц-41Б",
-      "id_request": "6",
-      "building": "Главное здание",
-      "auditorium": "219",
-      "discipline": "УПСП",
-      "schedule": "13:50 - 15:25",
-      "DataTime": "2022-04-09"
-    },
-    {
-      "id": 1649436329486,
-      "family": "Папин",
-      "name": "Алексей",
-      "fatherland": "Владимирович",
-      "group": "ИУ5Ц-41Б",
-      "id_request": "6",
-      "building": "Главное здание",
-      "auditorium": "423",
-      "discipline": "Физика",
-      "schedule": "12:00 - 13:35",
-      "DataTime": "2022-04-19"
-    },
-    {
-      "id": 1649506723395,
-      "family": "Папин",
-      "name": "Алексей",
-      "fatherland": "Владимирович",
-      "group": "ИУ5Ц-41Б",
-      "id_request": "",
-      "building": "Спортивный комплекс",
-      "auditorium": "34а3",
-      "discipline": "34п34",
-      "schedule": "12:00 - 13:35",
-      "DataTime": "0004-03-31"
-    },
-    {
-      "id": 1650294730776,
-      "family": "Малахов",
-      "name": "Владислав",
-      "fatherland": "Витальевич",
-      "group": "ИУ5Ц-41Б",
-      "id_request": "",
-      "building": "Учебно-лабораторный корпус",
-      "auditorium": "224л",
-      "discipline": "АСОИУ",
-      "schedule": "12:00 - 13:35",
-      "DataTime": "2022-04-22"
+      "auditorium": "21321",
+      "discipline": "234234",
+      "schedule": "10:15 - 11:50",
+      "DataTime": "3333-03-13",
+      "id": 1
     }
   ],
   "Man": [
     {
-      "id": 1,
-      "login": "",
-      "password": "",
-      "family": "",
-      "name": "",
-      "fatherland": "",
-      "group": ""
-    },
-    {
-      "id": 1649103395590,
-      "login": "Alex",
-      "password": "Alex",
-      "family": "Папин",
-      "name": "Алексей",
-      "fatherland": "Владимирович",
-      "group": "ИУ5Ц-41Б"
-    },
-    {
-      "id": 1649106444311,
-      "login": "Gosha",
-      "password": "Gosha",
-      "family": "Половников",
-      "name": "Игорь",
-      "fatherland": "Михайлович",
-      "group": "РК9Ц-41"
-    },
-    {
-      "id": 1649106608838,
-      "login": "Vlad",
-      "password": "Vlad",
-      "family": "Малахов",
-      "name": "Владислав",
-      "fatherland": "Витальевич",
-      "group": "ИУ5Ц-41Б"
-    },
-    {
-      "id": 1649143565209,
-      "login": "Nikita",
-      "password": "Nikita",
-      "family": "Перевощиков",
-      "name": "Никита",
-      "fatherland": "Дмитреевич",
-      "group": "ИУ5Ц-41Б"
-    },
-    {
-      "id": 1649499633765,
-      "login": "KleshaEgor",
-      "password": "KleshaEgor",
-      "family": "Клеша",
-      "name": "Егор",
-      "fatherland": "Сергеевич",
+      "id": 1651946287761,
+      "login": "TEST",
+      "password": "TEST",
+      "family": "Резервный",
+      "name": "Резерв",
+      "fatherland": "Резервович",
       "group": "ИУ5Ц-41Б"
     }
   ]

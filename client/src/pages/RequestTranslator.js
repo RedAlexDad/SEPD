@@ -24,24 +24,29 @@ import { Link, useHistory } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 export const RequestTranslator = () => {
+
+  const auth = useContext(AuthContext);
+
   const [post, setPost] = useState([]);
-  const [id_request, setIdRequest] = useState("");
+
+  const { myID, family, name, fatherland, group, num_req } = useAuth();
+  const { loading, request, error, clearError } = useHttp();
+
+  // const [num_req_web, setNumReqWeb] = useState(Number);
+
   const [building, setBuilding] = useState("");
   const [auditorium, setAuditorium] = useState("");
   const [discipline, setDiscipline] = useState("");
   const [schedule, setSchedule] = useState("");
   const [DataTime, setDataTime] = useState("");
-
-  const { family, name, fatherland, group } = useAuth();
-  const { loading, request, error, clearError } = useHttp();
-
+  
   const [form, setForm] = useState({
-    id: Date.now(),
-    family: "",
     name: "",
+    family: "",
     fatherland: "",
     group: "",
     id_request: "",
+    number_request: "",
     building: "",
     auditorium: "",
     discipline: "",
@@ -49,37 +54,32 @@ export const RequestTranslator = () => {
     DataTime: "",
   });
 
-  // const changeHandler = (event) => {
-  //   setForm({ ...form, [event.target.name]: event.target.value });
-  // };
-
-  // useEffect(() => {
-  //   const res = axios
-  //     .get("http://localhost:4000/request_tasks")
-  //     .then((response) => {
-  //       setPost(response.data);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  //   return res.data;
-  // }, []);
-
   const handleSubmit = async () => {
     try {
-      // const data = await request("/api/auth/request", "POST", { ...form });
-      // // Сообщение о успешной регистрации
-      // // message(data.message);
-      // console.log("Data request: ", data);
-      // alert(data.message);
+
+      let number_request = +num_req  + 1;
+      // num_req = number_request;
+
+      // const data = await request("/api/auth/request", "PUT", number_request);
+      // alert(data);
+      // console.log("data (await): ", data);
 
       const article = {
-        id: Date.now(),
+        // Идентификатор пользователя
+        // ID_user: myID,
+
+        // ФИО и группа пользователя
         family,
         name,
         fatherland,
         group,
-        id_request,
+
+        // Идентификатор заявления
+        id_request: Date.now(),
+        // Номер заявления
+        number_request,
+
+        // Данные заявления
         building,
         auditorium,
         discipline,
@@ -87,41 +87,25 @@ export const RequestTranslator = () => {
         DataTime,
       };
 
-      const res = axios
-        .post("http://localhost:4000/request_tasks", article)
-        // .post("http://localhost:4000/request_tasks", {...form})
+      setForm({...form, article});
+
+      const res = axios 
+        // .post(`http://localhost:4000/request_tasks`, article)
+        // .post(`http://localhost:4000/request_tasks_${myID}`, article)
+        // .request("/api/auth/login", "POST", article)
+        .post("/api/auth/request", article)
+        .get("/api/auth/accounts", number_request)
+        .put("/api/auth/accounts", number_request)
         .then((response) => {
           setForm(response.data);
           console.log(response.data);
+          // alert(response.data);
         });
-
-      // ФИО и группа
-      // form.family("");
-      // form.name("");
-      // form.fatherland("");
-      // form.group("");
-
-      // Запросы
-      let value = String(+id_request + 1);
-      // form.setIdRequest(value);
-      // form.setIdRequest("");
-      // form.setBuilding("");
-      // form.setAuditorium("");
-      // form.setDiscipline("");
-      // form.setSchedule("");
-      // form.setDataTime("");
-
-      setIdRequest(value);
-      setBuilding("");
-      setAuditorium("");
-      setDiscipline("");
-      setSchedule("");
-      setDataTime("");
-
-      return res.data;
-    } catch (e) {
-      e.preventDefault();
+        return res.data;
+    } catch (error) {
+      error.preventDefault();
       alert(error.message);
+      console.log(error.message);
     }
   };
 
