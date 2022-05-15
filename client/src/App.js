@@ -4,8 +4,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import RequestTranslatorTasks from "./pages/RequestTranslatorTasks";
 import { useRoutes } from "../src/routes";
 import { useAuth } from "./hooks/auth.hook";
+import { LinkForReadRequests } from "./hooks/LinkForReadRequests";
 import { AuthContext } from "./context/AuthContext";
 import { Header } from "./pages/Header";
+import { Main } from "./pages/Main";
 // import { Main } from "./pages/Main";
 // import 'material-css';
 
@@ -24,14 +26,15 @@ import { Header } from "./pages/Header";
 function App() {
   // const routes = useRoutes(true);
   // const { token, login, logout, userID } = useAuth();
-  const { family, name, fatherland, group, token, login, logout, userID } =
-    useAuth();
+  const { family, name, fatherland, group, token, login, logout, myID } = useAuth();
+  // const {build, auid, dis, sched, datime} = LinkForReadRequests();
   const isAuthenficated = !!token;
   // const isAuthenficated = true;
   const routes = useRoutes(isAuthenficated);
   return (
     <AuthContext.Provider
       value={{
+        myID,
         family,
         name,
         fatherland,
@@ -43,7 +46,7 @@ function App() {
       }}
     >
       <Router>
-        {isAuthenficated && <Header />} 
+        {isAuthenficated && <Header/>} 
         {routes}
         {/* <Route path="/request_tasks" element={<RequestTranslatorTasks />} /> */}
       </Router>

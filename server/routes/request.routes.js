@@ -14,6 +14,10 @@ class requestBuilding {
     try {
       // Передаем и сохраняем нашу структуру
       const {
+        surdo_family,
+        surdo_name,
+        surdo_fatherland,
+        
         _id,
         post_user,
 
@@ -24,6 +28,7 @@ class requestBuilding {
 
         id_request,
         number_request,
+        status_request,
 
         building,
         auditorium,
@@ -38,6 +43,10 @@ class requestBuilding {
 
       // console.log("body: ", req.body);
       const post = await User.create({
+        surdo_family,
+        surdo_name,
+        surdo_fatherland,
+
         _id,
         post_user,
         
@@ -48,6 +57,7 @@ class requestBuilding {
 
         id_request,
         number_request,
+        status_request,
 
         building,
         auditorium,
@@ -56,9 +66,9 @@ class requestBuilding {
         DataTime,
       });
 
-      res.json(post);
       console.log(post);
       // console.log(post._id);
+      return res.json(post);
     } catch (error) {
       res.status(500).json({
         message: "ERROR! Проверьте! Тип ошибка: ",
@@ -71,47 +81,16 @@ class requestBuilding {
 
   async update(req, res) {
     try {
-      // Передаем и сохраняем нашу структуру
-      const {
-        _id,
-
-        family,
-        name,
-        fatherland,
-        group,
-
-        id_request,
-        number_request,
-
-        building,
-        auditorium,
-        discipline,
-        schedule,
-        DataTime,
-      } = req.body;
-
-      const post = await User.create({
-        _id,
-
-        family,
-        name,
-        fatherland,
-        group,
-
-        id_request,
-        number_request,
-
-        building,
-        auditorium,
-        discipline,
-        schedule,
-        DataTime,
-      });
-
-      res.json(post);
-      console.log(post);
-      // console.log(post._id);
-      
+      const post = req.body;
+      if (!post._id) {
+        res.status(400).json({ message:"Ошибка! ID не указан!"});
+      }
+      const post_update = await User.findByIdAndUpdate(
+        post._id,
+        post, {new: true}
+      );
+      console.log("Обновлено:", post_update);
+      return res.json(post_update);
     } catch (error) {
       res.status(500).json({
         message: "ERROR! Проверьте! Тип ошибка: ",
@@ -120,6 +99,15 @@ class requestBuilding {
       console.log("ERROR! Проверьте!");
       console.log("Тип ошибка: ", error.message);
     }
+  }
+  async delete(req, res) {
+    const post = req.body;
+    if (!post._id) {
+      res.status(400).json({ message:"Ошибка! ID не указан!"});
+    }
+    const post_delete = await User.findByIdAndDelete(post._id, {new: false});
+    console.log("Удалено:", post_delete);
+    return res.json(post_delete);
   }
 }
 

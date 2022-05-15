@@ -500,6 +500,21 @@ h1 {
 
 /* http://localhost:3000/request_tasks */
 
+.button_accept_delete {
+    margin: 10px 10px 10px 10px;
+}
+
+.button_update {
+    font-weight: bold;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+    width: auto;
+    font-size: 40px;
+    color: #000;
+    /* background-color: #ffc107; */
+    border-color: #ffc107;
+}
+
 .row {
     padding: 30px 70px 30px 70px;
 }

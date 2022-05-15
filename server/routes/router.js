@@ -28,10 +28,14 @@ router.get("/getInfoAll", database.getInfoAll)
 
 router.get("/getInfoName", database.getInfoName)
 
-router.get("/getInfoFIO", database.getInfoFIO)
+// Получение данные запросы для студентов, сурдопереводчиков и админа
+
+router.post("/getInfoFIO_student", database.getInfoFIO_student)
+
+// Также закрепить запросы у себя для сурдопереводчиков
+router.post("/getInfoFIO_translator", database.getInfoFIO_translator)
 
 router.get("/getInfoNumReq", database.getInfoNumReq)
-
 
 // Для подачи и получения заявок и обработка запроса
 // 
@@ -44,14 +48,14 @@ router.get('/request')
 // Операция запроса получения всех постов
 router.get('/request/:id')
 
-// Операция для обновления
-router.put('/request', requestBuilding.update)
+// Изменение статуса запроса (принято/отклонено)
+router.put('/request/:id', requestBuilding.update)
 
 // Созданные маршрутизации удаляем
-router.delete('/request/:id')
+router.delete('/request/:id', requestBuilding.delete)
 
-router.get('/accounts', roleMiddleware(["USER"]), authController.getUsers)
-// router.get('/accounts', authController.getUsers)
+// router.get('/accounts', roleMiddleware(["USER"]), authController.getUsers)
+router.get('/accounts', authController.getUsers)
 
 // router.get('/accounts/:id', AccountController.getOne)
 // router.put('/accounts/:id', AccountController.update)

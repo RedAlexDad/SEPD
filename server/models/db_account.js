@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+// Полная БД для всех
+// Для регистрации и проверка учетной записи при авторизации
 const Account = new mongoose.Schema({
   // Уч. запись для авторизации и регистрации
   login: { type: String, unique: true, required: true },
@@ -13,13 +15,14 @@ const Account = new mongoose.Schema({
   family: { type: String, required: true },
   name: { type: String, required: true },
   fatherland: { type: String, required: true },
-  group: { type: String, required: true },
+  // Если сурдопереводчик, то можно пропустить
+  group: { type: String, required: false },
 
-  // Номер заявления
+  // Номер заявления (08.05.2022 - по плану должен быть порядковый номер запроса, в данный момент эта функция отключена)
   number_request: { type: Number, required: false },
 
   // Роль доступа, USER и ADMIN
-  // role_user: [{ type: String, ref: "Role" }],
+  // role_user: [{ type: String, ref: 'Role' }],
   // value: {type:String, unique: true, default: "USER"} 
 });
 

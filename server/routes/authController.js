@@ -40,7 +40,7 @@ class authController {
       console.log("Error: ", errors);
       // const {password, login} = req.body // --------
       // const {password, login, value} = req.body
-      const { password, login, post_user, value, family, name, fatherland, group, number_request } = req.body;
+      const { password, login, post_user, family, name, fatherland, group, number_request } = req.body;
       const candidate = await User.findOne({ login });
 
       if (candidate) {
@@ -58,13 +58,13 @@ class authController {
       // console.log(Man)
 
       const hashPassword = bcrypt.hashSync(password, 7);
-      const userRole = await Role.findOne( {value:"USER"} ) // --------
+      // const userRole = await Role.findOne( {value:"USER"} ) // --------
       // const user = new User( {login, password: hashPassword, role_user: [value]} ) //не записывает значение роли
       const user = new User({
         login,
         password: hashPassword,
         post_user,
-        userRole: [value],
+        // role_user : [userRole.value],
         family,
         name,
         fatherland,

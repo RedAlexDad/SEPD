@@ -27,9 +27,9 @@ export const RequestTranslator = () => {
 
   const auth = useContext(AuthContext);
 
-  const [post, setPost] = useState([]);
+  // const [post, setPost] = useState([]);
 
-  const { myID, family, name, fatherland, group, num_req } = useAuth();
+  const { myID, family, name, fatherland, group, num_req, post_user } = useAuth();
   const { loading, request, error, clearError } = useHttp();
 
   // const [num_req_web, setNumReqWeb] = useState(Number);
@@ -40,24 +40,25 @@ export const RequestTranslator = () => {
   const [schedule, setSchedule] = useState("");
   const [DataTime, setDataTime] = useState("");
   
-  const [form, setForm] = useState({
-    name: "",
-    family: "",
-    fatherland: "",
-    group: "",
-    id_request: "",
-    number_request: "",
-    building: "",
-    auditorium: "",
-    discipline: "",
-    schedule: "",
-    DataTime: "",
-  });
+  // const [form, setForm] = useState({
+  //   name: "",
+  //   family: "",
+  //   fatherland: "",
+  //   group: "",
+  //   id_request: "",
+  //   number_request: "",
+  //   building: "",
+  //   auditorium: "",
+  //   discipline: "",
+  //   schedule: "",
+  //   DataTime: "",
+  // });
 
   const handleSubmit = async () => {
     try {
 
-      let number_request = +num_req  + 1;
+      // let number_request = +num_req  + 1;
+      let number_request = 1;
       // num_req = number_request;
 
       // const data = await request("/api/auth/request", "PUT", number_request);
@@ -67,6 +68,7 @@ export const RequestTranslator = () => {
       const article = {
         // Идентификатор пользователя
         // ID_user: myID,
+        post_user: post_user,
 
         // ФИО и группа пользователя
         family,
@@ -87,17 +89,17 @@ export const RequestTranslator = () => {
         DataTime,
       };
 
-      setForm({...form, article});
+      // setForm({...form, article});
 
       const res = axios 
         // .post(`http://localhost:4000/request_tasks`, article)
         // .post(`http://localhost:4000/request_tasks_${myID}`, article)
         // .request("/api/auth/login", "POST", article)
         .post("/api/auth/request", article)
-        .get("/api/auth/accounts", number_request)
-        .put("/api/auth/accounts", number_request)
+        // .get("/api/auth/accounts", number_request)
+        // .put("/api/auth/accounts", number_request)
         .then((response) => {
-          setForm(response.data);
+          // setForm(response.data);
           console.log(response.data);
           // alert(response.data);
         });

@@ -18,11 +18,18 @@ export const Main = () => {
   const history = useHistory();
   const auth = useContext(AuthContext);
 
+  // Работа с хранилищем памяти
+  // let nametest = localStorage.setItem("TEST", JSON.stringify({name: "test", first: "yes"}));
+  // console.log("nametest", nametest);
+  // let newObject = window.localStorage.getItem("TEST");
+  // console.log("parse(newObject): ", JSON.parse(newObject)); 
+
   const logoutHandler = (event) => {
     event.preventDefault();
     auth.logout();
     history.push("/");
   };
+  
   return (
     <div>
       <title>Главная</title>

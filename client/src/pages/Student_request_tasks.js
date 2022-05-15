@@ -23,9 +23,8 @@ import { useHttp } from "../hooks/http.hook.js";
 import { useAuth } from "../hooks/auth.hook.js";
 import { LinkForReadRequests } from "../hooks/LinkForReadRequests";
 
-
 // function RequestTranslatorTasks() {
-export const Translator = () => {
+export const StudentRequestTasks = () => {
 
 
   const { loading, request, error, clearError } = useHttp();
@@ -45,20 +44,18 @@ export const Translator = () => {
   const [post, setPost] = useState([]);
 
 const update_info_click = () => {
-  console.log("click");
-  const res = axios
+    const res = axios;
     res
-    // .post("/api/auth/getInfoFIO_translator", {...FIO_translate})
-    .post("/api/auth/getInfoFIO_translator", 
-    { surdo_family: family, surdo_name: name, surdo_fatherland: fatherland })
+    .post("/api/auth/getInfoFIO_student", { family, name, fatherland })
     .then((response) => {
         setPost(response.data);
+        const database = response.data;
         console.log(response.data);
     })
     .catch(function (error) {
-      console.log(error);
+        console.log(error);
     });
-    console.log("res.data: ", res.data);
+    // console.log("res.data: ", res.data);
     return res.data
 }
 
@@ -159,4 +156,4 @@ const update_info_click = () => {
   );
 };
 
-export default Translator;
+export default StudentRequestTasks;
