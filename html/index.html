@@ -4,7 +4,7 @@
 <head>
     <title>Авторизация</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,12 +21,12 @@
         }
     </style>
 
-    <script src = "../js/main.js"></script>
-   
+    <script src="../js/main.js"></script>
+
 </head>
 
 <body>
-    
+
     <header>
         <div class="LOGO2">
             <!-- <img src="../image/1.png"> -->
@@ -57,8 +57,9 @@
             <div class="input-group-append">
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Аудитория</label>
-                    <input type="text" class="form-control" id="auditorium" placeholder="Введите аудиторию"> oninput: <span id="result"></span>
-                    
+                    <input type="text" class="form-control" id="auditorium" placeholder="Введите аудиторию"> oninput:
+                    <span id="result"></span>
+
                 </div>
             </div>
         </div>
@@ -104,28 +105,107 @@
 
             let aud = document.getElementById("auditorium");
             aud.value = "219";
-    
+
             let dis = document.getElementById("displine");
             dis.value = "УПСП";
-            
+
             let dat = document.getElementById("datatime");
             dat.value = "";
-            
+
             let she = document.getElementById("schedule");
             she.value = "13:50 - 15:25";
-            
+
+            // print_after_get_fetch();
+            // test_get();
+
+            // function test_get() {
+            // console.log("click test_get");
+            //     form.map((p) => {
+            //         // <div> p.name </div>
+            //     p.name
+            //     console.log("p.name: ", p.name);
+            //     })
+            // }
         </script>
+
+
+        <header> <h1> Всего заявления: </h1></header>
+
+        <div class="row">
+            <h1>
+                Запрос № 
+                <script>
+                let form = get_form();
+                form.map(post => {
+                    // console.log("post: ", post);
+                    return post;})
+                </script>
+            </h1>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Имя:</label>
+                    <a>Иван</a>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Фамилия:</label>
+                    <a>Иванов</a>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Отечество:</label>
+                    <a>Иванович</a>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Группа:</label>
+                    <a>ИУ5Ц-41Б</a>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Здание:</label>
+                    <a>УЛК</a>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Аудитория:</label>
+                    <a>224л</a>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Дисциплина:</label>
+                    <a>Архитектура </a>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Расписание:</label>
+                    <a>8:30 - 10:00</a>
+                </div>
+            </div>
+        </div>
 
         <div class="butt">
             <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn btn-warning" type="button">Показать все запросы</button>
+                <button class="btn btn-warning" type="button" onclick="get_request()">Показать все запросы</button>
                 <button class="btn btn-warning" type="button" onclick="push_request()">Отправить</button>
                 <button class="btn btn-warning" type="button" onclick="print()">Назад</button>
             </div>
         </div>
-
-
-
     </main>
 
 </body>

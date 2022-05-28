@@ -1,7 +1,7 @@
 const user = require("./user.js");
 
 class requestBuilding {
-  async request(req, res) {
+  async request_post(req, res) {
     try {
       const {
         family,
@@ -39,6 +39,15 @@ class requestBuilding {
       console.log("ERROR! Проверьте!");
       console.log("Тип ошибка: ", error.message);
     }
+  }
+
+  async request_get(req, res) {
+    user.find()
+          .then((users) => res.send(users))
+          .catch((err) => res.send(err));
+          
+    // console.log(post);
+    // return res.json(post);
   }
 }
 
